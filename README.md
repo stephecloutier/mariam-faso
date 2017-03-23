@@ -32,7 +32,11 @@ school project for Mariam Faso a.s.b.l.
 
     Existe-t-il un système de parrainage où l'utilisateur pourrait savoir qu'il y a un enfant qu'il aide directement ? Est-il possible de proposer un titre à un utilisateur qui donnerait fréquemment ? Faire apparaître le nom de ceux qui aide l'association quelque part sur le site ?
 
-    ### Susciter le partage
+    ### Susciter l'intérêt des jeunes
+
+    Proposer aux jeunes des opportunités d'aller aider sur place, ou même indirectement en partageant sur les réseaux sociaux ce qui concerne Mariam Faso.
+
+    Montrer des projets précédents avec des jeunes européens qui se sont rendus au Burkina Faso.
 
 
 
