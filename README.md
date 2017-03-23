@@ -2,7 +2,16 @@
 school project for Mariam Faso a.s.b.l.
 
 ## Plan d'attaque
-1. Définition
+__1. Définition__
+
+    Familiariser l'utilisateur avec l'univers et les actions de Mariam Faso, et à terme, le fidéliser d'une manière ou d'une autre.
+
+    L'objectif de _Mariam Faso_ est de contribuer au développement rural en Afrique. Elle promeut les échanges nord-sud, la solidarité interculturelle et le développement durable. Pour ce faire, ils organisent des activités de sensibilisation et des collectes de fonds pour financer leurs projets en Afrique.
+
+    Le public ciblé est belge/européen, et compte les jeunes (pour la participation au projets) et les personnes à même de faire des dons (sentiment premium)
+
+    La page Facebook, en ce moment peut active, permettrait un échange direct avec les jeunes et le partage des collectes de fonds.
+
 2. Stratégie
 
 ## Recherche sur le web
@@ -42,3 +51,7 @@ Il est possible d'accéder à une partie de leur site qui n'est aujourd'hui plus
     * En 2012, ils ont participé à une journée pédestre durant laquelle ils avaient un stand
     * Ils recherchaient à récolter des outils pour constituer des boîtes à outils pour les habitants au Burkina Faso. (Contenant tout ce qui se rapporte à des outils manuels)
     * Sans boîte à outils, là-bas ils ne sont pas embauchés, c'est donc essentiel pour eux
+* [Projet de voyage](http://mjcf.be/projets/voyage)
+    * Projet de voyage avec la maison des jeunes Chiny-Florenville soutenu par l'ASBL Mariam Faso
+    * Contact entre jeunes belges et jeunes Burkinabés de l'ASECD (_association, implantée à Ouagadougou, œuvre depuis plus de 10 ans pour l’épanouissement des enfants en difficultés à travers l’éducation, la santé, la nutrition et la réinsertion socioprofessionnelle._)
+    * Objectif du voyage : mieux comprendre le phénomène de désertification qui entraîne des répercussions sur la production agricole, et sur les conditions de vie des populations rurales.
