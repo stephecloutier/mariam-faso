@@ -2,7 +2,7 @@
 school project for Mariam Faso a.s.b.l.
 
 ## Plan d'attaque
-__1. Définition__
+1. __Définition__
 
     Familiariser l'utilisateur avec l'univers et les actions de Mariam Faso, et à terme, le fidéliser d'une manière ou d'une autre.
 
