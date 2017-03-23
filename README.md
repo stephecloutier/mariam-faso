@@ -20,6 +20,22 @@ school project for Mariam Faso a.s.b.l.
 
 2. __Stratégie__
 
+    de quelle(s) manière(s) puis-je faire passer le message du client, sa stratégie marketing ou sa manière de communiquer dans une interface web ? Est-ce que tous ces objectifs ont la même importance ? Quelle action veut-on que l'utilisateur entreprenne et comment puis-je augmenter l'efficacité de cette action ? Comment réaliser un design émotionnel pour ce public, cette thématique et le délai donné ?
+
+    ### L'interface web
+
+    Afin d'amener l'interface web a être parlante pour son utilisateur, les termes devront être bien choisis et orientés utilisateurs.
+
+    ### Appel au don
+
+    En ce qui concerne l'appel au don (qui est sans doute importante pour l'association) il faut que l'utilisateur se sente valorisé par l'action de donné, qu'on lui donne de l'importance.
+
+    Existe-t-il un système de parrainage où l'utilisateur pourrait savoir qu'il y a un enfant qu'il aide directement ? Est-il possible de proposer un titre à un utilisateur qui donnerait fréquemment ? Faire apparaître le nom de ceux qui aide l'association quelque part sur le site ?
+
+    ### Susciter le partage
+
+
+
 ## Recherche sur le web
 
 ### Définition de l'association
