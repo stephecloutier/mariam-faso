@@ -12,7 +12,13 @@ school project for Mariam Faso a.s.b.l.
 
     La page Facebook, en ce moment peut active, permettrait un échange direct avec les jeunes et le partage des collectes de fonds.
 
-2. Stratégie
+    _Pour sensibiliser les visiteurs du site_
+    * Montrer des images concrètes des projets passés et en cours;
+    * Parler de l'importance de l'éducation, donner des chiffres par rapport aux habitants alphabétisés;
+    * Faire un parallèle avec le mode de vie en Europe (Ex. Meubles de classe, matériel, accès à l'eau, etc.) pour toucher une éventuelle corde sensible
+
+
+2. __Stratégie__
 
 ## Recherche sur le web
 
