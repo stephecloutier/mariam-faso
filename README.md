@@ -70,6 +70,9 @@ __Agenda__ :
 __Dons__ :
 avantages fiscaux dans les donations, appartenance à le Fondation Roi Beaudoin, _intégrer le formulaire de donations ?_ ;
 
+__On parle de nous__ :
+Liens vers différent sites/articles qui mentionnent l'association ;
+
 __Contact__ :
 formulaire de contact simple, inscription à la newsletter ;
 
