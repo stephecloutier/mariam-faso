@@ -1,9 +1,9 @@
 # mariam-faso
 school project for Mariam Faso a.s.b.l.
 
-[Infos générales]() //
-[Plan d'attaque]() //
-[Recherches sur le web]()
+[Infos générales](https://github.com/stephecloutier/mariam-faso#informations-g%C3%A9n%C3%A9rales--id%C3%A9es-pour-le-futur-site-mariam-faso) //
+[Plan d'attaque](https://github.com/stephecloutier/mariam-faso#plan-dattaque) //
+[Recherches sur le web](https://github.com/stephecloutier/mariam-faso#recherche-sur-le-web)
 
 ## Informations générales & idées pour le futur site Mariam Faso
 
