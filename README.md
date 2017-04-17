@@ -84,6 +84,8 @@ inscription à la newsletter, lien pour les dons, coordonnées, réseaux sociaux
 
 ### 2. __Stratégie__
 
+Voir le dossier "plan-attaque" pour le schéma de la stratégie.
+
 ----
 
 ## Recherche sur le web
