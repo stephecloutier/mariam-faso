@@ -6,6 +6,9 @@ school project for Mariam Faso a.s.b.l.
 
 ## Informations générales & idées pour le futur site Mariam Faso
 
+[Informations de contact](http://www.bastogne.be/loisirs/bottin-des-associations/m/copy_of_mariam-faso-asbl)
+
+
 Familiariser l'utilisateur avec l'univers et les actions de Mariam Faso, et à terme, le fidéliser d'une manière ou d'une autre.
 
 L'objectif de _Mariam Faso_ est de contribuer au développement rural en Afrique. Elle promeut les échanges nord-sud, la solidarité interculturelle et le développement durable. Pour ce faire, ils organisent des activités de sensibilisation et des collectes de fonds pour financer leurs projets en Afrique.
