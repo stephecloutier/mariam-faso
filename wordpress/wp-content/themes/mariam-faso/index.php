@@ -43,9 +43,8 @@ get_header();
             <?php endwhile; else: ?>
             <p class="events__empty">Il n'y a pas d'évènements à afficher pour le moment.</p>
             <?php endif; ?>
-
-
-            <a href="#" class="events__link--more">Voir notre agenda</a>
+            <?php //var_dump(mf_get_page_id_from_template('single-agenda.php')); ?>
+            <a href="<?= mf_get_page_url('single-agenda.php'); ?>" class="events__link--more">Voir notre agenda</a>
         </section>
         <section class="main__projects projects">
             <h2 class="projects__title">Projets en cours</h2>

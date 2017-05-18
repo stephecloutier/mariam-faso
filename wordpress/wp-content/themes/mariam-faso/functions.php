@@ -209,8 +209,22 @@ function mf_get_image_alt($fieldName) {
 
 
 /*
- * Create page from publishing new event post
+ * Get page ID from template name
 */
-function mf_create_event_page() {
+function mf_get_page_id_from_template($templateName) {
+    $pages = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $templateName
+    ));
+    // vérifier autre fonction que get_pages
+    foreach($pages as $page){
+        return $page->ID;
+    }
+}
 
+/*
+ * Get page url from ID
+*/
+function mf_get_page_url($templateName) {
+    return get_page_link(mf_get_page_id_from_template($templateName));
 }

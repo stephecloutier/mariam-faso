@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <h1 class="header__title">
-            <a href="/">
+            <a href="index.php">
                 <img src="#" alt="<?php bloginfo('name') ?>">
                 <span class="hidden"><?php bloginfo('name') ?></span>
             </a>
