@@ -19,3 +19,7 @@
 
 /wordpress/wp-content/themes/mariam-faso/node_modules
 /wordpress/wp-content/themes/mariam-faso/assets
+
+wordpress/wp-content/themes/.idea/
+
+/ex_wordpress
