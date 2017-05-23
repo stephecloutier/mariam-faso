@@ -12,7 +12,7 @@ get_header();
             <p class="who__content">
                 <?= get_field('homePresentation'); ?>
             </p>
-            <a href="<?php mf_get_page_url('template-about.php'); ?>" class="who__link--more"><?= __('En savoir plus', 'mf'); ?><span class="hidden"> <?= __('sur Mariam Faso', 'mf'); ?></span></a>
+            <a href="<?= mf_get_page_url('template-about.php'); ?>" class="who__link--more"><?= __('En savoir plus', 'mf'); ?><span class="hidden"> <?= __('sur Mariam Faso', 'mf'); ?></span></a>
             <?php if(get_field('homePresentationImg')): ?>
             <img class="who__img" width="500" height="auto" src="<?= get_field('homePresentationImg')['url']; ?>" alt="<?= mf_get_image_alt('homePresentationImg'); ?>">
             <?php endif; ?>
@@ -43,7 +43,7 @@ get_header();
             <?php endwhile; else: ?>
             <p class="events__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
             <?php endif; ?>
-            <a href="<?= mf_get_page_url('archive-events.php'); ?>" class="events__link--more"><?= __('Voir notre agenda', 'mf'); ?></a>
+            <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="events__link--more"><?= __('Voir notre agenda', 'mf'); ?></a>
         </section>
 
         <section class="main__projects projects">
@@ -62,7 +62,7 @@ get_header();
             <?php endwhile; else: ?>
             <p class="events__empty"><?= __('Il n’y a pas de projets à afficher pour le moment.', 'mf'); ?></p>
             <?php endif; ?>
-            <a href="<?= mf_get_page_url('archive-projects.php') ?>" class="projects__link--more"><?= __('Voir tous les projets', 'mf'); ?></a>
+            <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="projects__link--more"><?= __('Voir tous les projets', 'mf'); ?></a>
         </section>
 
         <section class="main__news news">
@@ -84,15 +84,15 @@ get_header();
                 <p class="events__empty"><?= __('Il n’y a pas d’actualités à afficher pour le moment.', 'mf'); ?></p>
                 <?php endif; ?>
             </div>
-            <a href="<?= mf_get_page_url('archive-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualités', 'mf'); ?></a>
+            <a href="<?= mf_get_page_url('template-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualités', 'mf'); ?></a>
         </section>
 
         <section class="main__help help">
             <h2 class="help__title"><?= __('Envie d’aider&nbsp;?', 'mf'); ?></h2>
             <p class="help__desc"><?= __('Mariam Faso a besoin de votre aider pour mener à bien ses projets', 'mf'); ?></p>
             <div class="help__links">
-                <a href="<?php mf_get_page_url('template-help.php'); ?>" class="help__link"><?= __('Faire un don', 'mf'); ?></a>
-                <a href="<?php mf_get_page_url('archive-events.php'); ?>" class="help__link"><?= __('Participer à nos évènements', 'mf'); ?></a>
+                <a href="<?= mf_get_page_url('template-help.php'); ?>" class="help__link"><?= __('Faire un don', 'mf'); ?></a>
+                <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="help__link"><?= __('Participer à nos évènements', 'mf'); ?></a>
                 <a href="#" class="help__link"><?= __('Partager notre site web', 'mf'); ?></a>
             </div>
         </section>

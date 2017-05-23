@@ -237,7 +237,7 @@ function mf_get_image_alt($fieldName) {
 function mf_get_page_id_from_template($templateName) {
     $pages = get_pages(array(
         'meta_key' => '_wp_page_template',
-        'meta_value' => $templateName
+        'meta_value' => 'template-parts/' . $templateName
     ));
     // vérifier autre fonction que get_pages
     foreach($pages as $page){

@@ -42,7 +42,7 @@
             <p class="landing__title">
                 <?= get_field('landingCatchPhrase'); ?>
             </p>
-            <a href="<?= mf_get_page_url('template-help'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
+            <a href="<?= mf_get_page_url('template-help.php'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
         <?php endif; ?>
 
         <?php if(!is_front_page()): ?>
