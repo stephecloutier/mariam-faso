@@ -74,7 +74,7 @@ get_header();
                 <article class="news__article article">
                     <h3 class="article__title"><?= $fields['newsTitle']; ?></h3>
                     <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
-                    <p class="article__content"><?= mf_get_the_excerpt(60); ?></p>
+                    <p class="article__content"><?= mf_get_the_excerpt('newsContent', 300); ?></p>
                     <a href="<?php the_permalink(); ?>" class="article__link">Lire la suite<span class="hidden"> de <?= $fields['newsTitle']; ?></span></a>
                     <?php if($fields['projectImg']): ?>
                     <img width="200" height="auto" src="<?= $fields['newsImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="article__img">
@@ -86,7 +86,7 @@ get_header();
             </div>
             <a href="<?= mf_get_page_url('archive-news.php'); ?>" class="news__link">Voir plus d'actualités</a>
         </section>
-        
+
         <section class="main__help help">
             <h2 class="help__title">Envie d'aider&nbsp;?</h2>
             <p class="help__desc">Mariam Faso a besoin de votre aider pour mener à bien ses projets</p>
