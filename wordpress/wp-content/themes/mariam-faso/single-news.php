@@ -5,4 +5,5 @@
 */
 
 get_header();
+echo 'Single News';
 ?>

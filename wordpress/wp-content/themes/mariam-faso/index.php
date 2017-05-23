@@ -68,16 +68,25 @@ get_header();
         <section class="main__news news">
             <h2 class="news__title">Actualité</h2>
             <div class="news__wrapper">
+                <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'news']); ?>
+                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                <?php $fields = get_fields(); ?>
                 <article class="news__article article">
-                    <h3 class="article__title">Nouveau projet de voyage</h3>
-                    <time class="article__date" datetime="2017-04-25">25/04/2017</time>
-                    <p class="article__content">Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <a href="" class="article__link">Lire la suite<span class="hidden"> sur 'nouveau projet de voyage'</span></a>
-                    <img src="" alt="" class="article__img">
+                    <h3 class="article__title"><?= $fields['newsTitle']; ?></h3>
+                    <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
+                    <p class="article__content"><?= mf_get_the_excerpt(60); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="article__link">Lire la suite<span class="hidden"> de <?= $fields['newsTitle']; ?></span></a>
+                    <?php if($fields['projectImg']): ?>
+                    <img width="200" height="auto" src="<?= $fields['newsImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="article__img">
+                    <?php endif; ?>
                 </article>
+                <?php endwhile; else: ?>
+                <p class="events__empty">Il n'y a pas d'actualités à afficher pour le moment.</p>
+                <?php endif; ?>
             </div>
-            <a href="#" class="news__link">Voir plus d'actualités</a>
+            <a href="<?= mf_get_page_url('archive-news.php'); ?>" class="news__link">Voir plus d'actualités</a>
         </section>
+        
         <section class="main__help help">
             <h2 class="help__title">Envie d'aider&nbsp;?</h2>
             <p class="help__desc">Mariam Faso a besoin de votre aider pour mener à bien ses projets</p>
