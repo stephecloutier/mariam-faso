@@ -43,19 +43,28 @@ get_header();
             <?php endwhile; else: ?>
             <p class="events__empty">Il n'y a pas d'évènements à afficher pour le moment.</p>
             <?php endif; ?>
-            <?php //var_dump(mf_get_page_id_from_template('single-agenda.php')); ?>
-            <a href="<?= mf_get_page_url('single-agenda.php'); ?>" class="events__link--more">Voir notre agenda</a>
+            <a href="<?= mf_get_page_url('archive-events.php'); ?>" class="events__link--more">Voir notre agenda</a>
         </section>
+
         <section class="main__projects projects">
             <h2 class="projects__title">Projets en cours</h2>
+            <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'project']); ?>
+            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+            <?php $fields = get_fields(); ?>
             <article class="projects__project project">
-                <h3 class="project__title">Construction de puits</h3>
-                <img src="#" alt="Photo du projet">
-                <p class="project__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-                <a href="#" class="project__link">Voir le projet<span class="hidden"> 'construction de puits'</span></a>
+                <h3 class="project__title"><?= $fields['projectName']; ?></h3>
+                <?php if($fields['projectImg']): ?>
+                <img width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
+                <?php endif; ?>
+                <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
+                <a href="<?php the_permalink(); ?>" class="project__link">Voir le projet<span class="hidden"><?= $fields['projectName']; ?></span></a>
             </article>
-            <a href="#" class="projects__link--more">Voir tous les projets</a>
+            <?php endwhile; else: ?>
+            <p class="events__empty">Il n'y a pas de projets à afficher pour le moment.</p>
+            <?php endif; ?>
+            <a href="<?= mf_get_page_url('archive-projects.php') ?>" class="projects__link--more">Voir tous les projets</a>
         </section>
+
         <section class="main__news news">
             <h2 class="news__title">Actualité</h2>
             <div class="news__wrapper">

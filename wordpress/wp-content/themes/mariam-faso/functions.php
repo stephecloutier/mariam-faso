@@ -41,6 +41,18 @@ function mf_register_types() {
         'menu_icon' => 'dashicons-calendar-alt'
     ]);
 
+    register_post_type('project', [
+        'label' => 'Projets',
+        'labels' => [
+            'singular_name' => 'projet',
+            'add_new_item' => 'Ajouter un nouveau projet'
+        ],
+        'description' => 'Permet d’administrer les projets affichés sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-portfolio'
+    ]);
+
     register_taxonomy('places', 'trip', [
         'label' => 'Endroits',
         'labels' => [
