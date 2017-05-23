@@ -15,7 +15,7 @@
             </a>
         </h1>
         <nav class="navigation">
-            <h2 class="hidden">Navigation principale</h2>
+            <h2 class="hidden"><?= __('Navigation principale', 'mf'); ?></h2>
             <ul class="navigation__container">
                 <?php foreach(mf_get_nav_items('main') as $item): ?>
                 <li class="navigation__item">
@@ -42,7 +42,7 @@
             <p class="landing__title">
                 <?= get_field('landingCatchPhrase'); ?>
             </p>
-            <a href="#" class="landing__button">Faire un don</a>
+            <a href="<?= mf_get_page_url('template-help'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
         <?php endif; ?>
 
     </header>
