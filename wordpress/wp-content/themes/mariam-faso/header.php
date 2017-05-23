@@ -45,4 +45,10 @@
             <a href="<?= mf_get_page_url('template-help'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
         <?php endif; ?>
 
+        <?php if(!is_front_page()): ?>
+        <div class="breadcrumb">
+        <?php mf_display_breadcrumb(); ?>
+        </div>
+        <?php endif; ?>
+
     </header>

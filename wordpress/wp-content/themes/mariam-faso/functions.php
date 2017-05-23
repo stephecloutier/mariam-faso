@@ -251,3 +251,12 @@ function mf_get_page_id_from_template($templateName) {
 function mf_get_page_url($templateName) {
     return get_page_link(mf_get_page_id_from_template($templateName));
 }
+
+/*
+ * Check if bcn_display exists, then displays it
+*/
+function mf_display_breadcrumb() {
+    if(function_exists('bcn_display')) {
+        bcn_display();
+    }
+}
