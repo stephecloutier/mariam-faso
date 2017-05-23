@@ -6,7 +6,6 @@
         <p class="footer__address">6600 Bastogne</p>
 
         <a href="mailto:info@mariam-faso.be" class="footer__mail">info@mariam-faso.be</a>
-
         <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="footer__button--contact"><?= __('Contactez-nous', 'mf'); ?></a>
     </div>
     <div class="footer__help">
