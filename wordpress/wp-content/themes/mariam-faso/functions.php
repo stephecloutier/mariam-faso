@@ -53,6 +53,18 @@ function mf_register_types() {
         'menu_icon' => 'dashicons-portfolio'
     ]);
 
+    register_post_type('news', [
+        'label' => 'Actualités',
+        'labels' => [
+            'singular_name' => 'actualité',
+            'add_new_item' => 'Ajouter une nouvelle actualité'
+        ],
+        'description' => 'Permet d’administrer les actualités affichées sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-pressthis'
+    ]);
+
     register_taxonomy('places', 'trip', [
         'label' => 'Endroits',
         'labels' => [
