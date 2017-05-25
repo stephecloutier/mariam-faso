@@ -38,7 +38,9 @@ function mf_register_types() {
         'description' => 'Permet d’administrer les évènements affichés sur le site',
         'public' => true,
         'menu_position' => 20,
-        'menu_icon' => 'dashicons-calendar-alt'
+        'menu_icon' => 'dashicons-calendar-alt',
+        'hierarchical' => true,
+        'supports' => true,
     ]);
 
     register_post_type('project', [
@@ -257,8 +259,8 @@ function mf_get_page_url($templateName) {
 /*
  * Check if bcn_display exists, then displays it
 */
-function mf_display_breadcrumb() {
-    if(function_exists('bcn_display')) {
-        bcn_display();
+function mf_display_breadcrumb($return = false, $linked = true, $reverse = false, $force = false) {
+    if(function_exists('bcn_display_list')) {
+        bcn_display_list($return, $linked, $reverse, $force);
     }
 }

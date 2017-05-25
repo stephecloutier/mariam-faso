@@ -46,9 +46,9 @@
         <?php endif; ?>
 
         <?php if(!is_front_page()): ?>
-        <div class="breadcrumb">
+        <ul class="breadcrumb">
         <?php mf_display_breadcrumb(); ?>
-        </div>
+        </ul>
         <?php endif; ?>
 
     </header>
