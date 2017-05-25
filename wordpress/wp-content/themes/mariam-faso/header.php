@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="wp-content/themes/mariam-faso/assets/css/main.css">
 </head>
 <body>
-    <header class="header">
+    <?php if(is_front_page()): ?>
+    <header class="header header--home">
         <h1 class="header__title">
-            <a href="index.php">
-                <img src="#" alt="<?php bloginfo('name') ?>">
-                <span class="hidden"><?php bloginfo('name') ?></span>
+            <a href="index.php" class="header__link">
+                <img src="wp-content/themes/mariam-faso/assets/images/mariamfaso_logo_alt.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
+                --><span class="hidden"><?php bloginfo('name') ?></span>
             </a>
         </h1>
+    <?php else: ?>
+        <header class="header">
+            <h1 class="header__title">
+                <a href="index.php" class="header__link">
+                    <img src="wp-content/themes/mariam-faso/assets/images/mariamfaso_logo.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
+                    --><span class="hidden"><?php bloginfo('name') ?></span>
+                </a>
+            </h1>
+    <?php endif; ?>
         <nav class="navigation">
             <h2 class="hidden"><?= __('Navigation principale', 'mf'); ?></h2>
             <ul class="navigation__container">
