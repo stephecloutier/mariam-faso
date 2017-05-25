@@ -1,0 +1,23 @@
+.header {
+    &.header--home {
+        min-height: 100vh;
+        background: transparent url('../images/landing.jpg') center/cover no-repeat fixed;
+    }
+    .header__title {
+        display: inline-block;
+    }
+
+    .navigation {
+        display: inline-block;
+        .navigation__item {
+            display: inline-block;
+        }
+        .navigation__sub-item {
+            height: 0;
+            font-size: 0;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
