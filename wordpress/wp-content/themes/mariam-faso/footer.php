@@ -24,4 +24,4 @@
 
     <span class="footer__copyright"><?= __('Site web réalisé par', 'mf'); ?> <a href="www.behance.net/stephecloutier" class="footer__copyright--link">Stéphanie Cloutier</a></span>
 </footer>
-<?php if(is_user_logged_in()) {wp_footer();}; ?>
+<!-- <?php //if(is_user_logged_in()) {wp_footer();}; ?> -->
