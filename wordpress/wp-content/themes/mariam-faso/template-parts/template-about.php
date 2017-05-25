@@ -3,16 +3,15 @@
     Template Name: À propos
 */
 get_header();
-echo 'À propos';
 ?>
 
 <main class="main">
     <section class="about">
-        <h2>À propos</h2>
+        <h2><?= __('À propos', 'mf'); ?></h2>
         <article class="about__introduction introduction">
-            <h3>L'ASBL Mariam Faso</h3>
+            <h3><?= __('L’ASBL Mariam Faso', 'mf'); ?></h3>
             <p class="introduction__content"></p>
-            <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link">Voir nos projets</a>
+            <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
         </article>
 
         <blockquote class="about__quote quote">
@@ -21,22 +20,21 @@ echo 'À propos';
         </blockquote>
 
         <article class="about__objectives objectives">
-            <h3>Objectifs</h3>
+            <h3><?= __('Objectifs', 'mf'); ?></h3>
             <p class="objectives__content"></p>
             <img src="#" alt="#">
         </article>
 
         <article class="about__relations relations">
-            <h3>Relations nord-sud</h3>
+            <h3><?= __('Relations nord-sud', 'mf'); ?></h3>
             <p class="relations__content"></p>
             <img src="#" alt="#">
         </article>
     </section>
 
     <section class="learn-more">
-        <h2>En savoir plus</h2>
-        <p class="learn-more__catchphrase">Envie d'en savoir plus sur la <span class="learn-more__catchphrase--bold">culture</span> de là-bas&nbsp;?</p>
-        <p class="learn-more__links">Découvrez la culture du <a href="#" class="learn-more__link">Burkina Faso</a> et du <a href="#" class="learn-more__link">Maroc</a> ou découvrez nos <a href="#" class="learn-more__link">voyages</a></p>
+        <h2><?= __('En savoir plus', 'mf'); ?></h2>
+        <p class="learn-more__catchphrase"><?= str_replace(':culture', '<span class="learn-more__catchphrase--bold">culture</span>', __('Envie d’en savoir plus sur la :culture de là-bas&nbsp;?', 'mf')); ?></p>
+        <p class="learn-more__links"><?= str_replace([':burkina-faso', ':maroc', ':trips'], ['<a href="' . mf_get_page_url('template-burkinafaso.php') . '" class="learn-more__link">Burkina Faso</a>', '<a href="' . mf_get_page_url('template-maroc.php') . '" class="learn-more__link">Maroc</a>', '<a href="' . mf_get_page_url('template-trips.php') . '" class="learn-more__link">voyages</a>'], __('Découvrez la culture du :burkina-faso et du :maroc ou découvrez nos :trips', 'mf')); ?></p>
     </section>
-
 </main>
