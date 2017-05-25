@@ -7,7 +7,7 @@
  */
 
 var gulp = require("gulp"),
-    //image = require("gulp-image")
+    image = require("gulp-image")
     sass = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
     csso = require("gulp-csso"),
@@ -55,5 +55,5 @@ var gulp = require("gulp"),
 
 // --- Aliases
 
-    gulp.task("default", ["css", "js"]);
+    gulp.task("default", ["images", "css", "js"]);
     gulp.task("work", ["default", "watch"]);
