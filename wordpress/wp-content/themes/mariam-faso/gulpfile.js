@@ -55,5 +55,5 @@ var gulp = require("gulp"),
 
 // --- Aliases
 
-    gulp.task("default", ["images", "css", "js"]);
+    gulp.task("default", ["css", "js"]);
     gulp.task("work", ["default", "watch"]);
