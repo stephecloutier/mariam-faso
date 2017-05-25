@@ -7,11 +7,23 @@
  */
 
 var gulp = require("gulp"),
+    image = require("gulp-image"),
     sass = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
     csso = require("gulp-csso"),
     babel = require("gulp-babel"),
     sourcemaps = require("gulp-sourcemaps")
+
+// --- Tasks for images
+
+    gulp.task("images", function() {
+        gulp.src("src/images/**")
+            .pipe(image({
+                mozjpeg: false,
+                jpegoptim: false
+            }))
+            .pipe(gulp.dest("assets/images"));
+   });
 
 // --- Tasks for styles
 
@@ -43,5 +55,5 @@ var gulp = require("gulp"),
 
 // --- Aliases
 
-    gulp.task("default", ["css", "js"]);
+    gulp.task("default", ["images", "css", "js"]);
     gulp.task("work", ["default", "watch"]);
