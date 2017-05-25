@@ -3,6 +3,11 @@
         min-height: 100vh;
         background: transparent url('../images/landing.jpg') center/cover no-repeat fixed;
     }
+
+    .header__wrapper {
+        max-width: 1056px;
+        margin: 0 auto;
+    }
     .header__title {
         display: inline-block;
     }
