@@ -54,16 +54,17 @@
             </div>
 
             <?php if(is_front_page()): ?>
-            <div class="landing__title">
-                <?= get_field('landingCatchPhrase'); ?>
+            <div class="landing">
+                <div class="landing__title">
+                    <?= get_field('landingCatchPhrase'); ?>
+                </div>
+                <a href="<?= mf_get_page_url('template-help.php'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
             </div>
-            <a href="<?= mf_get_page_url('template-help.php'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
-            <?php endif; ?>
-
-            <?php if(!is_front_page()): ?>
-            <ul class="breadcrumb">
-            <?php mf_display_breadcrumb(); ?>
-            </ul>
             <?php endif; ?>
         </div>
     </header>
+    <?php if(!is_front_page()): ?>
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
+    <?php endif; ?>

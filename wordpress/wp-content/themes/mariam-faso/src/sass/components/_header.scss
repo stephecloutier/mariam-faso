@@ -1,19 +1,19 @@
 .header {
     font-family: "Rubik", Helvetica, arial, sans-serif;
+    color: $raspberry;
+    border-bottom: 0.512em solid $orange;
 
     &.header--home {
         min-height: 100vh;
         background: transparent url('../images/landing.jpg') center/cover no-repeat fixed;
         color: white;
-        .navigation__link::after {
-            //fill: white;
-        }
+        border: none;
     }
 
     .header__wrapper {
         max-width: 1056px;
         margin: 0 auto;
-        padding-top: 2em;
+        padding: 1.75em 0;
     }
 
     .header__top {
@@ -37,10 +37,10 @@
     justify-content: space-between;
     align-items: center;
     .navigation__item--parent {
-        .navigation__link::after {
+        &>.navigation__link::after {
             content: "v";
             font-family: 'mariamfaso';
-            font-size: 0.833em;
+            font-size: $smaller;
             font-weight: 400;
             color: inherit;
             display: inline-block;
@@ -52,10 +52,75 @@
 
 // Showing/hiding sub-menu
 
-.navigation__sub-item {
-    height: 0;
-    font-size: 0;
-    line-height: 0;
-    margin: 0;
-    padding: 0;
+.navigation__item--parent {
+    position: relative;
+    .navigation__sub-container {
+        font-size: 0;
+        line-height: 0;
+    }
+    &:hover {
+        .navigation__sub-container {
+            position: absolute;
+            top: 0;
+            background-color: white;
+            width: 265px;
+            //margin-top: 2.5em;
+            border-radius: 3px;
+            //box-shadow: ;
+            &::before {
+                // content: "u";
+                // text-transform: lowercase;
+                // font-size: $normal;
+                // font-family: 'mariamfaso';
+                // color: white;
+                // background-color: none;
+            }
+        }
+        .navigation__sub-item {
+            width: 100%;
+            color: $raspberry;
+            font-size: $small;
+            letter-spacing: 0.8px;
+            line-height: 1;
+            padding: 0 1em;
+            box-shadow:  0px 1px 0px 0px $raspberry70 inset;
+            @include transition;
+            &:last-child {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+            &:first-child {
+                box-shadow: none;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+            .navigation__link {
+                display: inline-block;
+                padding: 1.2em 0;
+                height: 40px;
+                width: 90%;
+                margin: 0 auto;
+            }
+            &:hover {
+                color: white;
+                background-color: $raspberry;
+            }
+        }
+    }
+}
+
+
+// Landing page
+.landing {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .landing__title {
+        @include landing-title;
+        strong {
+            font-weight: 600;
+        }
+    }
 }
