@@ -63,7 +63,7 @@
             position: absolute;
             width: 265px;
             border-radius: 3px;
-            //box-shadow: ;
+            box-shadow: 0px 4px 0px 0px $lightGray;
             z-index: 1;
             &::before {
                 content: "u";
