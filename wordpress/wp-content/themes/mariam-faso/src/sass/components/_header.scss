@@ -32,6 +32,8 @@
     }
 }
 
+// Main navigation
+
 .navigation__list {
     display: flex;
     justify-content: space-between;
@@ -75,7 +77,6 @@
                 top: 7px;
                 left: 1rem;
                 z-index: -1;
-                //height: 80px;
                 display: inline-block;
                 padding-top: 0.64rem;
                 background-color: rgba(0,0,0,0);
@@ -117,6 +118,7 @@
 
 
 // Landing page
+
 .landing {
     min-height: 80vh;
     display: flex;
