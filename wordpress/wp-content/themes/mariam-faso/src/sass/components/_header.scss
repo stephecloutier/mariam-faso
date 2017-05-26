@@ -61,22 +61,28 @@
     &:hover {
         .navigation__sub-container {
             position: absolute;
-            top: 0;
-            background-color: white;
             width: 265px;
-            //margin-top: 2.5em;
             border-radius: 3px;
             //box-shadow: ;
+            z-index: 1;
             &::before {
-                // content: "u";
-                // text-transform: lowercase;
-                // font-size: $normal;
-                // font-family: 'mariamfaso';
-                // color: white;
-                // background-color: none;
+                content: "u";
+                text-transform: lowercase;
+                font-size: $big;
+                font-family: 'mariamfaso';
+                color: white;
+                position: relative;
+                top: 7px;
+                left: 1rem;
+                z-index: -1;
+                //height: 80px;
+                display: inline-block;
+                padding-top: 0.64rem;
+                background-color: rgba(0,0,0,0);
             }
         }
         .navigation__sub-item {
+            background-color: white;
             width: 100%;
             color: $raspberry;
             font-size: $small;
@@ -84,7 +90,7 @@
             line-height: 1;
             padding: 0 1em;
             box-shadow:  0px 1px 0px 0px $raspberry70 inset;
-            @include transition;
+            @include transition-color;
             &:last-child {
                 border-bottom-left-radius: 3px;
                 border-bottom-right-radius: 3px;
