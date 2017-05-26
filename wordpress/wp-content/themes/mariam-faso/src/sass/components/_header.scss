@@ -1,28 +1,61 @@
 .header {
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+
     &.header--home {
         min-height: 100vh;
         background: transparent url('../images/landing.jpg') center/cover no-repeat fixed;
+        color: white;
+        .navigation__link::after {
+            //fill: white;
+        }
     }
 
     .header__wrapper {
         max-width: 1056px;
         margin: 0 auto;
-    }
-    .header__title {
-        display: inline-block;
+        padding-top: 2em;
     }
 
-    .navigation {
-        display: inline-block;
-        .navigation__item {
-            display: inline-block;
+    .header__top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        text-transform: uppercase;
+        .header__title {
+            flex-grow: 1;
         }
-        .navigation__sub-item {
-            height: 0;
-            font-size: 0;
-            line-height: 0;
-            margin: 0;
-            padding: 0;
+        .navigation {
+            flex-grow: 2;
         }
     }
+}
+
+.navigation__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navigation__item--parent {
+        .navigation__link::after {
+            content: "v";
+            font-family: 'mariamfaso';
+            font-size: 0.833em;
+            font-weight: 400;
+            color: inherit;
+            display: inline-block;
+            text-transform: lowercase;
+            margin-left: 0.833em;
+        }
+    }
+}
+
+// Showing/hiding sub-menu
+
+.navigation__sub-item {
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Sort down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Accueil-full" transform="translate(-785.000000, -80.000000)" fill="#FFFFFF">
+            <g id="Navigation" transform="translate(192.000000, 36.000000)">
+                <g id="libellés" transform="translate(353.000000, 37.000000)">
+                    <g id="À-propos" transform="translate(134.250000, 0.000000)">
+                        <path d="M118.99715,7.83333333 C118.99715,7.37760417 118.629066,7 118.184828,7 L106.812322,7 C106.368083,7 106,7.37760417 106,7.83333333 C106,8.0546875 106.088848,8.26302083 106.241158,8.41927083 L111.927411,14.2526042 C112.079721,14.4088542 112.282802,14.5 112.498575,14.5 C112.714348,14.5 112.917428,14.4088542 113.069739,14.2526042 L118.755992,8.41927083 C118.908302,8.26302083 118.99715,8.0546875 118.99715,7.83333333 L118.99715,7.83333333 Z" id="Icons/Sort-down"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
