@@ -42,3 +42,5 @@ get_header();
         <p class="learn-more__links"><?= str_replace([':burkina-faso', ':maroc', ':trips'], ['<a href="' . mf_get_page_url('template-burkinafaso.php') . '" class="learn-more__link">Burkina Faso</a>', '<a href="' . mf_get_page_url('template-maroc.php') . '" class="learn-more__link">Maroc</a>', '<a href="' . mf_get_page_url('template-trips.php') . '" class="learn-more__link">voyages</a>'], __('Découvrez la culture du :burkina-faso et du :maroc ou découvrez nos :trips', 'mf')); ?></p>
     </section>
 </main>
+
+<?php get_footer(); ?>
