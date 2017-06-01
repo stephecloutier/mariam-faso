@@ -7,6 +7,12 @@
 add_action('init', 'mf_register_types');
 add_action( 'publish_event', 'mf_create_event_page' );
 add_filter('wp_title', 'custom_wp_title');
+
+/* For pagination classes */
+add_filter('wp_pagenavi_class_previouspostslink', 'theme_pagination_class');
+add_filter('wp_pagenavi_class_nextpostslink', 'theme_pagination_class');
+add_filter('wp_pagenavi_class_current', 'theme_pagination_class');
+
 register_nav_menu('main', 'La navigation principale du site.');
 add_theme_support('post-thumbnails');
 
@@ -40,7 +46,6 @@ function mf_register_types() {
         'menu_position' => 20,
         'menu_icon' => 'dashicons-calendar-alt',
         'hierarchical' => true,
-        'supports' => true,
     ]);
 
     register_post_type('project', [
@@ -65,6 +70,18 @@ function mf_register_types() {
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-pressthis'
+    ]);
+
+    register_post_type('article', [
+        'label' => 'Articles de presse',
+        'labels' => [
+            'singular_name' => 'article de presse',
+            'add_new_item' => 'Ajouter un nouvel article de presse'
+        ],
+        'description' => 'Permet d’administrer les articles de presse affichés sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-admin-links'
     ]);
 
     register_taxonomy('places', 'trip', [
@@ -264,4 +281,23 @@ function mf_display_breadcrumb($return = false, $linked = true, $reverse = false
     if(function_exists('bcn_display_list')) {
         bcn_display_list($return, $linked, $reverse, $force);
     }
+}
+
+/*
+ * Function to add class to pagination elements
+*/
+
+function theme_pagination_class($class_name) {
+  switch($class_name) {
+    case 'previouspostslink':
+      $class_name = 'pagination__control-link pagination__control-link--previous';
+      break;
+    case 'nextpostslink':
+      $class_name = 'pagination__control-link pagination__control-link--next';
+      break;
+    case 'current':
+      $class_name = 'pagination__current';
+      break;
+  }
+  return $class_name;
 }
