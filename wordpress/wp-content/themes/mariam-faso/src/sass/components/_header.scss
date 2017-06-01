@@ -65,14 +65,14 @@
             position: absolute;
             width: 265px;
             border-radius: 3px;
-            box-shadow: 0px 4px 0px 0px $lightGray;
+            box-shadow: 0px 4px 0px 0px darken_color($raspberry);
             z-index: 1;
             &::before {
                 content: "u";
                 text-transform: lowercase;
                 font-size: $big;
                 font-family: 'mariamfaso';
-                color: white;
+                color: $raspberry;
                 position: relative;
                 top: 7px;
                 left: 1rem;
@@ -83,14 +83,14 @@
             }
         }
         .navigation__sub-item {
-            background-color: white;
+            background-color: $raspberry;
             width: 100%;
-            color: $raspberry;
+            color: white;
             font-size: $small;
             letter-spacing: 0.8px;
             line-height: 1;
             padding: 0 1em;
-            box-shadow:  0px 1px 0px 0px $raspberry70 inset;
+            box-shadow:  0px 1px 0px 0px darken_color($raspberry) inset;
             @include transition-color;
             &:last-child {
                 border-bottom-left-radius: 3px;
@@ -109,13 +109,39 @@
                 margin: 0 auto;
             }
             &:hover {
-                color: white;
-                background-color: $raspberry;
+                color: $raspberry;
+                background-color: white;
             }
         }
     }
 }
 
+// Homepage submenu colors
+.header--home {
+    .navigation__item--parent {
+        &:hover {
+            .navigation__sub-container {
+                box-shadow: 0px 4px 0px 0px $lightGray;
+                &::before {
+                    color: white;
+                }
+            }
+            .navigation__sub-item {
+                background-color: white;
+                color: $raspberry;
+                box-shadow:  0px 1px 0px 0px $raspberry70 inset;
+                @include transition-color;
+                &:first-child {
+                    box-shadow: none;
+                }
+                &:hover {
+                    color: white;
+                    background-color: $raspberry;
+                }
+            }
+        }
+    }
+}
 
 // Landing page
 
