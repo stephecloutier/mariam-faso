@@ -22,21 +22,18 @@ get_header();
             <?php endif; ?>
         </blockquote>
 
-        <article class="about__objectives objectives">
-            <h3><?= __('Objectifs', 'mf'); ?></h3>
-            <p class="objectives__content"><?= $fields['aboutObjectives']; ?></p>
-            <?php if($fields['aboutObjectivesImg']): ?>
-            <img src="<?= $fields['aboutObjectivesImg']['url']; ?>" alt="<?= mf_get_image_alt('aboutObjectivesImg'); ?>">
+        <?php if(have_rows('aboutContentRepeater')):
+            while(have_rows('aboutContentRepeater')): the_row();
+        ?>
+        <article class="about__article article">
+            <h3><?= the_sub_field('aboutContentTitle'); ?></h3>
+            <p class="article__content"><?= the_sub_field('aboutContentP') ?></p>
+            <?php if(get_sub_field('aboutContentImg')): ?>
+                <?php $image = get_sub_field('aboutContentImg'); ?>
+            <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
             <?php endif; ?>
         </article>
-
-        <article class="about__relations relations">
-            <h3><?= __('Relations nord-sud', 'mf'); ?></h3>
-            <p class="relations__content"><?= $fields['aboutRelations']; ?></p>
-            <?php if($fields['aboutRelationsImg']): ?>
-            <img src="<?= $fields['aboutRelationsImg']['url']; ?>" alt="<?= mf_get_image_alt('aboutRelationsImg'); ?>">
-            <?php endif; ?>
-        </article>
+        <?php endwhile; endif; ?>
     </section>
 
     <section class="learn-more">

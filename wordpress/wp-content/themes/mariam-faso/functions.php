@@ -224,7 +224,8 @@ function mf_chose_singularity($number, $singular, $plural, $empty = null) {
 */
 
 function mf_get_image_alt($fieldName) {
-    $image = get_field($fieldName);
+    if(get_field($fieldName)) $image = get_field($fieldName);
+    if(get_sub_field($fieldName)) $image = get_sub_field($fieldName);
     if(!$image) return false;
     if($image['alt']) return $image['alt'];
     if($image['description']) return $image['description'];
