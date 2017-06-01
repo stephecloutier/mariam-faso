@@ -8,9 +8,9 @@ get_header();
 <main class="main">
     <section class="about">
         <?php $fields = get_fields(); ?>
-        <h2><?= __('À propos', 'mf'); ?></h2>
+        <h1><?= __('À propos', 'mf'); ?></h2>
         <article class="about__introduction introduction">
-            <h3 class="introduction__title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h3>
+            <h2 class="introduction__title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h2>
             <p class="introduction__content"><?= $fields['aboutIntroduction']; ?></p>
             <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
         </article>
@@ -26,7 +26,7 @@ get_header();
             while(have_rows('aboutContentRepeater')): the_row();
         ?>
         <article class="about__article article">
-            <h3><?= the_sub_field('aboutContentTitle'); ?></h3>
+            <h2><?= the_sub_field('aboutContentTitle'); ?></h2>
             <p class="article__content"><?= the_sub_field('aboutContentP') ?></p>
             <?php if(get_sub_field('aboutContentImg')): ?>
                 <?php $image = get_sub_field('aboutContentImg'); ?>
