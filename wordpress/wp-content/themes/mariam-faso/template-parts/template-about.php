@@ -10,7 +10,7 @@ get_header();
         <?php $fields = get_fields(); ?>
         <h2><?= __('À propos', 'mf'); ?></h2>
         <article class="about__introduction introduction">
-            <h3><?= __('L’ASBL Mariam Faso', 'mf'); ?></h3>
+            <h3 class="introduction__title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h3>
             <p class="introduction__content"><?= $fields['aboutIntroduction']; ?></p>
             <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
         </article>
