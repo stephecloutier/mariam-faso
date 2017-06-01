@@ -9,7 +9,7 @@ echo 'Agenda';
 
 
 <section class="main__events events">
-    <h2 class="events__title"><?= __('Évènements à venir', 'mf'); ?></h2>
+    <h1 class="events__title"><?= __('Agenda', 'mf'); ?></h1>
 
     <?php
         $posts = new WP_Query(['showposts' => 3, 'post_type' => 'event']);
@@ -17,7 +17,7 @@ echo 'Agenda';
     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
     <?php $fields = get_fields(); ?>
     <article class="events__event event">
-        <h3 class="event__title"><?= $fields['eventName'] ?></h3>
+        <h2 class="event__title"><?= $fields['eventName'] ?></h2>
         <?php if($fields['eventImg']): ?>
         <img src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
         <?php endif; ?>
