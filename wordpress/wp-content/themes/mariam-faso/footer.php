@@ -1,9 +1,11 @@
 <footer class="footer">
     <div class="footer__questions">
-        <span class="footer__title">Des questions&nbsp;?</span>
-        <p class="footer__address">Mariam Faso ASBL</p>
-        <p class="footer__address">Rue de la gare, 15</p>
-        <p class="footer__address">6600 Bastogne</p>
+        <span class="footer__title"><?= __('Des questions&nbsp;?', 'mf'); ?></span>
+        <p class="footer__address">
+            <span>Mariam Faso ASBL</span>
+            <span>Rue de la gare, 15</span>
+            <span>6600 Bastogne</span>
+        </p>
 
         <a href="mailto:info@mariam-faso.be" class="footer__mail">info@mariam-faso.be</a>
         <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="footer__button--contact"><?= __('Contactez-nous', 'mf'); ?></a>
