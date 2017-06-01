@@ -14,7 +14,7 @@
                 <h1 class="header__title">
                     <a href="index.php" class="header__link">
                         <img src="wp-content/themes/mariam-faso/assets/images/mariamfaso_logo_alt.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
-                        --><span class="hidden"><?php bloginfo('name') ?></span>
+                        --><span class="hidden"><?php bloginfo('name'); ?></span>
                     </a>
                 </h1>
     <?php else: ?>
