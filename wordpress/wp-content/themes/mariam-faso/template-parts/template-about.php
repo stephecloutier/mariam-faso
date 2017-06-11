@@ -8,12 +8,12 @@ get_header();
 <main class="main">
     <div class="about">
         <?php $fields = get_fields(); ?>
-        <h1 class="about__title main-title"><?= __('À propos', 'mf'); ?></h1>
-        <article class="about__introduction introduction">
-            <h2 class="introduction__title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h2>
-            <p class="introduction__content"><?= $fields['aboutIntroduction']; ?></p>
+        <h1 class="about__title"><?= __('À propos', 'mf'); ?></h1>
+        <div class="about__introduction introduction">
+            <h2 class="introduction__title main-title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h2>
+            <p class="introduction__content main-intro"><?= $fields['aboutIntroduction']; ?></p>
             <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
-        </article>
+        </div>
 
         <blockquote class="about__quote quote">
             <p class="quote__content"><?= $fields['aboutQuote']; ?></p>
