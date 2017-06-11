@@ -42,6 +42,6 @@ get_header();
     <a class="more__link" href="<?= mf_get_page_url('template-about.php'); ?>"><?= __('Découvrez notre ASBL', 'mf'); ?></a>
 </div>
 
-<?php get_template_part('parts/help.php'); ?>
+<?php get_template_part('parts/help'); ?>
 
 <?php get_footer(); ?>

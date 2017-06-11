@@ -87,7 +87,8 @@ get_header();
             <a href="<?= mf_get_page_url('template-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualités', 'mf'); ?></a>
         </section>
 
-        <?php get_template_part('parts/help.php'); ?>
+        <?php get_template_part('parts/help'); ?>
+
     </main>
 
     <?php get_footer(); ?>
