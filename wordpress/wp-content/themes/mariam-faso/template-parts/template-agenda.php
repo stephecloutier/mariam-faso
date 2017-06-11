@@ -8,7 +8,7 @@ echo 'Agenda';
 ?>
 
 
-<section class="main__events events">
+<div class="main__events events">
     <h1 class="events__title"><?= __('Agenda', 'mf'); ?></h1>
 
     <?php

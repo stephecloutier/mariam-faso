@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <main class="main">
-    <section class="about">
+    <div class="about">
         <?php $fields = get_fields(); ?>
         <h1><?= __('À propos', 'mf'); ?></h2>
         <article class="about__introduction introduction">
