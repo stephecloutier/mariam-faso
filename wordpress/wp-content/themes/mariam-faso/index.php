@@ -87,15 +87,7 @@ get_header();
             <a href="<?= mf_get_page_url('template-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualités', 'mf'); ?></a>
         </section>
 
-        <section class="main__help help">
-            <h2 class="help__title"><?= __('Envie d’aider&nbsp;?', 'mf'); ?></h2>
-            <p class="help__desc"><?= __('Mariam Faso a besoin de votre aider pour mener à bien ses projets', 'mf'); ?></p>
-            <div class="help__links">
-                <a href="<?= mf_get_page_url('template-help.php'); ?>" class="help__link"><?= __('Faire un don', 'mf'); ?></a>
-                <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="help__link"><?= __('Participer à nos évènements', 'mf'); ?></a>
-                <a href="#" class="help__link"><?= __('Partager notre site web', 'mf'); ?></a>
-            </div>
-        </section>
+        <?php get_template_part('parts/help.php'); ?>
     </main>
 
     <?php get_footer(); ?>
