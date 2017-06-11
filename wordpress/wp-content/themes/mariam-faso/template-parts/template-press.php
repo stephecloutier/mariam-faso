@@ -8,7 +8,7 @@ get_header();
 <main class="main">
     <div class="press">
         <div class="press__introduction introduction">
-            <h1 class="introduction__title"><?= __('Mariam Faso dans la presse', 'mf'); ?></h1>
+            <h1 class="introduction__title main-title"><?= __('Mariam Faso dans la presse', 'mf'); ?></h1>
             <p class="introduction__content"><?= __('À plusieurs reprises, l’ASBL Mariam Faso est mentionnée dans la presse pour ses projets et voyages en Afrique, plus précisément au Burkina Faso et au Maroc.', 'mf'); ?></p>
         </div>
 
@@ -34,7 +34,7 @@ get_header();
                 <?php endif; ?>
             </ul>
         </div>
-    </section>
+    </div>
 
     <?php if(function_exists('wp_pagenavi')) {
         wp_pagenavi( array(

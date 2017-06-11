@@ -9,7 +9,7 @@ echo 'Agenda';
 
 
 <div class="main__events events">
-    <h1 class="events__title"><?= __('Agenda', 'mf'); ?></h1>
+    <h1 class="events__title main-title"><?= __('Agenda', 'mf'); ?></h1>
 
     <?php
         $posts = new WP_Query(['showposts' => 3, 'post_type' => 'event']);
@@ -34,4 +34,4 @@ echo 'Agenda';
     <p class="events__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
     <?php endif; ?>
     <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="events__link--more"><?= __('Voir notre agenda', 'mf'); ?></a>
-</section>
+</div>

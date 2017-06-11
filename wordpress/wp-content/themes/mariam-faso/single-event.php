@@ -8,8 +8,8 @@ get_header();
 
 
 <?php $fields = get_fields(); ?>
-<article class="events__event event">
-    <h3 class="event__title"><?= $fields['eventName'] ?></h3>
+<div class="events__event event">
+    <h1 class="event__title"><?= $fields['eventName'] ?></h1>
     <?php if($fields['eventImg']): ?>
     <img src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
     <?php endif; ?>
@@ -21,5 +21,5 @@ get_header();
 
     <p class="event__desc"><?= $fields['eventShortDesc'] ?></p>
     <a href="#" class="event__link">Voir les informations<span class="hidden"> sur <?= strtolower($fields['eventName']); ?></span></a>
-</article>
+</div>
 <?php get_footer(); ?>

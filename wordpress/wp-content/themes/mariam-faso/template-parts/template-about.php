@@ -8,7 +8,7 @@ get_header();
 <main class="main">
     <div class="about">
         <?php $fields = get_fields(); ?>
-        <h1><?= __('À propos', 'mf'); ?></h2>
+        <h1 class="about__title main-title"><?= __('À propos', 'mf'); ?></h1>
         <article class="about__introduction introduction">
             <h2 class="introduction__title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h2>
             <p class="introduction__content"><?= $fields['aboutIntroduction']; ?></p>
@@ -34,7 +34,7 @@ get_header();
             <?php endif; ?>
         </article>
         <?php endwhile; endif; ?>
-    </section>
+    </div>
 
     <section class="learn-more">
         <h2><?= __('En savoir plus', 'mf'); ?></h2>
