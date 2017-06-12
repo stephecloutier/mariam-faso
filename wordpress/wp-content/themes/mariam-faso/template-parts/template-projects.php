@@ -9,7 +9,7 @@ $fields = get_fields();
 
 <main class="main">
     <div class="projects">
-        <h1 class="projects__title main-title"><?= __('Nos projets', 'mf') ?></h1>
+        <h1 class="projects__title main-title"><?= __('Nos projets', 'mf'); ?></h1>
         <div class="projects__intro main-intro">
             <?= $fields['projectsIntro']; ?>
         </div>
@@ -38,18 +38,14 @@ $fields = get_fields();
         <article class="allProjects__project project <?= ($projectFields['projectIsOver']) ? ('project--over') : ('project--inProgress'); ?>">
             <h2 class="projectTitle"><?= $projectFields['projectName']; ?></h2>
                 <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
-            <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg<?php if($projectFields['projectIsBig']) echo ' projectImg--big'; ?>">
+            <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg<?php if($projectFields['projectIsBig']) echo ' projectImg--big'; ?>">
                 <?php endif; ?>
             <p class="project__shortDesc"><?= $projectFields['projectShortDesc']; ?></p>
             <a href="<?= the_permalink(); ?>" class="project__link"><?= str_replace(':projectName', '<span class="hidden">' . $projectFields['projectName'] . '</span>', __('Voir le projet :projectName', 'mf')); ?></a>
         </article>
-        <?php endwhile; endif; ?>
-
-        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-            <?php $projectFields = get_fields(); ?>
-            <?php if($projectFields['projectFeatured'] && $projectFields['projectIsOver']): ?>
+        <?php endwhile; else: ?>
             <span class="projects__empty"><?= __('Il n’y a pas de projets à afficher pour le moment', 'mf'); ?></span>
-
+        <?php endif; ?>
         </div>
     </div>
 
