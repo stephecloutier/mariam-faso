@@ -18,7 +18,7 @@ if($fields['eventTimeStart']) {
 
     <div class="event">
         <div class="event__landing single-landing">
-            <h1 class="event__title single-landing__title"><?= $fields['eventName'] ?></h1>
+            <h1 class="event__title single-landing__title single-landing__title--strong"><?= $fields['eventName'] ?></h1>
             <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
             <div class="event__intro single-landing__intro">
                 <?= $fields['eventDesc']; ?>
