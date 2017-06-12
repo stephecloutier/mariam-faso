@@ -48,7 +48,7 @@ get_header();
             <article class="agenda__event nextEvent">
                 <h2 class="event__title"><?= $nextEvent['eventName'] ?></h2>
                 <?php if($nextEvent['eventImg']): ?>
-                <img src="<?= $nextEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                <img width="300" height="auto" src="<?= $nextEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
                 <?php endif; ?>
                 <?php $date = new DateTime($nextEvent['eventDate']); ?>
                 <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
@@ -63,13 +63,13 @@ get_header();
         <div class="agenda__events-wrapper agenda__events--previous">
             <span class="agenda__previousEvents"><?= __('Évènements passés', 'mf'); ?></span>
             <?php
-                if($nextEventsFields) :
+                if($previousEventsFields) :
                     foreach($previousEventsFields as $previousEvent) :
             ?>
             <article class="agenda__event previousEvent">
                 <h2 class="event__title"><?= $previousEvent['eventName'] ?></h2>
                 <?php if($previousEvent['eventImg']): ?>
-                <img src="<?= $previousEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                <img width="300" height="auto" src="<?= $previousEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
                 <?php endif; ?>
                 <?php $date = new DateTime($previousEvent['eventDate']); ?>
                 <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
@@ -77,7 +77,7 @@ get_header();
                 <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></a>
             </article>
         <?php endforeach; else: ?>
-            <p class="events__empty"><?= __('Il n’y a pas d’évènements précédents pour le moment.', 'mf'); ?></p>
+            <p class="events__empty"><?= __('Il n’y a pas d’évènements passés à afficher.', 'mf'); ?></p>
         <?php endif; ?>
         </div>
     </div>

@@ -4,23 +4,83 @@
 */
 
 get_header();
+$fields = get_fields();
+$date = new DateTime($fields['eventDate']);
+if($fields['eventTimeStart']) {
+    $startingTime = new DateTime($fields['eventTimeStart']);
+    if($fields['eventTimeEnd']) {
+        $endingTime = new DateTime($fields['eventTimeEnd']);
+    }
+}
 ?>
 
 <main class="main">
-    <?php $fields = get_fields(); ?>
-    <div class="events__event event">
-        <h1 class="event__title"><?= $fields['eventName'] ?></h1>
-        <?php if($fields['eventImg']): ?>
-        <img src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
-        <?php endif; ?>
-        <?php
-            $date = $fields['eventDate'];
-            $date = new DateTime($date);
-         ?>
-        <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
 
-        <p class="event__desc"><?= $fields['eventShortDesc'] ?></p>
-        <a href="#" class="event__link">Voir les informations<span class="hidden"> sur <?= strtolower($fields['eventName']); ?></span></a>
+    <div class="event">
+        <div class="event__landing single-landing">
+            <h1 class="event__title single-landing__title"><?= $fields['eventName'] ?></h1>
+            <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
+            <p class="event__intro single-landing__intro"><?= $fields['eventDesc']; ?></p>
+            <!-- <a href="" class="event__button single-landing__button"></a> -->
+            <?php if($fields['eventImg']): ?>
+            <style>
+                .event__landing {
+                    background-image: url('<?= $fields['eventImg']['url']; ?>');
+                }
+            </style>
+            <?php endif; ?>
+        </div>
+
+        <div class="event__infos infos">
+            <h2 class="infos__title"><?= __('Informations pratiques', 'mf'); ?></h2>
+            <div class="event__info info__single">
+                <span class="info__title"><?= __('Date', 'mf'); ?></span>
+                <time class="event__time" datetime="
+                <?php if($startingTime) {
+                        $date->setTime($startingTime->format('G'), $startingTime->format('i'));
+                    }
+                    echo $date->format('c');
+                ?>">
+                    <?= strftime("%e %B %Y", $date->getTimestamp()); ?>
+                </time>
+            </div>
+            <?php if($startingTime): ?>
+            <div class="event__info info__single">
+                <span class="info__title"><?= __('Heure', 'mf'); ?></span>
+                <span class="event__time">
+                    <?= $startingTime->format('G'. '\h'. 'i');
+                        if($endingTime):
+                     ?>
+                         <?= __('à ', 'mf') . $endingTime->format('G' . '\h' . 'i'); ?>
+                     <?php endif; ?>
+                </span>
+            </div>
+            <?php endif; ?>
+            <div class="event__info info__single">
+                <span class="info__title"><?= __('Lieu', 'mf'); ?></span>
+                <div class="event__place">
+                    <?= $fields['eventPlace']; ?>
+                </div>
+            </div>
+
+            <?php if($fields['eventMap']): ?>
+            <div class="event__info info__single event__map">
+                <img src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
+            </div>
+            <?php endif; ?>
+
+
+        </div>
+        <?php if(have_rows('eventFieldsRepeater')):
+            while(have_rows('eventFieldsRepeater')): the_row();
+        ?>
+        <div class="event__info info__single">
+            <span class="info__title"><?= get_sub_field('eventFieldName'); ?></span>
+            <div class="info__content">
+                <?= get_sub_field('eventFieldContent'); ?>
+            </div>
+        </div>
+        <?php endwhile; endif; ?>
     </div>
 </main>
 <?php get_footer(); ?>

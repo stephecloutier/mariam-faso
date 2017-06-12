@@ -8,11 +8,15 @@ add_action('init', 'mf_register_types');
 add_action( 'publish_event', 'mf_create_event_page' );
 add_filter('wp_title', 'custom_wp_title');
 
-/* For pagination classes */
+// ACF
+add_action('acf/init', 'my_acf_init');
+
+// PAGINATION CLASSES
 add_filter('wp_pagenavi_class_previouspostslink', 'theme_pagination_class');
 add_filter('wp_pagenavi_class_nextpostslink', 'theme_pagination_class');
 add_filter('wp_pagenavi_class_current', 'theme_pagination_class');
 
+// NAVIGATION
 register_nav_menu('main', 'La navigation principale du site.');
 add_theme_support('post-thumbnails');
 
@@ -301,4 +305,20 @@ function theme_pagination_class($class_name) {
       break;
   }
   return $class_name;
+}
+
+/*
+ * Function to initiate some ACF settings
+*/
+
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew');
+}
+
+/*
+ * Function to get url of static google map
+*/
+
+function mf_get_static_google_map($lat, $lng, $zoom = 14, $maptype = 'roadmap', $width = 600, $height = 300) {
+    return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
 }

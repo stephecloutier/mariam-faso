@@ -68,3 +68,4 @@
     <?php mf_display_breadcrumb(); ?>
     </ul>
     <?php endif; ?>
+    <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
