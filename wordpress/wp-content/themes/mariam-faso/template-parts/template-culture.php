@@ -11,7 +11,7 @@ get_header();
 <main class="main">
     <div class="culture__landing">
         <h1 class="landing-title culture__title"></h1>
-        <p class="landing-intro culture__intro"></p>
+        <div class="landing-intro culture__intro"></div>
         <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
     </div>
     <?php $i = 0; $j = 0; $q = 0; ?>

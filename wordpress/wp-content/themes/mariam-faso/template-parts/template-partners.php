@@ -7,7 +7,9 @@ get_header();
 <main class="main">
     <div class="partners">
         <h1 class="partners__title main-title"><?= __('Nos partenaires', 'mf'); ?></h1>
-        <p class="partners__intro main-intro"><?= get_field('partnersIntro'); ?></p>
+        <div class="partners__intro main-intro">
+            <?= get_field('partnersIntro'); ?>
+        </div>
         <ul class="partners__list">
             <?php if(have_rows('partnersRepeater')):
                 while(have_rows('partnersRepeater')): the_row();

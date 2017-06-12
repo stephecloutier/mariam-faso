@@ -38,7 +38,9 @@ get_header();
 <main class="main">
     <div class="agenda">
         <h1 class="agenda__title main-title"><?= __('Agenda', 'mf'); ?></h1>
-        <p class="main-intro agenda__intro"><?= $fields['agendaIntro']; ?></p>
+        <div class="main-intro agenda__intro">
+            <?= $fields['agendaIntro']; ?>
+        </div>
         <div class="agenda__events-wrapper agenda__events--next">
             <span class="agenda__nextEvents"><?= __('Évènements à venir', 'mf'); ?></span>
             <?php

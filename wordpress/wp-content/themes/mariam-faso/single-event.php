@@ -20,7 +20,9 @@ if($fields['eventTimeStart']) {
         <div class="event__landing single-landing">
             <h1 class="event__title single-landing__title"><?= $fields['eventName'] ?></h1>
             <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
-            <p class="event__intro single-landing__intro"><?= $fields['eventDesc']; ?></p>
+            <div class="event__intro single-landing__intro">
+                <?= $fields['eventDesc']; ?>
+            </div>
             <!-- <a href="" class="event__button single-landing__button"></a> -->
             <?php if($fields['eventImg']): ?>
             <style>

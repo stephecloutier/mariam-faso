@@ -12,7 +12,9 @@ var_dump($fields);
 <main class="main">
     <div class="projects">
         <h1 class="projects__title main-title"></h1>
-        <p class="projects__intro main-intro"></p>
+        <div class="projects__intro main-intro">
+            
+        </div>
     </div>
 
 </main>

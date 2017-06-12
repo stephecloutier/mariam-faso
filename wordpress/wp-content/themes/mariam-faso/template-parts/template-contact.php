@@ -9,7 +9,9 @@ get_header();
 <main class="main">
     <div class="contact">
         <h1 class="main-title contact__title"><?= __('Contact', 'mf'); ?></h1>
-        <p class="contact__intro main-intro"><?= $fields['contactIntro']; ?></p>
+        <div class="contact__intro main-intro">
+            <?= $fields['contactIntro']; ?>
+        </div>
 
         <article class="contact__infos infos">
             <div class="infos__general">
