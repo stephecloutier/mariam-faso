@@ -44,3 +44,5 @@ get_header();
 
     <?php get_template_part('parts/help'); ?>
 </main>
+
+<?php get_footer(); ?>
