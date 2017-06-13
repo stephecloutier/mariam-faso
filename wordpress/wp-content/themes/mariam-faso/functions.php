@@ -322,3 +322,12 @@ function my_acf_init() {
 function mf_get_static_google_map($lat, $lng, $zoom = 14, $maptype = 'roadmap', $width = 600, $height = 300) {
     return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
 }
+
+/*
+ * Function to remove <p> tags from given fields (to use in heading element)
+*/
+
+function mf_remove_p_tags($field) {
+    $newString = str_replace(['<p>', '</p>'], ' ', $field);
+    return trim($newString);
+}
