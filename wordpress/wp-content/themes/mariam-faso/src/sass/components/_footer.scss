@@ -1,0 +1,9 @@
+.footer {
+    min-height: 400px;
+    background-color: $purple;
+    color: white;
+    .footer__wrapper {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+}
