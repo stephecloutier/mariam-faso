@@ -4,10 +4,10 @@
             <div class="footer__questions footer__column">
                 <span class="footer__title"><?= __('Des questions&nbsp;?', 'mf'); ?></span>
                 <p class="footer__address">
-                    <span class="footer__address--line">Mariam Faso <span class="footer--important">ASBL</span>
+                    <span class="footer__address--line">Mariam Faso <span class="footer--important">ASBL</span></span>
                     <span class="footer__address--line">Rue de la gare, 15</span>
                     <span class="footer__address--line">6600 Bastogne</span>
-                    <a href="mailto:info@mariam-faso.be" class="footer__mail">info@mariam-faso.be</a>
+                    <a href="mailto:info@mariam-faso.be" class="footer__mail" title="<?= __('Envoyer un mail à Mariam Faso', 'mf'); ?>">info@mariam-faso.be</a>
                 </p>
 
                 <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="footer__button footer__button--contact"><?= __('Contactez-nous', 'mf'); ?></a>

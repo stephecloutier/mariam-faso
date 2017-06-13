@@ -59,3 +59,19 @@
         transition: none;
     }
 }
+
+@mixin link-underline-transition($color, $thickness) {
+    &::after {
+        content: "";
+        height: $thickness;
+        background-color: $color;
+        display: block;
+        margin-top: -5px;
+        opacity: 0;
+        transition: 0.2s ease-in;
+    }
+    &:hover::after, &:focus::after {
+        margin-top: -3px;
+        opacity: 1;
+    }
+}
