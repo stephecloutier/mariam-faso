@@ -29,7 +29,7 @@ get_header();
             <article class="events__event event">
                 <h3 class="event__title"><?= $fields['eventName'] ?></h3>
                 <?php if($fields['eventImg']): ?>
-                <img src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                <img width="300" height="auto" src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
                 <?php endif; ?>
                 <?php
                     $date = $fields['eventDate'];
