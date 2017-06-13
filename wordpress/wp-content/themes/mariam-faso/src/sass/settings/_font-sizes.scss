@@ -5,6 +5,7 @@ $smallest: $normal * pow($type-scale, -3);
 $smaller: $normal * pow($type-scale, -2);
 $small: $normal * pow($type-scale, -1);
 
+$normalPlus: $normal * pow($type-scale, 0.5);
 $big: $normal * pow($type-scale, 1);
 $bigger: $normal * pow($type-scale, 2);
 $biggest: $normal * pow($type-scale, 3);
