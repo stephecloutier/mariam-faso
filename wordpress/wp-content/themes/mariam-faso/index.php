@@ -66,7 +66,7 @@ get_header();
         </section>
 
         <section class="main__news news">
-            <h2 class="news__title second-title"><?= __('Actualité', 'mf'); ?></h2>
+            <h2 class="news__title second-title"><?= __('Actualités', 'mf'); ?></h2>
             <div class="news__wrapper">
                 <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'news']); ?>
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -74,10 +74,12 @@ get_header();
                 <article class="news__article article">
                     <h3 class="article__title"><?= $fields['newsTitle']; ?></h3>
                     <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
-                    <p class="article__content"><?= mf_get_the_excerpt('newsContent', 300); ?></p>
+                    <div class="article__content">
+                        <?= mf_get_the_excerpt('newsContent', 300); ?>
+                    </div>
                     <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf') ?><span class="hidden"> <?= __('de', 'mf') ?> <?= $fields['newsTitle']; ?></span></a>
-                    <?php if($fields['projectImg']): ?>
-                    <img width="200" height="auto" src="<?= $fields['newsImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="article__img">
+                    <?php if($fields['newsImg']): ?>
+                    <img width="200" height="auto" src="<?= $fields['newsImg']['url']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
                     <?php endif; ?>
                 </article>
                 <?php endwhile; else: ?>
