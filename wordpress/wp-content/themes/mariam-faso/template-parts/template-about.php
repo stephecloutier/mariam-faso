@@ -28,7 +28,7 @@ get_header();
             while(have_rows('aboutContentRepeater')): the_row();
         ?>
         <article class="about__article article">
-            <h2><?= the_sub_field('aboutContentTitle'); ?></h2>
+            <h2 class="second-title"><?= the_sub_field('aboutContentTitle'); ?></h2>
             <div class="article__content">
                 <?= the_sub_field('aboutContentP') ?>
             </div>
@@ -41,7 +41,7 @@ get_header();
     </div>
 
     <section class="learn-more">
-        <h2><?= __('En savoir plus', 'mf'); ?></h2>
+        <h2 class="second-title"><?= __('En savoir plus', 'mf'); ?></h2>
         <p class="learn-more__catchphrase"><?= str_replace(':culture', '<span class="learn-more__catchphrase--bold">culture</span>', __('Envie d’en savoir plus sur la :culture de là-bas&nbsp;?', 'mf')); ?></p>
         <p class="learn-more__links"><?= str_replace([':burkina-faso', ':maroc', ':trips'], ['<a href="' . mf_get_page_url('template-burkinafaso.php') . '" class="learn-more__link">Burkina Faso</a>', '<a href="' . mf_get_page_url('template-maroc.php') . '" class="learn-more__link">Maroc</a>', '<a href="' . mf_get_page_url('template-trips.php') . '" class="learn-more__link">voyages</a>'], __('Découvrez la culture du :burkina-faso et du :maroc ou découvrez nos :trips', 'mf')); ?></p>
     </section>

@@ -60,7 +60,7 @@ $fields = get_fields();
             <a href="<?= mf_get_page_url('template-help.php'); ?>" class="infos__button" title="<?= __('Aller sur la page de don', 'mf') ?>"><?= __('Faire un don pour aider ce projet', 'mf'); ?></a>
         </div>
 
-        <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
+        <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back back__link" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
     </div>
 
     <?php get_template_part('parts/help'); ?>

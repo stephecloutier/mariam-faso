@@ -8,7 +8,7 @@ get_header();
 ?>
     <main class="main">
         <section class="main__who who">
-            <h2 class="who__title"><?= __('Qui sommes-nous&nbsp;?', 'mf'); ?></h2>
+            <h2 class="who__title second-title"><?= __('Qui sommes-nous&nbsp;?', 'mf'); ?></h2>
             <p class="who__content">
                 <?= get_field('homePresentation'); ?>
             </p>
@@ -19,7 +19,7 @@ get_header();
         </section>
 
         <section class="main__events events">
-            <h2 class="events__title"><?= __('Évènements à venir', 'mf'); ?></h2>
+            <h2 class="events__title second-title"><?= __('Évènements à venir', 'mf'); ?></h2>
 
             <?php
                 $posts = new WP_Query(['showposts' => 3, 'post_type' => 'event']);
@@ -47,7 +47,7 @@ get_header();
         </section>
 
         <section class="main__projects projects">
-            <h2 class="projects__title"><?= __('Projets en cours', 'mf'); ?></h2>
+            <h2 class="projects__title second-title"><?= __('Projets en cours', 'mf'); ?></h2>
             <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'project']); ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php $fields = get_fields(); ?>
@@ -66,7 +66,7 @@ get_header();
         </section>
 
         <section class="main__news news">
-            <h2 class="news__title"><?= __('Actualité', 'mf'); ?></h2>
+            <h2 class="news__title second-title"><?= __('Actualité', 'mf'); ?></h2>
             <div class="news__wrapper">
                 <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'news']); ?>
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>

@@ -22,7 +22,7 @@ get_header();
         $images = get_sub_field('cultureImgs');
     ?>
     <article class="culture__article">
-        <h2 class="culture__subtitle"><?= get_sub_field('cultureSubtitle'); ?></h2>
+        <h2 class="culture__subtitle second-title"><?= get_sub_field('cultureSubtitle'); ?></h2>
         <div class="culture__text">
             <?= get_sub_field('cultureTextualContent'); ?>
         </div>

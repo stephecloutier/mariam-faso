@@ -34,7 +34,7 @@ if($fields['eventTimeStart']) {
         </div>
 
         <div class="event__infos infos">
-            <h2 class="infos__title"><?= __('Informations pratiques', 'mf'); ?></h2>
+            <h2 class="infos__title second-title"><?= __('Informations pratiques', 'mf'); ?></h2>
             <div class="event__info info__single">
                 <span class="info__title"><?= __('Date', 'mf'); ?></span>
                 <time class="event__time" datetime="
@@ -83,6 +83,8 @@ if($fields['eventTimeStart']) {
             </div>
         </div>
         <?php endwhile; endif; ?>
+
+        <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="event__back back__link" title="<?= __('Aller sur la page Agenda', 'mf'); ?>"><?= __('Retourner à l’agenda', 'mf'); ?></a>
     </div>
 </main>
 <?php get_footer(); ?>

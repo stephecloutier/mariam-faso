@@ -61,7 +61,7 @@ get_header();
         </article>
 
         <section class="contact__form">
-            <h2 class="form__title"><?= __('Formulaire de contact', 'mf'); ?></h2>
+            <h2 class="form__title second-title"><?= __('Formulaire de contact', 'mf'); ?></h2>
             <p class="form__mendatoryfields"><?= __('Les champs munis d’un * sont obligatoires', 'mf') ?></p>
             <form action="#" method="post">
                 <label required="required" for="formName" class="form__label form__label--required"><?= __('Nom et prénom', 'mf'); ?></label>

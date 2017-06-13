@@ -19,7 +19,7 @@ $previousTrip = false;
     </div>
     <?php $posts = new WP_Query(['posts_per_page' => -1, 'post_type' => 'trip']); ?>
     <div class="trips-wrapper">
-        <h2 class="trips__title"><?= __('Voyages à venir', 'mf'); ?></h2>
+        <h2 class="trips__title second-title"><?= __('Voyages à venir', 'mf'); ?></h2>
         <?php
             if($posts->have_posts()) :
                 while($posts->have_posts()):
@@ -54,7 +54,7 @@ $previousTrip = false;
     </div>
 
     <div class="trips-wrapper">
-        <h2 class="trips__title"><?= __('Voyages précédents', 'mf'); ?></h2>
+        <h2 class="trips__title second-title"><?= __('Voyages précédents', 'mf'); ?></h2>
         <?php
             if($posts->have_posts()) :
                 while($posts->have_posts()):
