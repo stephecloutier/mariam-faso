@@ -9,6 +9,9 @@ get_header();
 <main class="main">
     <div class="main__news news">
         <h1 class="news__title main-title"><?= __('Toutes les actualités', 'mf'); ?></h1>
+        <div class="main-intro news__intro">
+            <?= get_field('allNewsIntro'); ?>
+        </div>
         <div class="news__wrapper">
             <?php
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
@@ -38,4 +41,6 @@ get_header();
         ));
     }
     ?>
+
+    <?php get_template_part('parts/help'); ?>
 </main>
