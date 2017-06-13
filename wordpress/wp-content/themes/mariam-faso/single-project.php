@@ -11,6 +11,13 @@ $fields = get_fields();
         <div class="project__landing single-landing">
             <h1 class="single-landing__title project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h1>
             <p class="single-landing__intro project__intro"><?= $fields['projectDesc']; ?></p>
+            <?php if($fields['projectImg']): ?>
+            <style>
+                .project__landing {
+                    background-image: url('<?= $fields['projectImg']['url']; ?>');
+                }
+            </style>
+            <?php endif; ?>
         </div>
 
         <article class="project__description">
