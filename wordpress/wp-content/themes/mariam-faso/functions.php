@@ -4,6 +4,11 @@
 
 // https://codex.wordpress.org/Plugin_API/Filter_Reference
 
+// Image compression
+    // original images
+add_filter( 'wp_generate_attachment_metadata', mf_compress_image, 10, 2 );
+
+
 add_action('init', 'mf_register_types');
 add_action( 'publish_event', 'mf_create_event_page' );
 add_filter('wp_title', 'custom_wp_title');
@@ -332,4 +337,64 @@ function mf_get_static_google_map($lat, $lng, $zoom = 14, $maptype = 'roadmap', 
 function mf_remove_p_tags($field) {
     $newString = str_replace(['<p>', '</p>'], ' ', $field);
     return trim($newString);
+}
+
+
+/*
+ * Function to compress image
+*/
+function mf_compress_image( $metadata, $attachment_id ) {
+    $file = get_attached_file( $attachment_id );
+    $type = get_post_mime_type( $attachment_id );
+
+    // Target jpeg images
+    if( in_array( $type, [ 'image/jpg', 'image/jpeg' ] ) )
+    {
+        // reduce image size
+        mf_reduce_image_size($file, 1400, 1400);
+
+        // Check for a valid image editor
+        $editor = wp_get_image_editor( $file );
+        if( ! is_wp_error( $editor ) )
+        {
+            // Set the new image quality
+            $result = $editor->set_quality( 80 );
+
+            // Re-save the original image file
+            if( ! is_wp_error( $result ) )
+                $editor->save( $file );
+        }
+    }
+    return $metadata;
+}
+
+/*
+ * Function to reduce image size with given width and height
+*/
+
+function mf_reduce_image_size($path, $max_width, $max_height) {
+    list($width_orig, $height_orig) = getimagesize($path);
+
+    $ratio_orig = $width_orig / $height_orig;
+    $ratio_new = $max_width / $max_height;
+
+    if($width_orig > $max_width || $height_orig > $max_height) {
+        if($ratio_new > $ratio_orig) {
+            $max_width = $max_height * $ratio_orig;
+        } else {
+            $max_height = $max_width / $ratio_orig;
+        }
+    } else {
+        $max_width = $width_orig;
+        $max_height = $height_orig;
+    }
+
+    $image_new = imagecreatetruecolor($max_width, $max_height);
+    //$image = imagecreatetruecolor($max_width, $max_height);
+    $image = imagecreatefromjpeg($path);
+
+
+    imagecopyresampled($image_new, $image, 0, 0, 0, 0, $max_width, $max_height, $width_orig, $height_orig);
+
+    imagejpeg($image_new, $path, 100);
 }
