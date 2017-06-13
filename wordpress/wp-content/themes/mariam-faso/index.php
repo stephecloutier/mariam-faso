@@ -52,15 +52,15 @@ get_header();
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php $fields = get_fields(); ?>
             <article class="projects__project project">
-                <h3 class="project__title"><?= $fields['projectName']; ?></h3>
+                <h3 class="project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h3>
                 <?php if($fields['projectImg']): ?>
                 <img width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
                 <?php endif; ?>
                 <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
-                <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= $fields['projectName']; ?></span></a>
+                <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_p_tags($fields['projectName']); ?></span></a>
             </article>
             <?php endwhile; else: ?>
-            <p class="events__empty"><?= __('Il n’y a pas de projets à afficher pour le moment.', 'mf'); ?></p>
+            <p class="events__empty loop__empty"><?= __('Il n’y a pas de projets à afficher pour le moment.', 'mf'); ?></p>
             <?php endif; ?>
             <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="projects__link--more"><?= __('Voir tous les projets', 'mf'); ?></a>
         </section>
@@ -81,7 +81,7 @@ get_header();
                     <?php endif; ?>
                 </article>
                 <?php endwhile; else: ?>
-                <p class="events__empty"><?= __('Il n’y a pas d’actualités à afficher pour le moment.', 'mf'); ?></p>
+                <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualités à afficher pour le moment.', 'mf'); ?></p>
                 <?php endif; ?>
             </div>
             <a href="<?= mf_get_page_url('template-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualités', 'mf'); ?></a>

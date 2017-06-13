@@ -58,7 +58,7 @@ get_header();
                 <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($nextEvent['eventName']); ?></span></a>
             </article>
         <?php endforeach; else: ?>
-            <p class="events__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
+            <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
         <?php endif; ?>
         </div>
 
@@ -79,7 +79,7 @@ get_header();
                 <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></a>
             </article>
         <?php endforeach; else: ?>
-            <p class="events__empty"><?= __('Il n’y a pas d’évènements passés à afficher.', 'mf'); ?></p>
+            <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements passés à afficher.', 'mf'); ?></p>
         <?php endif; ?>
         </div>
     </div>

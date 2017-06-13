@@ -34,7 +34,7 @@ $previousTrip = false;
                     $nextTrip = true;
         ?>
         <article class="trips_previousTrip">
-            <h3 class="tripTitle"><?= $tripFields['tripName']; ?></h3>
+            <h3 class="tripTitle"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
             <time class="tripDate" datetime="<?= $startDate->format('c'); ?>">
                 <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
             </time>
@@ -49,7 +49,7 @@ $previousTrip = false;
         </article>
         <?php endif; endwhile; endif; ?>
         <?php if(!$nextTrip): ?>
-        <span class="loop__empty"><?= __('Il n’y a pas de voyages à venir à afficher pour le moment', 'mf'); ?></span>
+        <span class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à venir à afficher pour le moment', 'mf'); ?></span>
         <?php endif; ?>
     </div>
 
@@ -69,7 +69,7 @@ $previousTrip = false;
                     $nextTrip = true;
         ?>
         <article class="trips_previousTrip">
-            <h3 class="tripTitle"><?= $tripFields['tripName']; ?></h3>
+            <h3 class="tripTitle"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
             <time class="tripDate" datetime="<?= $startDate->format('c'); ?>">
                 <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
             </time>
@@ -81,7 +81,7 @@ $previousTrip = false;
         </article>
         <?php endif; endwhile; endif; ?>
         <?php if(!$previousTrip): ?>
-        <span class="loop__empty"><?= __('Il n’y a pas de voyages à précédents à afficher pour le moment', 'mf'); ?></span>
+        <span class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à précédents à afficher pour le moment', 'mf'); ?></span>
         <?php endif; ?>
     </div>
 </main>

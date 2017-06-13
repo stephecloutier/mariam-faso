@@ -10,7 +10,7 @@ get_header();
 
 <main class="main">
     <div class="culture__landing">
-        <h1 class="landing-title culture__title"><?= $fields['cultureTitle']; ?></h1>
+        <h1 class="landing-title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
         <div class="landing-intro culture__intro">
             <?= $fields['cultureIntro']; ?>
         </div>

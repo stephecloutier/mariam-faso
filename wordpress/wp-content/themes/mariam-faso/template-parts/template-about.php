@@ -29,7 +29,9 @@ get_header();
         ?>
         <article class="about__article article">
             <h2><?= the_sub_field('aboutContentTitle'); ?></h2>
-            <p class="article__content"><?= the_sub_field('aboutContentP') ?></p>
+            <div class="article__content">
+                <?= the_sub_field('aboutContentP') ?>
+            </div>
             <?php if(get_sub_field('aboutContentImg')): ?>
                 <?php $image = get_sub_field('aboutContentImg'); ?>
             <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
