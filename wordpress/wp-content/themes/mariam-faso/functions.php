@@ -88,6 +88,7 @@ function mf_register_types() {
         'menu_icon' => 'dashicons-admin-links'
     ]);
 
+/*
     register_taxonomy('places', 'trip', [
         'label' => 'Endroits',
         'labels' => [
@@ -99,6 +100,7 @@ function mf_register_types() {
         'public' => true,
         'hierarchical' => true
     ]);
+*/
 }
 
 
