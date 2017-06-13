@@ -65,7 +65,7 @@
             position: absolute;
             width: 265px;
             border-radius: 3px;
-            box-shadow: 0px 4px 0px 0px darken_color($raspberry);
+            box-shadow: 0px 4px 0px 0px darken($raspberry, 10%);
             z-index: 1;
             &::before {
                 content: "u";
@@ -90,7 +90,7 @@
             letter-spacing: 0.8px;
             line-height: 1;
             padding: 0 1em;
-            box-shadow:  0px 1px 0px 0px darken_color($raspberry) inset;
+            box-shadow:  0px 1px 0px 0px darken($raspberry, 10%) inset;
             @include transition-color;
             &:last-child {
                 border-bottom-left-radius: 3px;
