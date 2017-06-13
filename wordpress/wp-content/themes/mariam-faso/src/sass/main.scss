@@ -7,13 +7,13 @@
 // Components : Designed components, chunks of UI
 // Trumps : Helpers and overrides
 
+@import "tools/mixins";
+@import "tools/functions";
+
 @import "settings/colors";
 @import "settings/fonts";
 @import "settings/font-sizes";
 @import "settings/transitions";
-
-@import "tools/mixins";
-@import "tools/functions";
 
 @import "generic/reset";
 @import "generic/box-sizing";

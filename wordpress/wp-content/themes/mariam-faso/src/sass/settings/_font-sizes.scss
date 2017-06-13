@@ -1,9 +1,12 @@
-$smallest: 0.52rem;
-$smaller: 0.64rem;
-$small: 0.8rem;
+$type-scale: 1.25;
 $normal: 1rem;
-$big: 1.25rem;
-$bigger: 1.563rem;
-$biggest: 1.953rem;
 
-$huge: 3.815rem;
+$smallest: $normal * pow($type-scale, -3);
+$smaller: $normal * pow($type-scale, -2);
+$small: $normal * pow($type-scale, -1);
+
+$big: $normal * pow($type-scale, 1);
+$bigger: $normal * pow($type-scale, 2);
+$biggest: $normal * pow($type-scale, 3);
+
+$huge: $normal * pow($type-scale, 6);
