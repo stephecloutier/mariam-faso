@@ -10,9 +10,8 @@ get_header();
     </ul>
     <div class="about">
         <?php $fields = get_fields(); ?>
-        <h1 class="about__title main-title"><?= __('À propos', 'mf'); ?></h1>
         <div class="about__introduction introduction">
-            <h2 class="introduction__title main-title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h2>
+            <h1 class="introduction__title main-title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h1>
             <div class="introduction__content main-intro">
                 <?= $fields['aboutIntroduction']; ?>
             </div>
