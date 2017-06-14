@@ -36,32 +36,34 @@ get_header();
         $images = get_sub_field('cultureImgs');
     ?>
     <article class="culture__article">
-        <h2 class="culture__subtitle second-title"><?= get_sub_field('cultureSubtitle'); ?></h2>
-        <div class="culture__text">
-            <?= get_sub_field('cultureTextualContent'); ?>
+        <div class="culture__wrapper">
+            <h2 class="culture__subtitle second-title"><?= get_sub_field('cultureSubtitle'); ?></h2>
+            <div class="culture__text">
+                <?= get_sub_field('cultureTextualContent'); ?>
+            </div>
+            <div class="culture__imgWrapper">
+                <?php foreach($images as $image): ?>
+            <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="culture__img">
+                <?php endforeach; ?>
+            </div>
+                <?php if(get_sub_field('cultureVideo')): ?>
+            <div class="culture__videoWrapper">
+                <?= get_sub_field('cultureVideo'); ?>
+            </div>
+                <?php endif; ?>
         </div>
-        <div class="culture__imgWrapper">
-            <?php foreach($images as $image): ?>
-        <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="culture__img">
-            <?php endforeach; ?>
-        </div>
-            <?php if(get_sub_field('cultureVideo')): ?>
-        <div class="culture__videoWrapper">
-            <?= get_sub_field('cultureVideo'); ?>
-        </div>
-            <?php endif; ?>
     </article>
 
         <?php if($i % 3 === 1): ?>
             <?php if($fields['cultureQuoteRepeater'][$q]['cultureQuote']): ?>
-    <div class="culture__quoteWrapper">
-        <blockquote class="culture__quote quote">
+    <blockquote class="culture__quote">
+        <div class="quote__wrapper">
             <?= $fields['cultureQuoteRepeater'][$q]['cultureQuote']; ?>
             <?php if($fields['cultureQuoteRepeater'][$q]['cultureCite']): ?>
             <span class="quote__author">- <?= $fields['cultureQuoteRepeater'][$q]['cultureCite']; ?></span>
             <?php endif; ?>
-        </blockquote>
-    </div>
+        </div>
+    </blockquote>
             <?php endif; ?>
         <?php endif; ?>
     <?php $i++; ?>

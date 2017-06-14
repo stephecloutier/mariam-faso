@@ -1,0 +1,3 @@
+.who__wrapper, .events__wrapper, .projects__wrapper, .news__wrapper, .help__wrapper, .introduction__wrapper, .quote__wrapper, .about__wrapper, .learn-more__wrapper, .press-list__wrapper, .partners__list, .pressArticle__wrapper, .infos__wrapper, .form__wrapper, .culture__wrapper, .project__wrapper, .trips__wrapper, .trip__wrapper, .gallery__wrapper, .faq__wrapper {
+    @include max-width-centered;
+}

@@ -18,16 +18,16 @@
             color: white;
             a {
                 @include link-underline-transition(white, 1px, 4);
-            }    
+            }
         }
     }
 }
 
 // Content styling \\
 .single-landing__content {
+    @include max-width-centered;
+    
     min-height: 80vh;
-    max-width: 1056px;
-    margin: 0 auto;
     padding: 5rem 0;
 
     display: flex;

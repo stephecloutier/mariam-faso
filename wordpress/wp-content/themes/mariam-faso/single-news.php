@@ -12,7 +12,7 @@ $fields = get_fields();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="single-news">
+    <div class="news__wrapper">
         <h1 class="single-news__title main-title"><?= $fields['newsTitle']; ?></h1>
         <?php
             if($fields['newsImg']):
@@ -23,9 +23,10 @@ $fields = get_fields();
         <div class="single-news__content main-intro">
             <?= $fields['newsContent']; ?>
         </div>
+        <a href="<?= mf_get_page_url('template-news.php') ?>" class="back__link news__back" title="<?= __('Aller sur la page des actualités', 'mf'); ?>"><?= __('Aller à la page des actualités', 'mf'); ?></a>
+        <a href="index.php" class="back__link news__back" title="<?= __('Aller sur la page d’accueil', 'mf'); ?>"><?= __('Retourner sur la page d’accueil', 'mf'); ?></a>
     </div>
-    <a href="<?= mf_get_page_url('template-news.php') ?>" class="back__link news__back" title="<?= __('Aller sur la page des actualités', 'mf'); ?>"><?= __('Aller à la page des actualités', 'mf'); ?></a>
-    <a href="index.php" class="back__link news__back" title="<?= __('Aller sur la page d’accueil', 'mf'); ?>"><?= __('Retourner sur la page d’accueil', 'mf'); ?></a>
+
 </main>
 
 <?php get_footer(); ?>

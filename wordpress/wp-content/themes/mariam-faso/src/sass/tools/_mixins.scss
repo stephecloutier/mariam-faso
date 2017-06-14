@@ -38,6 +38,11 @@
     }
 }
 
+@mixin max-width-centered {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
 // Titles \\
 
 @mixin landing-title($color) {

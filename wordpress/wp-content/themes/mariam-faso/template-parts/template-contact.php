@@ -10,13 +10,14 @@ get_header();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="contact">
+    <div class="introduction__wrapper">
         <h1 class="main-title contact__title"><?= __('Contact', 'mf'); ?></h1>
         <div class="contact__intro main-intro">
             <?= $fields['contactIntro']; ?>
         </div>
-
-        <article class="contact__infos infos">
+    </div>
+    <article class="contact__infos infos">
+        <div class="infos__wrapper">
             <div class="infos__general">
                 <p class="infos__title infos__title--general"><?= __('Coordonnées générales', 'mf'); ?></p>
                 <p class="infos__address"><?= $fields['contactGeneralAddress']; ?></p>
@@ -61,9 +62,11 @@ get_header();
                 </div>
                 <?php endwhile; endif; ?>
             </div>
-        </article>
+        </div>
+    </article>
 
-        <section class="contact__form">
+    <section class="contact__form">
+        <div class="form__wrapper">
             <h2 class="form__title second-title"><?= __('Formulaire de contact', 'mf'); ?></h2>
             <p class="form__mendatoryfields"><?= __('Les champs munis d’un * sont obligatoires', 'mf') ?></p>
             <form action="#" method="post">
@@ -81,8 +84,8 @@ get_header();
 
                 <button type="submit"><?= __('Envoyer', 'mf'); ?></button>
             </form>
-        </section>
-    </div>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>

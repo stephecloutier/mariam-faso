@@ -3,8 +3,7 @@
     color: $raspberry;
     border-bottom: 0.512em solid $orange;
     .header__wrapper {
-        max-width: $max-width;
-        margin: 0 auto;
+        @include max-width-centered;
         padding: 1.75em 0;
     }
     .header__top {

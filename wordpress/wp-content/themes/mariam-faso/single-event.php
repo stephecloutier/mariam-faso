@@ -38,8 +38,8 @@ if($fields['eventTimeStart']) {
         </div>
     </div>
 
-    <div class="event">
-        <div class="event__infos infos">
+    <div class="event__infos infos">
+        <div class="infos__wrapper">
             <h2 class="infos__title second-title"><?= __('Informations pratiques', 'mf'); ?></h2>
             <div class="event__info info__single">
                 <span class="info__title"><?= __('Date', 'mf'); ?></span>
@@ -76,19 +76,21 @@ if($fields['eventTimeStart']) {
                 <img src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
             </div>
             <?php endif; ?>
-        </div>
-        <?php if(have_rows('eventFieldsRepeater')):
-            while(have_rows('eventFieldsRepeater')): the_row();
-        ?>
-        <div class="event__info info__single">
-            <span class="info__title"><?= get_sub_field('eventFieldName'); ?></span>
-            <div class="info__content">
-                <?= get_sub_field('eventFieldContent'); ?>
-            </div>
-        </div>
-        <?php endwhile; endif; ?>
 
-        <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="event__back back__link" title="<?= __('Aller sur la page Agenda', 'mf'); ?>"><?= __('Retourner à l’agenda', 'mf'); ?></a>
+            <?php if(have_rows('eventFieldsRepeater')):
+                while(have_rows('eventFieldsRepeater')): the_row();
+            ?>
+            <div class="event__info info__single">
+                <span class="info__title"><?= get_sub_field('eventFieldName'); ?></span>
+                <div class="info__content">
+                    <?= get_sub_field('eventFieldContent'); ?>
+                </div>
+            </div>
+            <?php endwhile; endif; ?>
+
+            <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="event__back back__link" title="<?= __('Aller sur la page Agenda', 'mf'); ?>"><?= __('Retourner à l’agenda', 'mf'); ?></a>
+        </div>
     </div>
+
 </main>
 <?php get_footer(); ?>

@@ -10,7 +10,7 @@ $fields = get_fields();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="help">
+    <div class="introduction__wrapper">
         <h1 class="main-title help__title"><?= __('Nous aider', 'mf'); ?></h1>
         <div class="main-intro help__intro">
             <?= $fields['help-usIntro']; ?>
@@ -21,19 +21,22 @@ $fields = get_fields();
             <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="help__button" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Voir les projets', 'mf'); ?></a>
         </div>
 
-        <div class="help__faq faq">
-            <h2 class="second-title faq__title"><?= __('FAQ', 'mf'); ?></h2>
-            <?php
-                if(have_rows('help-usFaqRepeater')):
-                    while(have_rows('help-usFaqRepeater')): the_row();
-            ?>
-            <div class="faq__qa">
-                <span class="faq__question"><?= get_sub_field('help-usFaqQuestion'); ?></span>
-                <p class="faq__answer"><?= get_sub_field('help-usFaqAnswer'); ?></p>
-            </div>
-            <?php endwhile; endif; ?>
-        </div>
+    </div>
 
+    <div class="help__faq faq__wrapper">
+        <h2 class="second-title faq__title"><?= __('FAQ', 'mf'); ?></h2>
+        <?php
+            if(have_rows('help-usFaqRepeater')):
+                while(have_rows('help-usFaqRepeater')): the_row();
+        ?>
+        <div class="faq__qa">
+            <span class="faq__question"><?= get_sub_field('help-usFaqQuestion'); ?></span>
+            <p class="faq__answer"><?= get_sub_field('help-usFaqAnswer'); ?></p>
+        </div>
+        <?php endwhile; endif; ?>
+    </div>
+
+    <div class="learn-more__wrapper">
         <span class="help__more"><?= __('Encore des questions&nbsp;?', 'mf'); ?></span>
         <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="help__button more__button" title="<?= __('Aller sur la page de contact','mf'); ?>"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
     </div>

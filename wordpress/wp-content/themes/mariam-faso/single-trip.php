@@ -27,7 +27,7 @@ $date = new DateTime($fields['tripStartDate']);
             </div>
         </div>
     </div>
-    <div class="trip">
+    <div class="trip__wrapper">
         <article class="trip__description">
             <h2 class="second-title"><?= __('Description du voyage', 'mf'); ?></h2>
             <?php if(have_rows('tripContentRepeater')):

@@ -12,25 +12,25 @@ $fields = get_fields();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="gallery">
+    <div class="introduction__wrapper">
         <h1 class="main-title gallery__title"><?= __('Galerie photos', 'mf'); ?></h1>
         <div class="main-intro gallery__intro">
             <?= $fields['galleryIntro']; ?>
         </div>
+    </div>
 
-        <div class="gallery__photos">
-            <?php $images = $fields['galleryImgs']; ?>
-            <?php foreach($images as $image): ?>
-            <figure class="gallery__figure">
-                <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="gallery__img">
-                <?php if($image['description']): ?>
-                <figcaption class="gallery__figcaption">
-                    <?= $image['description']; ?>
-                </figcaption>
-                <?php endif; ?>
-            </figure>
-            <?php endforeach; ?>
-        </div>
+    <div class="gallery__wrapper">
+        <?php $images = $fields['galleryImgs']; ?>
+        <?php foreach($images as $image): ?>
+        <figure class="gallery__figure">
+            <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="gallery__img">
+            <?php if($image['description']): ?>
+            <figcaption class="gallery__figcaption">
+                <?= $image['description']; ?>
+            </figcaption>
+            <?php endif; ?>
+        </figure>
+        <?php endforeach; ?>
     </div>
 </main>
 

@@ -8,26 +8,28 @@ get_header();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="about">
-        <?php $fields = get_fields(); ?>
-        <div class="about__introduction introduction">
-            <h1 class="introduction__title main-title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h1>
-            <div class="introduction__content main-intro">
-                <?= $fields['aboutIntroduction']; ?>
-            </div>
-            <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
+    <?php $fields = get_fields(); ?>
+    <div class="about__introduction introduction__wrapper">
+        <h1 class="introduction__title main-title"><?= __('L’ASBL Mariam Faso', 'mf'); ?></h1>
+        <div class="introduction__content main-intro">
+            <?= $fields['aboutIntroduction']; ?>
         </div>
+        <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
+    </div>
 
-        <blockquote class="about__quote quote">
+    <blockquote class="about__quote quote">
+        <div class="quote__wrapper">
             <p class="quote__content"><?= $fields['aboutQuote']; ?></p>
             <?php if($fields['aboutQuoteCite']): ?>
             <cite class="quote__author"><?= $fields['aboutQuoteCite']; ?></cite>
             <?php endif; ?>
-        </blockquote>
+        </div>
+    </blockquote>
 
-        <?php if(have_rows('aboutContentRepeater')):
-            while(have_rows('aboutContentRepeater')): the_row();
-        ?>
+    <?php if(have_rows('aboutContentRepeater')):
+        while(have_rows('aboutContentRepeater')): the_row();
+    ?>
+    <div class="about__wrapper">
         <article class="about__article article">
             <h2 class="second-title"><?= the_sub_field('aboutContentTitle'); ?></h2>
             <div class="article__content">
@@ -38,13 +40,15 @@ get_header();
             <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
             <?php endif; ?>
         </article>
-        <?php endwhile; endif; ?>
     </div>
+    <?php endwhile; endif; ?>
 
     <section class="learn-more">
-        <h2 class="second-title"><?= __('En savoir plus', 'mf'); ?></h2>
-        <p class="learn-more__catchphrase"><?= str_replace(':culture', '<span class="learn-more__catchphrase--bold">culture</span>', __('Envie d’en savoir plus sur la :culture de là-bas&nbsp;?', 'mf')); ?></p>
-        <p class="learn-more__links"><?= str_replace([':burkina-faso', ':maroc', ':trips'], ['<a href="' . mf_get_page_url('template-burkinafaso.php') . '" class="learn-more__link">Burkina Faso</a>', '<a href="' . mf_get_page_url('template-maroc.php') . '" class="learn-more__link">Maroc</a>', '<a href="' . mf_get_page_url('template-trips.php') . '" class="learn-more__link">voyages</a>'], __('Découvrez la culture du :burkina-faso et du :maroc ou découvrez nos :trips', 'mf')); ?></p>
+        <div class="learn-more__wrapper">
+            <h2 class="second-title"><?= __('En savoir plus', 'mf'); ?></h2>
+            <p class="learn-more__catchphrase"><?= str_replace(':culture', '<span class="learn-more__catchphrase--bold">culture</span>', __('Envie d’en savoir plus sur la :culture de là-bas&nbsp;?', 'mf')); ?></p>
+            <p class="learn-more__links"><?= str_replace([':burkina-faso', ':maroc', ':trips'], ['<a href="' . mf_get_page_url('template-burkinafaso.php') . '" class="learn-more__link">Burkina Faso</a>', '<a href="' . mf_get_page_url('template-maroc.php') . '" class="learn-more__link">Maroc</a>', '<a href="' . mf_get_page_url('template-trips.php') . '" class="learn-more__link">voyages</a>'], __('Découvrez la culture du :burkina-faso et du :maroc ou découvrez nos :trips', 'mf')); ?></p>
+        </div>
     </section>
 </main>
 

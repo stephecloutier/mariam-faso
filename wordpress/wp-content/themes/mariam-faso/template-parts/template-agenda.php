@@ -39,12 +39,14 @@ get_header();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="agenda">
+    <div class="introduction__wrapper">
         <h1 class="agenda__title main-title"><?= __('Agenda', 'mf'); ?></h1>
         <div class="main-intro agenda__intro">
             <?= $fields['agendaIntro']; ?>
         </div>
-        <div class="agenda__events-wrapper agenda__events--next">
+    </div>
+    <div class="agenda__events agenda__events--next">
+        <div class="events__wrapper">
             <span class="agenda__nextEvents"><?= __('Évènements à venir', 'mf'); ?></span>
             <?php
                 if($nextEventsFields) :
@@ -60,12 +62,14 @@ get_header();
                 <p class="event__desc"><?= $nextEvent['eventShortDesc'] ?></p>
                 <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($nextEvent['eventName']); ?></span></a>
             </article>
-        <?php endforeach; else: ?>
+            <?php endforeach; else: ?>
             <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
-        <?php endif; ?>
+            <?php endif; ?>
         </div>
+    </div>
 
-        <div class="agenda__events-wrapper agenda__events--previous">
+    <div class="agenda__events agenda__events--previous">
+        <div class="events__wrapper">
             <span class="agenda__previousEvents"><?= __('Évènements passés', 'mf'); ?></span>
             <?php
                 if($previousEventsFields) :
@@ -81,9 +85,9 @@ get_header();
                 <p class="event__desc"><?= $previousEvent['eventShortDesc'] ?></p>
                 <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></a>
             </article>
-        <?php endforeach; else: ?>
+            <?php endforeach; else: ?>
             <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements passés à afficher.', 'mf'); ?></p>
-        <?php endif; ?>
+            <?php endif; ?>
         </div>
     </div>
 </main>
