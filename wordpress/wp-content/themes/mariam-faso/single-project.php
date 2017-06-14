@@ -42,7 +42,7 @@ $fields = get_fields();
                 ?>
                 <div class="project__imgWrapper">
                     <?php foreach($images as $image): ?>
-                    <img width="400" height="400" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
+                    <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
                     <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
