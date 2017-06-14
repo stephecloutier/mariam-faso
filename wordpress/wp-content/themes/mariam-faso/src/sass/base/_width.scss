@@ -1,8 +1,8 @@
 body {
-    width: 100%;
+    width: $columns24;
 }
 
 main>*:not(.single-landing) {
-    max-width: 1056px;
+    max-width: $max-width;
     margin: 0 auto;
 }

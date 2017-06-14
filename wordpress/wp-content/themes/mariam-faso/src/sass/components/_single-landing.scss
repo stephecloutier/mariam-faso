@@ -10,7 +10,9 @@
         background-repeat: repeat-x;
         &.single-landing--opaque {
             background-color: $purple;
-            min-height: 55vh;
+            .single-landing__content {
+                min-height: 55vh;
+            }
         }
     }
 }
@@ -29,13 +31,13 @@
     font-family: "Rubik", helvetica, arial, sans-serif;
     .single-landing__title {
         @include landing-title(white);
-        max-width: 60%;
+        max-width: $columns16;
         &--strong {
             font-weight: 600;
         }
     }
     .single-landing__intro {
-        max-width: 66.667%;
+        max-width: $columns16;
         font-weight: 500;
         font-size: $normalPlus;
         line-height: 1.5;
