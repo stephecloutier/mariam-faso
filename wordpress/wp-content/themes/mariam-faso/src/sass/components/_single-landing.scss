@@ -6,7 +6,6 @@
     background-size: cover;
     color: white;
     &--color {
-        min-height: 80vh;
         background-color: $purple70;
         background-repeat: repeat-x;
         &.single-landing--opaque {
@@ -18,12 +17,14 @@
 
 // Content styling \\
 .single-landing__content {
+    min-height: 80vh;
+    max-width: 1056px;
+    margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 1056px;
-    margin: 0 auto;
     .single-landing__title {
         @include landing-title(white);
         max-width: 60%;
