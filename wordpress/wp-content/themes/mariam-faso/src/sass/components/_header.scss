@@ -132,19 +132,3 @@
         }
     }
 }
-
-// Landing page
-
-.landing {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    .landing__title {
-        @include landing-title;
-        strong {
-            font-weight: 600;
-        }
-    }
-}
