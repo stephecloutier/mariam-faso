@@ -25,11 +25,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    font-family: "Rubik", helvetica, arial, sans-serif;
     .single-landing__title {
         @include landing-title(white);
         max-width: 60%;
         &--strong {
             font-weight: 600;
         }
+    }
+    .single-landing__intro {
+        max-width: 66.667%;
+        font-weight: 500;
+        font-size: $normalPlus;
+        line-height: 1.5;
+        letter-spacing: 0.45px;
+        @include wysiwyg(white);
     }
 }
