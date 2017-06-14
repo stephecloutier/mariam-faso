@@ -1,0 +1,20 @@
+.who {
+    background-color: $yellow;
+    padding: 4em 0;
+    .who__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .who__text {
+            max-width: $columns10;
+            font-weight: 500;
+            font-size: $normalPlus;
+            line-height: 1.5;
+        }
+        .who__button {
+            margin-top: 1.5em;
+            @include button-base($purple, $yellow);
+            @include button-transparent($purple);
+        }
+    }
+}

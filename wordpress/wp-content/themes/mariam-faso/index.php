@@ -9,14 +9,15 @@ get_header();
     <main class="main">
         <section class="main__who who">
             <div class="who__wrapper">
-                <h2 class="who__title second-title"><?= __('Qui sommes-nous&nbsp;?', 'mf'); ?></h2>
-                <p class="who__content">
+                <div class="who__text">
+                    <h2 class="who__title second-title"><?= __('Qui sommes-nous&nbsp;?', 'mf'); ?></h2>
                     <?= get_field('homePresentation'); ?>
-                </p>
-                <a href="<?= mf_get_page_url('template-about.php'); ?>" class="who__link--more"><?= __('En savoir plus', 'mf'); ?><span class="hidden"> <?= __('sur Mariam Faso', 'mf'); ?></span></a>
+                    <a href="<?= mf_get_page_url('template-about.php'); ?>" class="who__button"><?= __('En savoir plus', 'mf'); ?><span class="hidden"> <?= __('sur Mariam Faso', 'mf'); ?></span></a>
+                </div>
                 <?php if(get_field('homePresentationImg')): ?>
                 <img class="who__img" width="500" height="auto" src="<?= get_field('homePresentationImg')['url']; ?>" alt="<?= mf_get_image_alt('homePresentationImg'); ?>">
                 <?php endif; ?>
+
             </div>
         </section>
 
