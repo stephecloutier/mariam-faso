@@ -8,6 +8,36 @@
     border: 0;
 }
 
+@mixin wysiwyg($color) {
+    strong {
+        font-weight: 600;
+    }
+    em {
+        font-style: italic;
+    }
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: $color;
+        font-weight: 500;
+        position: relative;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 0.03em;
+            background-color: $color;
+            position: absolute;
+            bottom: 0.1em;
+            left: 0;
+            transition: 0.1s ease-in;
+        }
+        &:hover::after, &:focus::after {
+            height: 0.07em;
+        }
+    }
+}
+
 
 // Titles \\
 
@@ -72,6 +102,9 @@
         transition: none;
     }
 }
+
+
+// Links \\
 
 @mixin link-underline-transition($color, $thickness) {
     &::after {
