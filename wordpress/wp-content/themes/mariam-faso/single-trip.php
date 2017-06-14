@@ -10,7 +10,7 @@ $date = new DateTime($fields['tripStartDate']);
 <main class="main">
     <div class="trip">
         <div class="trip__landing single-landing">
-            <div class="single-landing--color">
+            <div class="single-landing--color<?php if(!$fields['tripImg']) echo ' single-landing--opaque'; ?>">
                 <ul class="breadcrumb">
                 <?php mf_display_breadcrumb(); ?>
                 </ul>

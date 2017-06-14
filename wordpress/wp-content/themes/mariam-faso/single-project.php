@@ -9,7 +9,7 @@ $fields = get_fields();
 <main class="main">
     <div class="project">
         <div class="project__landing single-landing">
-            <div class="single-landing--color">
+            <div class="single-landing--color<?php if(!$fields['projectImg']) echo ' single-landing--opaque'; ?>">
                 <ul class="breadcrumb">
                 <?php mf_display_breadcrumb(); ?>
                 </ul>

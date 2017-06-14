@@ -9,7 +9,12 @@
         min-height: 80vh;
         background-color: $purple70;
         background-repeat: repeat-x;
+        &.single-landing--opaque {
+            background-color: $purple;
+            //min-height: 50vh;
+        }
     }
+
     .breadcrumb {
         //color: white;
     }
