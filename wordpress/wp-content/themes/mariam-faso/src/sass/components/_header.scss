@@ -28,7 +28,12 @@
 .navigation__list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    min-height: 1.5em;
+    .navigation__item:not(.navigation__item--parent) {
+        .navigation__link {
+            @include link-underline-transition($raspberry, 2px, 5);
+        }
+    }
     .navigation__item--parent {
         &>.navigation__link::after {
             content: "v";
@@ -108,6 +113,11 @@
 
 // Homepage submenu colors
 .header--home {
+    .navigation__item:not(.navigation__item--parent) {
+        .navigation__link {
+            @include link-underline-transition(white, 2px, 5);
+        }
+    }
     .navigation__item--parent {
         &:hover {
             .navigation__sub-container {
