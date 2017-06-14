@@ -8,9 +8,9 @@ $date = new DateTime($fields['tripStartDate']);
 ?>
 
 <main class="main">
-    <div class="trip">
-        <div class="trip__landing single-landing">
-            <div class="single-landing--color<?php if(!$fields['tripImg']) echo ' single-landing--opaque'; ?>">
+    <div class="trip__landing single-landing">
+        <div class="single-landing--color<?php if(!$fields['tripImg']) echo ' single-landing--opaque'; ?>">
+            <div class="single-landing__content">
                 <ul class="breadcrumb">
                 <?php mf_display_breadcrumb(); ?>
                 </ul>
@@ -26,7 +26,8 @@ $date = new DateTime($fields['tripStartDate']);
                 <?php endif; ?>
             </div>
         </div>
-
+    </div>
+    <div class="trip">
         <article class="trip__description">
             <h2 class="second-title"><?= __('Description du voyage', 'mf'); ?></h2>
             <?php if(have_rows('tripContentRepeater')):

@@ -7,9 +7,9 @@ $fields = get_fields();
 ?>
 
 <main class="main">
-    <div class="project">
-        <div class="project__landing single-landing">
-            <div class="single-landing--color<?php if(!$fields['projectImg']) echo ' single-landing--opaque'; ?>">
+    <div class="project__landing single-landing">
+        <div class="single-landing--color<?php if(!$fields['projectImg']) echo ' single-landing--opaque'; ?>">
+            <div class="single-landing__content">
                 <ul class="breadcrumb">
                 <?php mf_display_breadcrumb(); ?>
                 </ul>
@@ -23,9 +23,9 @@ $fields = get_fields();
                 </style>
                 <?php endif; ?>
             </div>
-
         </div>
-
+    </div>
+    <div class="project">
         <article class="project__description">
             <h2 class="second-title"><?= __('Description du projet', 'mf'); ?></h2>
             <?php if(have_rows('projectContentRepeater')):

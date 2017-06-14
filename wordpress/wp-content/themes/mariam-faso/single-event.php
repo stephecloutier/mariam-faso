@@ -15,9 +15,9 @@ if($fields['eventTimeStart']) {
 ?>
 
 <main class="main">
-    <div class="event">
-        <div class="single-landing event__landing">
-            <div class="single-landing--color">
+    <div class="single-landing event__landing">
+        <div class="single-landing--color">
+            <div class="single-landing__content">
                 <ul class="breadcrumb">
                 <?php mf_display_breadcrumb(); ?>
                 </ul>
@@ -35,9 +35,10 @@ if($fields['eventTimeStart']) {
                 </style>
                 <?php endif; ?>
             </div>
-
         </div>
+    </div>
 
+    <div class="event">
         <div class="event__infos infos">
             <h2 class="infos__title second-title"><?= __('Informations pratiques', 'mf'); ?></h2>
             <div class="event__info info__single">
@@ -75,8 +76,6 @@ if($fields['eventTimeStart']) {
                 <img src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
             </div>
             <?php endif; ?>
-
-
         </div>
         <?php if(have_rows('eventFieldsRepeater')):
             while(have_rows('eventFieldsRepeater')): the_row();

@@ -1,5 +1,5 @@
+// Background styling \\
 .single-landing {
-    min-height: 80vh;
     background-attachment: fixed;
     background-position: top center;
     background-repeat: no-repeat;
@@ -11,13 +11,27 @@
         background-repeat: repeat-x;
         &.single-landing--opaque {
             background-color: $purple;
-            //min-height: 50vh;
+            min-height: 55vh;
+        }
+    }
+}
+
+// Content styling \\
+.single-landing__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1056px;
+    margin: 0 auto;
+    .single-landing__title {
+        @include landing-title(white);
+        max-width: 60%;
+        &--strong {
+            font-weight: 600;
         }
     }
     .breadcrumb {
-        @include breadcrumb(white);
-    }
-    &__title {
-        @include landing-title(white);
+        @include breadcrumb;
     }
 }

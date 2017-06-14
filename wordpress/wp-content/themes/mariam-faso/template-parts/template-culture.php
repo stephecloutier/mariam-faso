@@ -11,21 +11,23 @@ get_header();
 <main class="main">
     <div class="single-landing culture__landing">
         <div class="single-landing--color">
-            <ul class="breadcrumb">
-            <?php mf_display_breadcrumb(); ?>
-            </ul>
-            <h1 class="single-landing__title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
-            <div class="single-landing__intro culture__intro">
-                <?= $fields['cultureIntro']; ?>
+            <div class="single-landing__content">
+                <ul class="breadcrumb">
+                <?php mf_display_breadcrumb(); ?>
+                </ul>
+                <h1 class="single-landing__title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
+                <div class="single-landing__intro culture__intro">
+                    <?= $fields['cultureIntro']; ?>
+                </div>
+                <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
+                <?php if($fields['cultureImg']): ?>
+                <style>
+                    .culture__landing {
+                        background-image: url('<?= $fields['cultureImg']['url']; ?>');
+                    }
+                </style>
+                <?php endif; ?>
             </div>
-            <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
-            <?php if($fields['cultureImg']): ?>
-            <style>
-                .culture__landing {
-                    background-image: url('<?= $fields['cultureImg']['url']; ?>');
-                }
-            </style>
-            <?php endif; ?>
         </div>
     </div>
     <?php $i = 0; $j = 0; $q = 0; ?>
