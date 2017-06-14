@@ -12,10 +12,10 @@ $previousTrip = false;
 <main class="main">
     <div class="single-landing trips__landing">
         <div class="single-landing--color">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
             <div class="single-landing__content">
-                <ul class="breadcrumb">
-                <?php mf_display_breadcrumb(); ?>
-                </ul>
                 <h1 class="trips__title single-landing__title"><?= str_replace(':mariam-faso', '<span class="single-landing__title--strong">Mariam Faso</span>', __('Partir en voyage avec :mariam-faso', 'mf')); ?></h1>
                 <div class="trips__intro single-landing__intro">
                     <?= $fields['tripsIntro']; ?>

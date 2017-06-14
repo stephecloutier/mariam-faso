@@ -9,10 +9,10 @@ $fields = get_fields();
 <main class="main">
     <div class="project__landing single-landing">
         <div class="single-landing--color<?php if(!$fields['projectImg']) echo ' single-landing--opaque'; ?>">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
             <div class="single-landing__content">
-                <ul class="breadcrumb">
-                <?php mf_display_breadcrumb(); ?>
-                </ul>
                 <h1 class="single-landing__title project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h1>
                 <p class="single-landing__intro project__intro"><?= $fields['projectDesc']; ?></p>
                 <?php if($fields['projectImg']): ?>

@@ -11,10 +11,10 @@ get_header();
 <main class="main">
     <div class="single-landing culture__landing">
         <div class="single-landing--color">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
             <div class="single-landing__content">
-                <ul class="breadcrumb">
-                <?php mf_display_breadcrumb(); ?>
-                </ul>
                 <h1 class="single-landing__title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
                 <div class="single-landing__intro culture__intro">
                     <?= $fields['cultureIntro']; ?>
