@@ -1,8 +1,28 @@
 .breadcrumb {
     max-width: 1056px;
     margin: 0 auto;
-    color: inherit;
+    padding-top: 2rem;
+
+    font-size: $smallPlus;
+    color: $raspberry;
+    font-family: "Rubik", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
     li {
         display: inline-block;
+        &+li {
+            &::before {
+                content: ">";
+                padding: 0 0.75em;
+                font-weight: 400;
+            }
+        }
+        &.current_item {
+            font-weight: 600;
+        }
+        a {
+            display: inline-block;
+            @include link-underline-transition($raspberry, 1px, 4);
+        }
     }
 }

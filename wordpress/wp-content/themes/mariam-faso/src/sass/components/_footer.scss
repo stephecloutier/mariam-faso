@@ -48,7 +48,7 @@
     }
     .footer__mail {
         font-weight: 600;
-        @include link-underline-transition(white, 1px);
+        @include link-underline-transition(white, 1px, 2);
     }
 }
 
@@ -59,7 +59,7 @@
         &--link {
             font-weight: 600;
             display: inline-block;
-            @include link-underline-transition(white, 1px);
+            @include link-underline-transition(white, 1px, 2);
         }
     }
 }

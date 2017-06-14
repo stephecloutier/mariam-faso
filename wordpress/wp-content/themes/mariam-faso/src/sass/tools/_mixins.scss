@@ -107,7 +107,7 @@
 
 // Links \\
 
-@mixin link-underline-transition($color, $thickness) {
+@mixin link-underline-transition($color, $thickness, $offset) {
     &::after {
         content: "";
         height: $thickness;
@@ -118,7 +118,7 @@
         transition: 0.2s ease-in;
     }
     &:hover::after, &:focus::after {
-        margin-top: -3px;
+        margin-top: -5px + $offset;
         opacity: 1;
     }
 }
