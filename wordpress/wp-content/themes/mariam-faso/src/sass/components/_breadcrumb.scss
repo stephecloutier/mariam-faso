@@ -1,3 +1,8 @@
 .breadcrumb {
-    @include breadcrumb;
+    max-width: 1056px;
+    margin: 0 auto;
+    color: inherit;
+    li {
+        display: inline-block;
+    }
 }
