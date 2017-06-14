@@ -2,20 +2,11 @@
     font-family: "Rubik", Helvetica, arial, sans-serif;
     color: $raspberry;
     border-bottom: 0.512em solid $orange;
-
-    &.header--home {
-        min-height: 100vh;
-        background: transparent url('../images/landing.jpg') center/cover no-repeat fixed;
-        color: white;
-        border: none;
-    }
-
     .header__wrapper {
         max-width: 1056px;
         margin: 0 auto;
         padding: 1.75em 0;
     }
-
     .header__top {
         width: 100%;
         display: flex;
