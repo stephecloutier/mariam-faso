@@ -10,6 +10,9 @@ get_header();
 
 <main class="main">
     <div class="culture__landing">
+        <ul class="breadcrumb">
+        <?php mf_display_breadcrumb(); ?>
+        </ul>
         <h1 class="landing-title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
         <div class="landing-intro culture__intro">
             <?= $fields['cultureIntro']; ?>

@@ -6,6 +6,9 @@ get_header();
 ?>
 
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="press">
         <div class="press__introduction introduction">
             <h1 class="introduction__title main-title"><?= __('Mariam Faso dans la presse', 'mf'); ?></h1>

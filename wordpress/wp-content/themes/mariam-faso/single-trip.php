@@ -10,6 +10,9 @@ $date = new DateTime($fields['tripStartDate']);
 <main class="main">
     <div class="trip">
         <div class="trip__landing single-landing">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
             <h1 class="single-landing__title trip__title"><?= mf_remove_p_tags($fields['tripName']); ?></h1>
             <time class="single-landing__subtitle trip__subtitle" datetime="<?= $date->format('c'); ?>"><?= strftime("%B %Y", $date->getTimestamp()); ?></time>
             <p class="single-landing__intro trip__intro"><?= $fields['tripDesc'] ?></p>

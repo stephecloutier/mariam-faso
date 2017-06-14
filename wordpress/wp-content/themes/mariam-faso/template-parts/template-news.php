@@ -7,6 +7,9 @@
 get_header();
 ?>
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="main__news news">
         <h1 class="news__title main-title"><?= __('Toutes les actualités', 'mf'); ?></h1>
         <div class="main-intro news__intro">

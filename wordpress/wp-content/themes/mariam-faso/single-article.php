@@ -6,6 +6,9 @@ get_header();
  ?>
 <?php $fields = get_fields(); ?>
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="pressArticle">
         <h1 class="pressArticle__title"><?= $fields['articleTitle']; ?></h1>
         <?php if($fields['articleIntroduction']): ?>

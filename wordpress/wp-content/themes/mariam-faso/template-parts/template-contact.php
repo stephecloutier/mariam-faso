@@ -7,6 +7,9 @@ get_header();
 ?>
 <?php $fields = get_fields(); ?>
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="contact">
         <h1 class="main-title contact__title"><?= __('Contact', 'mf'); ?></h1>
         <div class="contact__intro main-intro">

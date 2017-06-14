@@ -4,8 +4,10 @@
 */
 get_header();
 ?>
-
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="about">
         <?php $fields = get_fields(); ?>
         <h1 class="about__title main-title"><?= __('À propos', 'mf'); ?></h1>

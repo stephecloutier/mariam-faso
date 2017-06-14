@@ -8,6 +8,9 @@ $fields = get_fields();
 ?>
 
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="projects">
         <h1 class="projects__title main-title"><?= __('Nos projets', 'mf'); ?></h1>
         <div class="projects__intro main-intro">

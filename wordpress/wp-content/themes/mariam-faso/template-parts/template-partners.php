@@ -5,6 +5,9 @@
 get_header();
 ?>
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="partners">
         <h1 class="partners__title main-title"><?= __('Nos partenaires', 'mf'); ?></h1>
         <div class="partners__intro main-intro">

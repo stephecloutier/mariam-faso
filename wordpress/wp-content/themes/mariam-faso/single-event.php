@@ -15,9 +15,11 @@ if($fields['eventTimeStart']) {
 ?>
 
 <main class="main">
-
     <div class="event">
         <div class="event__landing single-landing">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
             <h1 class="event__title single-landing__title single-landing__title--strong"><?= $fields['eventName'] ?></h1>
             <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
             <div class="event__intro single-landing__intro">

@@ -36,6 +36,9 @@ get_header();
 
 ?>
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="agenda">
         <h1 class="agenda__title main-title"><?= __('Agenda', 'mf'); ?></h1>
         <div class="main-intro agenda__intro">

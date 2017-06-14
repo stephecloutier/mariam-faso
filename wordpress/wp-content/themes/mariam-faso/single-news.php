@@ -9,6 +9,9 @@ $fields = get_fields();
 ?>
 
 <main class="main">
+    <ul class="breadcrumb">
+    <?php mf_display_breadcrumb(); ?>
+    </ul>
     <div class="single-news">
         <h1 class="single-news__title main-title"><?= $fields['newsTitle']; ?></h1>
         <?php

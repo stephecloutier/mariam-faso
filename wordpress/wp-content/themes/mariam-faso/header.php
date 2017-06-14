@@ -63,9 +63,5 @@
             <?php endif; ?>
         </div>
     </header>
-    <?php if(!is_front_page()): ?>
-    <ul class="breadcrumb">
-    <?php mf_display_breadcrumb(); ?>
-    </ul>
-    <?php endif; ?>
+
     <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
