@@ -1,5 +1,4 @@
 .footer {
-    //min-height: 300px;
     padding: 3rem 0 2rem 0;
     background-color: $purple;
     color: white;
@@ -43,20 +42,13 @@
 }
 
 .footer__questions {
-    .footer__address {
-        //padding-bottom: 10px;
-        .footer__address--line {
-            display: block;
-        }
-        .footer__mail {
-            font-weight: 600;
-            @include link-underline-transition(white, 1px);
-        }
+    .footer__address--line {
+        display: block;
     }
-}
-
-.footer__help {
-
+    .footer__mail {
+        font-weight: 600;
+        @include link-underline-transition(white, 1px);
+    }
 }
 
 .footer__follow {
