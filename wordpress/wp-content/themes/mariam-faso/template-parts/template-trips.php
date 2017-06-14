@@ -10,15 +10,17 @@ $previousTrip = false;
 ?>
 
 <main class="main">
-    <div class="single-landing">
-        <ul class="breadcrumb">
-        <?php mf_display_breadcrumb(); ?>
-        </ul>
-        <h1 class="trips__title single-landing__title"><?= str_replace(':mariam-faso', '<span class="single-landing__title--strong">Mariam Faso</span>', __('Partir en voyage avec :mariam-faso', 'mf')); ?></h1>
-        <div class="trips__intro single-landing__intro">
-            <?= $fields['tripsIntro']; ?>
+    <div class="single-landing trips__landing">
+        <div class="single-landing--color">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
+            <h1 class="trips__title single-landing__title"><?= str_replace(':mariam-faso', '<span class="single-landing__title--strong">Mariam Faso</span>', __('Partir en voyage avec :mariam-faso', 'mf')); ?></h1>
+            <div class="trips__intro single-landing__intro">
+                <?= $fields['tripsIntro']; ?>
+            </div>
+            <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trips__button single-landing__button"></a>
         </div>
-        <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trips__button single-landing__button"></a>
     </div>
     <?php $posts = new WP_Query(['posts_per_page' => -1, 'post_type' => 'trip']); ?>
     <div class="trips-wrapper">

@@ -9,18 +9,21 @@ $fields = get_fields();
 <main class="main">
     <div class="project">
         <div class="project__landing single-landing">
-            <ul class="breadcrumb">
-            <?php mf_display_breadcrumb(); ?>
-            </ul>
-            <h1 class="single-landing__title project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h1>
-            <p class="single-landing__intro project__intro"><?= $fields['projectDesc']; ?></p>
-            <?php if($fields['projectImg']): ?>
-            <style>
-                .project__landing {
-                    background-image: url('<?= $fields['projectImg']['url']; ?>');
-                }
-            </style>
-            <?php endif; ?>
+            <div class="single-landing--color">
+                <ul class="breadcrumb">
+                <?php mf_display_breadcrumb(); ?>
+                </ul>
+                <h1 class="single-landing__title project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h1>
+                <p class="single-landing__intro project__intro"><?= $fields['projectDesc']; ?></p>
+                <?php if($fields['projectImg']): ?>
+                <style>
+                    .project__landing {
+                        background-image: url('<?= $fields['projectImg']['url']; ?>');
+                    }
+                </style>
+                <?php endif; ?>
+            </div>
+
         </div>
 
         <article class="project__description">

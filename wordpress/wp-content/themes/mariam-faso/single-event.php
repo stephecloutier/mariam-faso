@@ -16,23 +16,26 @@ if($fields['eventTimeStart']) {
 
 <main class="main">
     <div class="event">
-        <div class="event__landing single-landing">
-            <ul class="breadcrumb">
-            <?php mf_display_breadcrumb(); ?>
-            </ul>
-            <h1 class="event__title single-landing__title single-landing__title--strong"><?= $fields['eventName'] ?></h1>
-            <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
-            <div class="event__intro single-landing__intro">
-                <?= $fields['eventDesc']; ?>
+        <div class="single-landing event__landing">
+            <div class="single-landing--color">
+                <ul class="breadcrumb">
+                <?php mf_display_breadcrumb(); ?>
+                </ul>
+                <h1 class="event__title single-landing__title single-landing__title--strong"><?= $fields['eventName'] ?></h1>
+                <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
+                <div class="event__intro single-landing__intro">
+                    <?= $fields['eventDesc']; ?>
+                </div>
+                <!-- <a href="" class="event__button single-landing__button"></a> -->
+                <?php if($fields['eventImg']): ?>
+                <style>
+                    .event__landing {
+                        background-image: url('<?= $fields['eventImg']['url']; ?>');
+                    }
+                </style>
+                <?php endif; ?>
             </div>
-            <!-- <a href="" class="event__button single-landing__button"></a> -->
-            <?php if($fields['eventImg']): ?>
-            <style>
-                .event__landing {
-                    background-image: url('<?= $fields['eventImg']['url']; ?>');
-                }
-            </style>
-            <?php endif; ?>
+
         </div>
 
         <div class="event__infos infos">

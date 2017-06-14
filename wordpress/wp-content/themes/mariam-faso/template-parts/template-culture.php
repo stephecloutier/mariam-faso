@@ -9,15 +9,17 @@ get_header();
 <?php $fields = get_fields(); ?>
 
 <main class="main">
-    <div class="culture__landing">
-        <ul class="breadcrumb">
-        <?php mf_display_breadcrumb(); ?>
-        </ul>
-        <h1 class="landing-title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
-        <div class="landing-intro culture__intro">
-            <?= $fields['cultureIntro']; ?>
-        </div>
-        <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
+    <div class="single-landing culture__landing">
+        <div class="single-landing--color">
+            <ul class="breadcrumb">
+            <?php mf_display_breadcrumb(); ?>
+            </ul>
+            <h1 class="landing-title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
+            <div class="landing-intro culture__intro">
+                <?= $fields['cultureIntro']; ?>
+            </div>
+            <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
+        </div>    
     </div>
     <?php $i = 0; $j = 0; $q = 0; ?>
     <?php if(have_rows('cultureRepeater')):
