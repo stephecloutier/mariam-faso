@@ -19,7 +19,7 @@ get_header();
                 <div class="single-landing__intro culture__intro">
                     <?= $fields['cultureIntro']; ?>
                 </div>
-                <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
+                <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="single-landing__button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
                 <?php if($fields['cultureImg']): ?>
                 <style>
                     .culture__landing {
