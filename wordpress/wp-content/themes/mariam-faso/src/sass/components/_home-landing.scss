@@ -11,7 +11,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    .landing__title {
+    &__title {
         @include landing-title(white);
+    }
+    &__button {
+        margin-top: 1.5em;
+        @include button-base($purple, $purple);
+        @include button-colored-rounded($yellow, 20%);
     }
 }

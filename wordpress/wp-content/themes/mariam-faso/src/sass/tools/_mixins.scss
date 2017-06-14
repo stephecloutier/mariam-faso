@@ -47,7 +47,6 @@
     font-size: $huge;
     line-height: 1.2;
     color: $color;
-    margin-bottom: 0.75rem;
     @include wysiwyg($color);
 }
 

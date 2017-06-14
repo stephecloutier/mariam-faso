@@ -37,7 +37,12 @@
             font-weight: 600;
         }
     }
+    .single-landing__subtitle {
+        @include landing-title(white);
+        //line-height: 1;
+    }
     .single-landing__intro {
+        margin-top: 0.75rem;
         max-width: $columns16;
         font-weight: 500;
         font-size: $normalPlus;
@@ -47,6 +52,7 @@
     }
 
     .single-landing__button {
+        margin-top: 1.5em;
         @include button-base($purple, $purple);
         @include button-colored-rounded($yellow, 20%);
     }
