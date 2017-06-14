@@ -1,9 +1,15 @@
 $max-width: 1056px;
+$column-width: 44px;
+
 
 // Columns
+$columns7: 29.1667%;
 $columns8: 33.3333%;
 $columns10: 41.6667%;
 $columns12: 50%;
 $columns16: 66.6667%;
 $columns18: 75%;
 $columns24: 100%;
+
+// columns pixels
+$columns7p: $column-width * 7;
