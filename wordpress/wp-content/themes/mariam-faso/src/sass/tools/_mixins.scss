@@ -38,15 +38,24 @@
     }
 }
 
+@mixin breadcrumb($color) {
+    color: $color;
+    li {
+        display: inline-block;
+    }
+}
+
 
 // Titles \\
 
-@mixin landing-title {
+@mixin landing-title($color) {
     font-family: 'Rubik', Helvetica, arial, sans-serif;
     text-transform: uppercase;
     font-weight: 300;
     font-size: $huge;
     line-height: 1.2;
+    color: $color;
+    @include wysiwyg($color);
 }
 
 // buttons \\

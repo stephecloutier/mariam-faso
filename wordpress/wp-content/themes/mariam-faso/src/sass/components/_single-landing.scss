@@ -14,8 +14,10 @@
             //min-height: 50vh;
         }
     }
-
     .breadcrumb {
-        //color: white;
+        @include breadcrumb(white);
+    }
+    &__title {
+        @include landing-title(white);
     }
 }

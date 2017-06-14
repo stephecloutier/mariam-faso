@@ -14,8 +14,8 @@ get_header();
             <ul class="breadcrumb">
             <?php mf_display_breadcrumb(); ?>
             </ul>
-            <h1 class="landing-title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
-            <div class="landing-intro culture__intro">
+            <h1 class="single-landing__title culture__title"><?= mf_remove_p_tags($fields['cultureTitle']); ?></h1>
+            <div class="single-landing__intro culture__intro">
                 <?= $fields['cultureIntro']; ?>
             </div>
             <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
