@@ -25,7 +25,6 @@ add_filter('wp_pagenavi_class_current', 'theme_pagination_class');
 register_nav_menu('main', 'La navigation principale du site.');
 add_theme_support('post-thumbnails');
 
-
 // load_theme_textdomain()
 
 /*
