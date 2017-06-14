@@ -17,7 +17,6 @@ $date = new DateTime($fields['tripStartDate']);
                 <h1 class="single-landing__title trip__title"><?= mf_remove_p_tags($fields['tripName']); ?></h1>
                 <time class="single-landing__subtitle trip__subtitle" datetime="<?= $date->format('c'); ?>"><?= strftime("%B %Y", $date->getTimestamp()); ?></time>
                 <p class="single-landing__intro trip__intro"><?= $fields['tripDesc'] ?></p>
-                <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trips__button single-landing__button"></a>
                 <?php if($fields['tripImg']): ?>
                 <style>
                     .trip__landing {

@@ -42,4 +42,9 @@
         letter-spacing: 0.45px;
         @include wysiwyg(white);
     }
+
+    .single-landing__button {
+        @include button-base($purple, $purple);
+        @include button-colored-rounded($yellow, 20%);
+    }
 }

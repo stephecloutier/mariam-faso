@@ -20,7 +20,7 @@ $previousTrip = false;
                 <div class="trips__intro single-landing__intro">
                     <?= $fields['tripsIntro']; ?>
                 </div>
-                <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trips__button single-landing__button"></a>
+                <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trips__button single-landing__button"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
                 <?php if($fields['tripsImg']): ?>
                 <style>
                     .trips__landing {
