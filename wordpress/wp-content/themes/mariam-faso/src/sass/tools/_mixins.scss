@@ -38,8 +38,8 @@
     }
 }
 
-@mixin breadcrumb($color) {
-    color: $color;
+@mixin breadcrumb {
+    color: inherit;
     li {
         display: inline-block;
     }
