@@ -4,3 +4,22 @@
     color: $purple;
     text-transform: uppercase;
 }
+
+.main-title {
+    font-size: $biggest;
+    &::before {
+        content: "";
+        display: inline-block;
+        height: 0.5rem;
+        width: 3rem;
+        background-color: $purple;
+        border-radius: 2px;
+        position: relative;
+        bottom: 0.2em;
+        margin-right: 0.25em;
+    }
+}
+
+.second-title {
+    font-size: $bigger;
+}
