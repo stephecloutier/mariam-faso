@@ -26,9 +26,17 @@ get_header();
                     $posts = new WP_Query(['posts_per_page' => 10, 'paged' => $paged, 'post_type' => 'article']);
                 ?>
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-                <?php $fields = get_fields(); ?>
-                <li>
-                    <a href="<?= the_permalink(); ?>">
+                    <?php $fields = get_fields(); ?>
+                <li class="article <?php
+                    if($fields['articleProvenance'] === 'scanned') {
+                        echo 'article--scanned';
+                    } else if($fields['articleProvenance'] === 'video') {
+                        echo 'article--video';
+                    } else if($fields['articleProvenance'] === 'external') {
+                        echo 'article--external';
+                    }
+                    ?>">
+                    <a href="<?= ($fields['articleProvenance'] === 'scanned') ? the_permalink() : $fields['articleLink']; ?>" class="articleLink">
                         <p><?= $fields['articleTitle']; ?></p>
                     </a>
                 </li>
@@ -46,7 +54,6 @@ get_header();
             'query' => $posts
         ));
     }
-    //var_dump(get_the_posts_pagination());
     ?>
 
 </main>
