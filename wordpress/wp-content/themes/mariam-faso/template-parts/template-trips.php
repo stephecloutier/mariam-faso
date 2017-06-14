@@ -20,6 +20,13 @@ $previousTrip = false;
                 <?= $fields['tripsIntro']; ?>
             </div>
             <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trips__button single-landing__button"></a>
+            <?php if($fields['tripsImg']): ?>
+            <style>
+                .trips__landing {
+                    background-image: url('<?= $fields['tripsImg']['url']; ?>');
+                }
+            </style>
+            <?php endif; ?>
         </div>
     </div>
     <?php $posts = new WP_Query(['posts_per_page' => -1, 'post_type' => 'trip']); ?>

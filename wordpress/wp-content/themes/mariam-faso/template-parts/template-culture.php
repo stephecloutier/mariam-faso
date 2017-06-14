@@ -19,7 +19,14 @@ get_header();
                 <?= $fields['cultureIntro']; ?>
             </div>
             <a href="<?= mf_get_page_url('template-travels.php'); ?>" class="landing-button culture__button"><?= __('Voyage avec nous', 'mf'); ?></a>
-        </div>    
+            <?php if($fields['cultureImg']): ?>
+            <style>
+                .culture__landing {
+                    background-image: url('<?= $fields['cultureImg']['url']; ?>');
+                }
+            </style>
+            <?php endif; ?>
+        </div>
     </div>
     <?php $i = 0; $j = 0; $q = 0; ?>
     <?php if(have_rows('cultureRepeater')):

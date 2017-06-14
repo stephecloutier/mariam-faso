@@ -75,7 +75,9 @@ $date = new DateTime($fields['tripStartDate']);
                 </div>
                 <span class="confession__author">- <?= get_sub_field('tripConfessionAuthor'); ?></span>
             </div>
+            <?php endwhile; ?>
         </div>
+        <?php endif; ?>
 
         <span class="trip__more"><?= __('Vous avez participé à ce voyage et souhaitez partager votre expérience&nbsp;?', 'mf'); ?></span>
         <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trip__button button__more" title="<?= __('Aller sur la page de contact', 'mf'); ?>"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
