@@ -23,8 +23,8 @@
                 <p class="footer__desc"><?= str_replace(':facebook', '<span class="footer__desc--strong"><a href="#">Facebook</a></span>', __('N’hésitez pas à consulter notre page :facebook pour être au courant des évènements à venir&nbsp;!', 'mf')); ?></p>
 
                 <div class="footer__social">
-                    <a href="#" class="footer__button--social">Facebook</a>
-                    <a href="#" class="footer__button--social">Youtube</a>
+                    <a href="#" class="footer__button--social footer__facebook">Facebook</a>
+                    <a href="#" class="footer__button--social footer__youtube">Youtube</a>
                 </div>
                 <div class="footer__copyright">
                     <span class="footer__copyright"><?= __('Site web réalisé par', 'mf'); ?> <a href="www.behance.net/stephecloutier" class="footer__copyright--link">Stéphanie Cloutier</a></span>
