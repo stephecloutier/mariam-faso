@@ -1,11 +1,3 @@
 .agenda__events {
     @include overview-event;
-
-    .events__inside-wrapper {
-        .event {
-            box-shadow: none;
-            border: 2px solid $lightGray;
-        }
-    }
-
 }
