@@ -65,7 +65,7 @@ get_header();
                     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                     <?php $fields = get_fields(); ?>
                     <article class="projects__project project">
-                        <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_p_tags($fields['projectName']), false, 60); ?></h3>
+                        <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($fields['projectName']), false, 65); ?></h3>
                         <div class="project__img--wrapper">
                         <?php if($fields['projectImg']): ?>
                             <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
@@ -75,7 +75,7 @@ get_header();
                         </div>
                         <div class="project__content--wrapper">
                             <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
-                            <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_p_tags($fields['projectName']); ?></span></a>
+                            <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_all_tags($fields['projectName']); ?></span></a>
                         </div>
                     </article>
                     <?php endwhile; else: ?>

@@ -34,9 +34,11 @@
 @import "components/titles";
 @import "components/intros";
 
+@import "components/agenda/events";
+
+@import "components/projects/projects";
+
 @import "components/home/about";
 @import "components/home/events";
 @import "components/home/projects";
 @import "components/home/news";
-
-@import "components/agenda/events";

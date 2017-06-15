@@ -1,0 +1,7 @@
+.projects {
+    @include overview-project;
+    .projects__inside-wrapper {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+}

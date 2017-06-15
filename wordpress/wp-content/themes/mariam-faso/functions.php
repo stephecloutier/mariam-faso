@@ -340,6 +340,17 @@ function mf_remove_p_tags($field) {
     return trim($newString);
 }
 
+/*
+ * Function to remove all tags from given fields (to use in heading element not on single page)
+*/
+
+function mf_remove_all_tags($field) {
+    $newString = str_replace(['<p>', '</p>'], ' ', $field);
+    $newString = preg_replace('/<.*?>/', '', $newString);
+    return trim($newString);
+}
+
+
 
 /*
  * Function to compress image

@@ -24,7 +24,7 @@ $fields = get_fields();
     </div>
 
     <div class="projects">
-        <div class="projects__wrapper">
+        <div class="projects__inside-wrapper">
             <?php
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                 $posts = new WP_Query([
@@ -41,12 +41,18 @@ $fields = get_fields();
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php $projectFields = get_fields(); ?>
             <article class="projects__project project <?= ($projectFields['projectIsOver']) ? ('project--over') : ('project--inProgress'); ?>">
-                <h2 class="projectTitle"><?= mf_remove_p_tags($projectFields['projectName']); ?></h2>
+                <h2 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($projectFields['projectName']), false, 65); ?></h2>
+                <div class="project__img--wrapper">
                     <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
-                <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg<?php if($projectFields['projectIsBig']) echo ' projectImg--big'; ?>">
+                    <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg">
+                    <?php else: ?>
+                    <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                     <?php endif; ?>
-                <p class="project__shortDesc"><?= $projectFields['projectShortDesc']; ?></p>
-                <a href="<?= the_permalink(); ?>" class="project__link"><?= str_replace(':projectName', '<span class="hidden">' . mf_remove_p_tags($projectFields['projectName']) . '</span>', __('Voir le projet :projectName', 'mf')); ?></a>
+                </div>
+                <div class="project__content--wrapper">
+                    <p class="project__desc"><?= $projectFields['projectShortDesc']; ?></p>
+                    <a href="<?= the_permalink(); ?>" class="project__link"><?= str_replace(':projectName', '<span class="hidden">' . mf_remove_all_tags($projectFields['projectName']) . '</span>', __('Voir le projet :projectName', 'mf')); ?></a>
+                </div>
             </article>
             <?php endwhile; else: ?>
                 <span class="projects__empty loop__empty"><?= __('Il n’y a pas de projets à afficher pour le moment', 'mf'); ?></span>
