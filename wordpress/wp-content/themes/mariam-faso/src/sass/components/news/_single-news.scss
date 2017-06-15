@@ -1,0 +1,45 @@
+.single-news {
+    margin-bottom: 3rem;
+    &__heading {
+        margin-bottom: 0.5rem;
+        .single-news__title {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            max-width: $columns13;
+        }
+        .single-news__date {
+            text-transform: uppercase;
+            color: $purple;
+            font-family: "Rubik", Helvetica, arial, sans-serif;
+            font-size: $big;
+            font-weight: 500;
+            text-align: right;
+        }
+    }
+    &__content {
+        font-size: $normal;
+        line-height: 1.5;
+        display: flex;
+        align-items: flex-start;
+        &--textual {
+            max-width: $columns13;
+        }
+        .single-news__img {
+            margin-right: 44px;
+        }
+    }
+
+    &__links {
+        margin-top: 2em;
+        min-height: 2em;
+
+        .news__back {
+            display: block;
+            &--news {
+                @include link-with-left-arrow($purple);
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+}

@@ -159,6 +159,28 @@
     }
 }
 
+@mixin link-with-left-arrow($color) {
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: $normalPlus;
+    color: $color;
+    &::before {
+        content: "a";
+        font-family: mariamfaso;
+        display: inline-block;
+        font-size: $smallPlus;
+        vertical-align: middle;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        transition: 0.25s ease-in-out;
+    }
+    &:hover::before, &:focus::before {
+        margin-left: 0;
+        margin-right: 1em;
+    }
+}
+
+
 // Overviews \\
 
 @mixin overview-event {
