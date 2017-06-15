@@ -61,20 +61,28 @@ get_header();
             <div class="projects__wrapper">
                 <h2 class="projects__title second-title"><?= __('Projets en cours', 'mf'); ?></h2>
                 <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'project']); ?>
-                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-                <?php $fields = get_fields(); ?>
-                <article class="projects__project project">
-                    <h3 class="project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h3>
-                    <?php if($fields['projectImg']): ?>
-                    <img width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
+                <div class="projects__inside-wrapper">
+                    <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                    <?php $fields = get_fields(); ?>
+                    <article class="projects__project project">
+                        <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_p_tags($fields['projectName']), false, 60); ?></h3>
+                        <div class="project__img--wrapper">
+                        <?php if($fields['projectImg']): ?>
+                            <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
+                        <?php else: ?>
+                            <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>" >
+                        <?php endif; ?>
+                        </div>
+                        <div class="project__content--wrapper">
+                            <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
+                            <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_p_tags($fields['projectName']); ?></span></a>
+                        </div>
+                    </article>
+                    <?php endwhile; else: ?>
+                    <p class="events__empty loop__empty"><?= __('Il n’y a pas de projets à afficher pour le moment.', 'mf'); ?></p>
                     <?php endif; ?>
-                    <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
-                    <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_p_tags($fields['projectName']); ?></span></a>
-                </article>
-                <?php endwhile; else: ?>
-                <p class="events__empty loop__empty"><?= __('Il n’y a pas de projets à afficher pour le moment.', 'mf'); ?></p>
-                <?php endif; ?>
-                <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="projects__link--more"><?= __('Voir tous les projets', 'mf'); ?></a>
+                </div>
+                <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="projects__button"><?= __('Voir tous les projets', 'mf'); ?></a>
             </div>
         </section>
 
@@ -89,7 +97,7 @@ get_header();
                         <h3 class="article__title"><?= $fields['newsTitle']; ?></h3>
                         <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
                         <div class="article__content">
-                            <?= mf_get_the_excerpt('newsContent', 300); ?>
+                            <?= mf_get_the_excerpt('newsContent', true, 300); ?>
                         </div>
                         <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf') ?><span class="hidden"> <?= __('de', 'mf') ?> <?= $fields['newsTitle']; ?></span></a>
                         <?php if($fields['newsImg']): ?>

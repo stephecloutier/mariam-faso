@@ -185,8 +185,9 @@ function mf_get_nav_id($location) {
 /*
  *  Return custom excerpt from given field for given length
 */
-function mf_get_the_excerpt($field, $length = null) {
+function mf_get_the_excerpt($field, $toGet = true, $length = null) {
     $excerpt = get_field($field);
+    if(!$toGet) $excerpt = $field;
     if(is_null($length) || strlen($excerpt) <= $length) {
         return $excerpt;
     }
@@ -204,10 +205,11 @@ function mf_get_the_excerpt($field, $length = null) {
 /*
 *  Output custom excerpt from given field for given length
 */
-
+/*
 function mf_the_excerpt($length = null) {
     echo mf_get_the_excerpt($length);
 }
+*/
 
 /*
  * Return a list of visited places for given trip.
