@@ -131,7 +131,7 @@
 // Overviews \\
 
 @mixin overview-event {
-    .event__wrapper {
+    .events__inside-wrapper {
         text-align: left;
         display: flex;
         justify-content: flex-start;
@@ -140,7 +140,7 @@
             background-color: white;
             border-radius: 3px;
             box-shadow: inset 0 -4px darken($lightGray, 15%);
-            width: $columns7p;
+            max-width: $columns7p;
             min-height: 400px;
             display: flex;
             flex-direction: column;

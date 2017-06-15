@@ -25,7 +25,7 @@ get_header();
             <div class="events__wrapper">
                 <h2 class="events__title second-title"><?= __('Évènements à venir', 'mf'); ?></h2>
 
-                <div class="event__wrapper">
+                <div class="events__inside-wrapper">
                     <?php
                         $posts = new WP_Query(['showposts' => 3, 'post_type' => 'event']);
                     ?>
