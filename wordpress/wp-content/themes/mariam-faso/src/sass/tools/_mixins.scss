@@ -52,7 +52,16 @@
     font-size: $huge;
     line-height: 1.2;
     color: $color;
+    text-align: left;
     @include wysiwyg($color);
+}
+
+@mixin third-title($color) {
+    font-family: 'Rubik', Helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: $bigger;
+    color: $color;
 }
 
 // buttons \\
@@ -126,6 +135,27 @@
     &:hover::after, &:focus::after {
         margin-top: -5px + $offset;
         opacity: 1;
+    }
+}
+
+@mixin link-with-right-arrow($color) {
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: $normalPlus;
+    color: $color;
+    &::after {
+        content: "d";
+        font-family: mariamfaso;
+        display: inline-block;
+        font-size: $smallPlus;
+        vertical-align: middle;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        transition: 0.25s ease-in-out;
+    }
+    &:hover::after, &:focus::after {
+        margin-right: 0;
+        margin-left: 1em;
     }
 }
 
@@ -217,24 +247,8 @@
                     padding-bottom: 2rem;
                     align-self: flex-end;
 
-                    font-family: "Rubik", Helvetica, arial, sans-serif;
-                    font-weight: 500;
-                    font-size: $normalPlus;
-                    color: $purple;
-                    &::after {
-                        content: "d";
-                        font-family: mariamfaso;
-                        display: inline-block;
-                        font-size: $smallPlus;
-                        vertical-align: middle;
-                        margin-left: 0.5em;
-                        margin-right: 0.5em;
-                        transition: 0.25s ease-in-out;
-                    }
-                    &:hover::after, &:focus::after {
-                        margin-right: 0;
-                        margin-left: 1em;
-                    }
+                    @include link-with-right-arrow($purple);
+
                 }
             }
         }
@@ -306,24 +320,8 @@
                     padding-bottom: 2rem;
                     align-self: flex-end;
 
-                    font-family: "Rubik", Helvetica, arial, sans-serif;
-                    font-weight: 500;
-                    font-size: $normalPlus;
-                    color: $purple;
-                    &::after {
-                        content: "d";
-                        font-family: mariamfaso;
-                        display: inline-block;
-                        font-size: $smallPlus;
-                        vertical-align: middle;
-                        margin-left: 0.5em;
-                        margin-right: 0.5em;
-                        transition: 0.25s ease-in-out;
-                    }
-                    &:hover::after, &:focus::after {
-                        margin-right: 0;
-                        margin-left: 1em;
-                    }
+                    @include link-with-right-arrow($purple);
+
                 }
             }
         }
