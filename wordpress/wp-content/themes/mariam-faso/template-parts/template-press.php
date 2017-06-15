@@ -47,12 +47,11 @@ get_header();
         </ul>
     </div>
 
-    <?php if(function_exists('wp_pagenavi')) {
-        wp_pagenavi( array(
-            'query' => $posts
-        ));
-    }
-    ?>
+    <?php if(function_exists('wp_pagenavi')): ?>
+    <div class="pagination__wrapper">
+        <?php wp_pagenavi(array('query' => $posts)); ?>
+    </div>
+    <?php endif; ?>
 
 </main>
 
