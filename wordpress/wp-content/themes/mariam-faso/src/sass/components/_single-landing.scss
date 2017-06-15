@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    margin-bottom: 2rem;
     &--color {
         background-color: $purple70;
         background-repeat: repeat-x;
@@ -26,7 +27,7 @@
 // Content styling \\
 .single-landing__content {
     @include max-width-centered;
-    
+
     min-height: 80vh;
     padding: 5rem 0;
 
