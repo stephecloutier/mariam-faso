@@ -18,8 +18,8 @@ get_header();
     </div>
     <div class="news__wrapper">
         <?php
-            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 5;
-            $posts = new WP_Query(['showposts' => 1, 'paged' => $paged, 'post_type' => 'news']);
+            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+            $posts = new WP_Query(['showposts' => 5, 'paged' => $paged, 'post_type' => 'news']);
         ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $fields = get_fields(); ?>
