@@ -1,0 +1,79 @@
+.main__help {
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+
+    color: white;
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    text-align: center;
+
+    &.help--0 {
+        background-image: url('../images/help0.jpg');
+    }
+    &.help--1 {
+        background-position: top center;
+        background-image: url('../images/help1.jpg');
+    }
+    &.help--2 {
+        background-position: top center;
+        background-image: url('../images/help2.jpg');
+    }
+
+    .help__wrapper {
+        min-height: 500px;
+        padding: 6rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .help__title {
+            font-size: $huge;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .help__desc {
+            font-weight: 500;
+            font-size: $big;
+            margin-bottom: 1.5rem;
+        }
+        .help__links {
+            display: flex;
+            justify-content: space-between;
+            min-width: 55%;
+            .help__link {
+                width: 150px;
+                font-size: $normalPlus;
+                font-weight: 500;
+                &::before {
+                    display: block;
+                    font-family: mariamfaso;
+                    color: white;
+                    font-size: 5rem;
+                    position: relative;
+                    top: 0;
+                    transition: 0.25s ease-in;
+                }
+
+                &--donate::before {
+                    content: "1";
+                }
+                &--events::before {
+                    content: "2";
+                }
+                &--share::before {
+                    content: "3";
+                }
+
+                &:hover::before, &:focus::before {
+                    top: -5px;
+                }
+
+            }
+        }
+
+    }
+
+}
