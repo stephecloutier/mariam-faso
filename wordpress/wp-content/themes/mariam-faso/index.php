@@ -102,7 +102,7 @@ get_header();
                             <div class="article__content">
                                 <?= mf_get_the_excerpt('newsContent', true, 300); ?>
                             </div>
-                            <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf') ?><span class="hidden"> <?= __('de', 'mf') ?> <?= $fields['newsTitle']; ?></span></a>
+                            <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags($fields['newsTitle']); ?></span></a>
                         </div>
                         <div class="article__img--wrapper">
                         <?php if($fields['newsImg']): ?>

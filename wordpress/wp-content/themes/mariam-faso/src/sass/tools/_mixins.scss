@@ -327,3 +327,57 @@
         }
     }
 }
+
+@mixin overview-news {
+    .news__article {
+        text-align: left;
+
+        display: flex;
+        justify-content: space-between;
+
+        padding: 3rem 0;
+        border-bottom: 3px solid $lightGray;
+        margin-bottom: 2rem;
+
+        .news__content {
+            width: $columns13;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 250px;
+
+            .news__heading {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .article__title {
+                    @include third-title($raspberry);
+                }
+                .article__date {
+                    font-weight: 400;
+                    font-size: $big;
+                    color: $raspberry;
+                }
+            }
+            .article__content {
+                font-family: 'Open Sans', Helvetica, arial, sans-serif;
+                line-height: 1.625;
+            }
+            .article__link {
+                align-self: flex-end;
+                @include link-with-right-arrow($purple);
+            }
+        }
+        .article__img--wrapper {
+            order: -1;
+            width: $columns11;
+            overflow: hidden;
+            margin-right: $column-width;
+            height: 250px;
+            .article__img {
+                width: 100%;
+            }
+        }
+    }
+}
