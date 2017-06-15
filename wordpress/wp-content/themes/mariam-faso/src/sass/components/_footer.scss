@@ -52,6 +52,13 @@
 }
 
 .footer__follow {
+    .footer__desc--strong {
+        font-weight: 500;
+    }
+    .footer__link {
+        display: inline-block;
+        @include link-underline-transition(white, 1px, 2);
+    }
     .footer__copyright {
         margin-top: 30px;
         font-size: $smaller;
