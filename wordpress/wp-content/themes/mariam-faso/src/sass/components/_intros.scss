@@ -1,8 +1,8 @@
 .main-intro {
     font-family: "Rubik", helvetica, arial, sans-serif;
     font-size: $big;
-    //line-height: 1.6;
     max-width: $columns18;
     letter-spacing: 0.25px;
     @include wysiwyg($darkGray);
+    margin-bottom: 2rem;
 }
