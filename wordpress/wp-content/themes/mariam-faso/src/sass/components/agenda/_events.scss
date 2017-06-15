@@ -1,3 +1,16 @@
 .agenda__events {
+    margin-bottom: 3rem;
     @include overview-event;
+    .agenda__nextEvents, .agenda__previousEvents {
+        font-family: "Rubik", Helvetica, arial, sans-serif;
+        text-transform: uppercase;
+        color: $raspberry;
+        font-weight: 500;
+        font-size: $big;
+        display: block;
+        margin: 2rem 0;
+    }
+    .loop__empty {
+        margin-top: 0;
+    }
 }
