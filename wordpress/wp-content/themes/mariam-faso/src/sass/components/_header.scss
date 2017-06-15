@@ -56,7 +56,7 @@
         font-size: 0;
         line-height: 0;
     }
-    &:hover {
+    &:hover, &:focus {
         .navigation__sub-container {
             position: absolute;
             width: 265px;
@@ -78,6 +78,7 @@
                 background-color: rgba(0,0,0,0);
             }
         }
+
         .navigation__sub-item {
             background-color: $raspberry;
             width: 100%;
@@ -103,10 +104,12 @@
                 width: 100%;
                 margin: 0 auto;
             }
-            &:hover {
+
+            &:hover, &:focus {
                 color: $raspberry;
                 background-color: white;
             }
+
         }
     }
 }
@@ -119,26 +122,26 @@
         }
     }
     .navigation__item--parent {
-        &:hover {
-            .navigation__sub-container {
-                box-shadow: 0px 4px 0px 0px $lightGray;
-                &::before {
-                    color: white;
+            &:hover, &:focus {
+                .navigation__sub-container {
+                    box-shadow: 0px 4px 0px 0px $lightGray;
+                    &::before {
+                        color: white;
+                    }
+                }
+                .navigation__sub-item {
+                    background-color: white;
+                    color: $raspberry;
+                    box-shadow:  0px 1px 0px 0px $raspberry70 inset;
+                    @include transition-color;
+                    &:first-child {
+                        box-shadow: none;
+                    }
+                    &:hover, &:focus {
+                        color: white;
+                        background-color: $raspberry;
+                    }
                 }
             }
-            .navigation__sub-item {
-                background-color: white;
-                color: $raspberry;
-                box-shadow:  0px 1px 0px 0px $raspberry70 inset;
-                @include transition-color;
-                &:first-child {
-                    box-shadow: none;
-                }
-                &:hover {
-                    color: white;
-                    background-color: $raspberry;
-                }
-            }
-        }
     }
 }

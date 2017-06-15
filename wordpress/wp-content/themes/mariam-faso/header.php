@@ -30,20 +30,19 @@
     <?php endif; ?>
                 <nav class="navigation">
                     <h2 class="hidden"><?= __('Navigation principale', 'mf'); ?></h2>
-                    <ul class="navigation__list">
+                    <ul class="navigation__list" role="menubar">
                         <?php foreach(mf_get_nav_items('main') as $item): ?>
-                        <li class="navigation__item <?php if($item->children){ echo 'navigation__item--parent'; } ?>">
+                        <li tabindex="0" role="menuitem" class="navigation__item <?php if($item->children){ echo 'navigation__item--parent'; } ?>" <?php if($item->children) echo 'aria-haspopup="true"'; ?> >
                             <a href="<?= $item->url; ?>" class="navigation__link"><?= $item->label; ?></a>
 
                             <?php if($item->children): ?>
-                            <ul class="navigation__sub-container">
+                            <ul class="navigation__sub-container" role="menu">
 
                                 <?php foreach($item->children as $sub): ?>
-                                <li class="navigation__sub-item">
+                                <li tabindex="0" role="menuitem"  class="navigation__sub-item">
                                     <a href="<?= $sub->url; ?>" class="navigation__link"><?= $sub->label; ?></a>
                                 </li>
                                 <?php endforeach; ?>
-
                             </ul>
                             <?php endif; ?>
 
