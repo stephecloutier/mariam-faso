@@ -9,7 +9,8 @@ $normalPlus: $normal * pow($type-scale, 0.5);
 $big: $normal * pow($type-scale, 1);
 $bigger: $normal * pow($type-scale, 2);
 $biggest: $normal * pow($type-scale, 3);
-
+$biggestPlus: $normal * pow($type-scale, 4);
+$hugeMinus:$normal * pow($type-scale, 5);
 $huge: $normal * pow($type-scale, 6);
 
 $icon: $normal * 3.25;

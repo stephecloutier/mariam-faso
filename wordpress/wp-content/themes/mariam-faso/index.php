@@ -32,7 +32,7 @@ get_header();
                     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                     <?php $fields = get_fields(); ?>
                     <article class="events__event event">
-                        <h3 class="event__title"><?= $fields['eventName'] ?></h3>
+                        <h3 class="event__title<?php if(!$fields['eventImg']) echo " event__title--bigger"; ?>"><?= $fields['eventName'] ?></h3>
                         <?php if($fields['eventImg']): ?>
                         <div class="event__img--wrapper">
                                 <img class="event__img" width="500" height="auto" src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
@@ -44,8 +44,10 @@ get_header();
                          ?>
                         <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
 
-                        <p class="event__desc"><?= $fields['eventShortDesc'] ?></p>
-                        <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($fields['eventName']); ?></span></a>
+                        <div class="event__content--wrapper">
+                            <p class="event__desc<?php if(!$fields['eventImg']) echo " event__desc--down"; ?>"><?= $fields['eventShortDesc'] ?></p>
+                            <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($fields['eventName']); ?></span></a>
+                        </div>
                     </article>
                     <?php endwhile; else: ?>
                 </div>
