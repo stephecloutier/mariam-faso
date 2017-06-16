@@ -21,6 +21,14 @@
             @include button-transparent($purple);
         }
     }
+    &.moreTrips {
+        background-color: $raspberry;
+        color: white;
+        .more__link {
+            @include button-base(white, $raspberry);
+            @include button-transparent(white);
+        }
+    }
     .learn-more__wrapper {
         max-width: 50%;
         margin: 0 auto;

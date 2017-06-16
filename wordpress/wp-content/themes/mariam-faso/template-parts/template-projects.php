@@ -16,11 +16,7 @@ $fields = get_fields();
         <div class="projects__intro main-intro">
             <?= $fields['projectsIntro']; ?>
         </div>
-        <div class="projects__buttons">
-            <a href="<?= mf_get_page_url('template-help.php'); ?>" class="projects__button"><?= __('Faire un don', 'mf'); ?></a>
-            <a href="<?= mf_get_page_url('template-travel.php'); ?>" class="projects__button"><?= __('Voyager', 'mf'); ?></a>
-            <a href="<?= mf_get_page_url('template-gallery.php'); ?>" class="projects__button"><?= __('Voir toutes les photos', 'mf'); ?></a>
-        </div>
+        <a href="<?= mf_get_page_url('template-gallery.php'); ?>" class="projects__button"><?= __('Voir toutes les photos', 'mf'); ?></a>
     </div>
 
     <div class="projects">
@@ -65,6 +61,13 @@ $fields = get_fields();
         <?php wp_pagenavi(array('query' => $posts)); ?>
     </div>
     <?php endif; ?>
+
+    <div class="learn-more moreTrips">
+        <div class="learn-more__wrapper">
+            <p class="more__catchPhrase"><?= str_replace(':mariam-faso', '<strong class="more--strong">Mariam Faso</strong>', __('Envie de voir d’autres projets de :mariam-faso&nbsp;?', 'mf')); ?></p>
+            <a href="<?= mf_get_page_url('template-trips.php'); ?>" class="more__link"><?= __('Découvrir nos voyages', 'mf'); ?></a>
+        </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>
