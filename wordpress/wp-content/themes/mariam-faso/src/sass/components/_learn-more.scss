@@ -29,6 +29,20 @@
             @include button-transparent(white);
         }
     }
+    &.moreAll {
+        background-color: $raspberry;
+        color: white;
+        .help__more {
+            margin-bottom: 1rem;
+            .learn-more--important {
+                font-weight: 600;
+            }
+        }
+        .more__link {
+            @include button-base(white, $raspberry);
+            @include button-transparent(white);
+        }
+    }
     .learn-more__wrapper {
         max-width: 50%;
         margin: 0 auto;

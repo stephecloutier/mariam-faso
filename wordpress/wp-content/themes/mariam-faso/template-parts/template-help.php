@@ -10,17 +10,12 @@ $fields = get_fields();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="introduction__wrapper">
+    <div class="introduction__wrapper help__introduction">
         <h1 class="main-title help__title"><?= __('Nous aider', 'mf'); ?></h1>
         <div class="main-intro help__intro">
             <?= $fields['help-usIntro']; ?>
         </div>
-        <div class="help__links">
-            <a href="https://www.kbs-frb.be/en/Flows/Gift/Checkout?notice=L82338%20-%20Bastogne%20-%20Mariam%20Faso%20%28Burkina%20Faso%29&title=ASBL%20Mariam%20Faso%20%28Burkina%20Faso%29" class="help__button help__button--important" title="<?= __('Aller sur le site de la fondation Roi Beaudoin pour faire un don', 'mf'); ?>"><?= __('Faire un don', 'mf'); ?></a>
-            <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="help__button" title="<?= __('Aller sur la page des évènements', 'mf'); ?>"><?= __('Participer aux évènements', 'mf'); ?></a>
-            <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="help__button" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Voir les projets', 'mf'); ?></a>
-        </div>
-
+        <a href="https://www.kbs-frb.be/en/Flows/Gift/Checkout?notice=L82338%20-%20Bastogne%20-%20Mariam%20Faso%20%28Burkina%20Faso%29&title=ASBL%20Mariam%20Faso%20%28Burkina%20Faso%29" class="help__button help__button--important" title="<?= __('Aller sur le site de la fondation Roi Beaudoin pour faire un don', 'mf'); ?>"><?= __('Faire un don', 'mf'); ?></a>
     </div>
 
     <div class="help__faq faq__wrapper">
@@ -36,9 +31,12 @@ $fields = get_fields();
         <?php endwhile; endif; ?>
     </div>
 
-    <div class="learn-more__wrapper">
-        <span class="help__more"><?= __('Encore des questions&nbsp;?', 'mf'); ?></span>
-        <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="help__button more__button" title="<?= __('Aller sur la page de contact','mf'); ?>"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
+    <div class="learn-more moreAll">
+        <div class="learn-more__wrapper">
+            <p class="help__more"><?= str_replace(':questions', '<span class="learn-more--important">questions</span>', __('Encore des :questions&nbsp;?', 'mf')); ?></p>
+            <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="help__button more__button more__link" title="<?= __('Aller sur la page de contact','mf'); ?>"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
+        </div>
+
     </div>
 </main>
 

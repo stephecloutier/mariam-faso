@@ -1,0 +1,8 @@
+.help__introduction {
+    .help__button {
+        &--important {
+            @include button-base($purple, $purple);
+            @include button-colored-rounded($yellow, 20%);
+        }
+    }
+}
