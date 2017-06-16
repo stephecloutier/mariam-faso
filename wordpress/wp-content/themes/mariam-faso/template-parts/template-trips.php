@@ -51,7 +51,7 @@ $previousTrip = false;
                             $nextTrip = true;
                 ?>
                 <article class="trips__trip trip">
-                    <h3 class="trip__title"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
+                    <h3 class="trip__title<?php if(!$tripFields['tripImg']) echo ' trip__title--bigger'; ?>"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
                     <?php
                         if($tripFields['tripImg']):
                         $image = $tripFields['tripImg'];
@@ -64,14 +64,14 @@ $previousTrip = false;
                         <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
                     </time>
                     <div class="trip__content--wrapper">
-                        <p class="trip__desc<?php if(!$tripFields['tripImg']) echo 'trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
-                        <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . $tripFields['tripName'] . '</span>', __('Voir plan du voyage :tripName', 'mf')); ?></a>
+                        <p class="trip__desc<?php if(!$tripFields['tripImg']) echo ' trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
+                        <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . mf_remove_all_tags($tripFields['tripName']) . '</span>', __('Voir plan du voyage :tripName', 'mf')); ?></a>
                     </div>
                 </article>
                 <?php endif; endwhile; endif; ?>
             </div>
             <?php if(!$nextTrip): ?>
-            <p class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à venir à afficher pour le moment', 'mf'); ?></p>
+            <p class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à venir à afficher pour le moment.', 'mf'); ?></p>
             <?php endif; ?>
         </div>
     </section>
@@ -94,7 +94,7 @@ $previousTrip = false;
                             $nextTrip = true;
                 ?>
                 <article class="trips__trip trip">
-                    <h3 class="trip__title"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
+                    <h3 class="trip__title<?php if(!$tripFields['tripImg']) echo ' trip__title--bigger'; ?>"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
                     <?php if($tripFields['tripImg']): $image = $tripFields['tripImg']; ?>
                     <div class="trip__img--wrapper">
                         <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img<?php if($tripFields['tripIsBig']) echo ' tripImg--big'; ?>">
@@ -104,14 +104,14 @@ $previousTrip = false;
                         <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
                     </time>
                     <div class="trip__content--wrapper">
-                        <p class="trip__desc<?php if(!$tripFields['tripImg']) echo 'trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
-                        <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . $tripFields['tripName'] . '</span>', __('Voir le résumé du voyage :tripName', 'mf')); ?></a>
+                        <p class="trip__desc<?php if(!$tripFields['tripImg']) echo ' trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
+                        <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . mf_remove_all_tags($tripFields['tripName']) . '</span>', __('Voir le résumé du voyage :tripName', 'mf')); ?></a>
                     </div>
                 </article>
                 <?php endif; endwhile; endif; ?>
             </div>
             <?php if(!$previousTrip): ?>
-            <p class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à précédents à afficher pour le moment', 'mf'); ?></p>
+            <p class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à précédents à afficher pour le moment.', 'mf'); ?></p>
             <?php endif; ?>
         </div>
     </section>

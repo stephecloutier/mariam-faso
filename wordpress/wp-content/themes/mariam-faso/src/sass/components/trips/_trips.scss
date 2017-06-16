@@ -1,5 +1,21 @@
-
 .trips__trips {
+    //margin-bottom: 2rem;
+    .second-title {
+        font-family: "Rubik", Helvetica, arial, sans-serif;
+        text-transform: uppercase;
+        color: $raspberry;
+        font-weight: 500;
+        font-size: $big;
+        display: block;
+        margin: 2rem 0;
+    }
+    .loop__empty {
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+    .trip {
+        margin: 0;
+    }
     .trips__inside-wrapper {
         text-align: left;
         display: flex;
@@ -72,7 +88,7 @@
                 .trip__desc {
                     font-weight: 500;
                     margin-top: 1rem;
-                    min-height: 110px;
+                    min-height: 80px;
 
                     &--down {
                         margin-top: 1rem + $big;
@@ -84,7 +100,7 @@
                     margin-top: 1rem;
                     padding-bottom: 2rem;
                     align-self: flex-end;
-
+                    display: inline-block;
                     @include link-with-right-arrow($purple);
 
                 }
