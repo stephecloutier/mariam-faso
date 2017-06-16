@@ -1,0 +1,41 @@
+.partners__list {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .partner {
+        width: $columns7p;
+        border: 2px solid $lightGray;
+        border-radius: 3px;
+        margin-bottom: 44px;
+        text-align: center;
+        padding: 3rem;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.25s ease-in-out;
+        &--linked {
+            padding: 0;
+            .partner__link {
+                padding: 3rem;
+            }
+            &:hover, &:focus {
+                border-color: $darkGray;
+            }
+        }
+        &:not(:nth-child(3n+1)) {
+            margin-left: 66px;
+        }
+
+        .partner__name {
+            font-family: "Rubik", Helvetica, arial, sans-serif;
+            font-size: $big;
+            font-weight: 600;
+            color: $darkGray;
+            text-transform: uppercase;
+        }
+    }
+}

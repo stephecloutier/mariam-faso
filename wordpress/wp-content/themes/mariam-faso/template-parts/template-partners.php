@@ -18,9 +18,9 @@ get_header();
         <?php if(have_rows('partnersRepeater')):
             while(have_rows('partnersRepeater')): the_row();
         ?>
-        <li class="partners__partner partner">
+        <li class="partners__partner partner<?php if(get_sub_field('partnerLink')) echo ' partner--linked'; ?>">
         <?php if(get_sub_field('partnerLink')): ?>
-            <a href="<?= the_sub_field('partnerLink'); ?>" title="<?= str_replace(':partnerName', the_sub_field('partnerName'), __('Visiter le site web de notre partenaire :partnerName', 'mf')); ?>">
+            <a class="partner__link" href="<?= the_sub_field('partnerLink'); ?>" title="<?= str_replace(':partnerName', the_sub_field('partnerName'), __('Visiter le site web de notre partenaire :partnerName', 'mf')); ?>">
             <?php if(get_sub_field('partnerLogo')): ?>
             <?php $logo = get_sub_field('partnerLogo'); ?>
             <img width="200" height="auto" src="<?= $logo['url']; ?>" alt="<?= mf_get_image_alt('partnerLogo'); ?>">
