@@ -1,0 +1,22 @@
+.gallery__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    .gallery__figure {
+        height: $columns7p;
+        width: $columns7p;
+        overflow: hidden;
+        margin-bottom: 66px;
+        &:not(:nth-child(3n+1)) {
+            margin-left: 66px;
+        }
+        .gallery__img {
+            width: auto;
+            height: $columns7p;
+        }
+        .gallery__figcaption {
+            @include hidden;
+            height: 0;
+        }
+    }
+}

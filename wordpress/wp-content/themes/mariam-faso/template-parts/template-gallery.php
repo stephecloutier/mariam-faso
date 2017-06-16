@@ -22,7 +22,7 @@ $fields = get_fields();
     <div class="gallery__wrapper">
         <?php $images = $fields['galleryImgs']; ?>
         <?php foreach($images as $image): ?>
-        <figure class="gallery__figure">
+        <figure tabindex="0" class="gallery__figure">
             <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="gallery__img">
             <?php if($image['description']): ?>
             <figcaption class="gallery__figcaption">
