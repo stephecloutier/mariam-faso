@@ -19,9 +19,11 @@ get_header();
 
     <blockquote class="about__quote quote">
         <div class="quote__wrapper">
-            <p class="quote__content"><?= $fields['aboutQuote']; ?></p>
+            <div class="quote__content">
+                <?= $fields['aboutQuote']; ?>
+            </div>
             <?php if($fields['aboutQuoteCite']): ?>
-            <cite class="quote__author"><?= $fields['aboutQuoteCite']; ?></cite>
+            <span class="quote__author"><?= $fields['aboutQuoteCite']; ?></span>
             <?php endif; ?>
         </div>
     </blockquote>
@@ -43,13 +45,7 @@ get_header();
     </div>
     <?php endwhile; endif; ?>
 
-    <section class="learn-more">
-        <div class="learn-more__wrapper">
-            <h2 class="second-title"><?= __('En savoir plus', 'mf'); ?></h2>
-            <p class="learn-more__catchphrase"><?= str_replace(':culture', '<span class="learn-more__catchphrase--bold">culture</span>', __('Envie d’en savoir plus sur la :culture de là-bas&nbsp;?', 'mf')); ?></p>
-            <p class="learn-more__links"><?= str_replace([':burkina-faso', ':maroc', ':trips'], ['<a href="' . mf_get_page_url('template-burkinafaso.php') . '" class="learn-more__link">Burkina Faso</a>', '<a href="' . mf_get_page_url('template-maroc.php') . '" class="learn-more__link">Maroc</a>', '<a href="' . mf_get_page_url('template-trips.php') . '" class="learn-more__link">voyages</a>'], __('Découvrez la culture du :burkina-faso et du :maroc ou découvrez nos :trips', 'mf')); ?></p>
-        </div>
-    </section>
+    <?php get_template_part('parts/help'); ?>
 </main>
 
 <?php get_footer(); ?>

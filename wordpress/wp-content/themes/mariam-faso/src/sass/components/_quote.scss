@@ -1,0 +1,36 @@
+.quote {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-size: $big;
+    font-style: italic;
+    line-height: 2;
+
+    padding: 4rem 0;
+
+    .quote__content {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}
+
+.culture__quote {
+    color: $purple;
+    background-color: $yellow;
+}
+.about__quote {
+    min-height: 300px;
+    color: white;
+    background-image: url('../images/quote.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

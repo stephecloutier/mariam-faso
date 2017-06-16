@@ -1,0 +1,6 @@
+.about__introduction {
+    .introduction__link {
+        @include button-base(white, white);
+        @include button-colored-rounded($raspberry, 15%);
+    }
+}

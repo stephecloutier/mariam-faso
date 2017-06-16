@@ -56,9 +56,11 @@ get_header();
 
         <?php if($i % 3 === 1): ?>
             <?php if($fields['cultureQuoteRepeater'][$q]['cultureQuote']): ?>
-    <blockquote class="culture__quote">
+    <blockquote class="culture__quote quote">
         <div class="quote__wrapper">
-            <?= $fields['cultureQuoteRepeater'][$q]['cultureQuote']; ?>
+            <div class="quote__content">
+                    <?= $fields['cultureQuoteRepeater'][$q]['cultureQuote']; ?>
+            </div>
             <?php if($fields['cultureQuoteRepeater'][$q]['cultureCite']): ?>
             <span class="quote__author">- <?= $fields['cultureQuoteRepeater'][$q]['cultureCite']; ?></span>
             <?php endif; ?>
