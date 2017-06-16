@@ -1,0 +1,17 @@
+.pressArticle__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .pressArticle__dl {
+        @include button-base($purple, white);
+        @include button-transparent($purple);
+        margin-bottom: 1.5rem;
+    }
+    .pressArticle__img {
+        margin-bottom: 2rem;
+    }
+    .pressArticle__back {
+        @include link-with-left-arrow($purple);
+        margin-bottom: 3rem;
+    }
+}
