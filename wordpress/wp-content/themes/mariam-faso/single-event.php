@@ -39,8 +39,8 @@ if($fields['eventTimeStart']) {
     </div>
 
     <div class="event__infos infos">
+        <h2 class="infos__title second-title"><?= __('Informations pratiques', 'mf'); ?></h2>
         <div class="infos__wrapper">
-            <h2 class="infos__title second-title"><?= __('Informations pratiques', 'mf'); ?></h2>
             <div class="event__info info__single">
                 <span class="info__title"><?= __('Date', 'mf'); ?></span>
                 <time class="event__time" datetime="
@@ -72,8 +72,8 @@ if($fields['eventTimeStart']) {
             </div>
 
             <?php if($fields['eventMap']): ?>
-            <div class="event__info info__single event__map">
-                <img src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
+            <div class="info__single event__map map__wrapper">
+                <img class="map__img" src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
             </div>
             <?php endif; ?>
 
@@ -88,8 +88,18 @@ if($fields['eventTimeStart']) {
             </div>
             <?php endwhile; endif; ?>
 
-            <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="event__back back__link" title="<?= __('Aller sur la page Agenda', 'mf'); ?>"><?= __('Retourner à l’agenda', 'mf'); ?></a>
+            <?php if($fields['eventMoreInfos']): ?>
+            <div class="more__infos">
+                <span class="more__infos--title">
+                    <?= __('Informations supplémentaires', 'mf'); ?>
+                </span>
+                <div class="more__infos--content">
+                    <?= $fields['eventMoreInfos']; ?>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
+        <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="event__back back__link" title="<?= __('Aller sur la page Agenda', 'mf'); ?>"><?= __('Retourner à l’agenda', 'mf'); ?></a>
     </div>
 
 </main>

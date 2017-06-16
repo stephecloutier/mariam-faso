@@ -327,7 +327,7 @@ function my_acf_init() {
  * Function to get url of static google map
 */
 
-function mf_get_static_google_map($lat, $lng, $zoom = 14, $maptype = 'roadmap', $width = 600, $height = 300) {
+function mf_get_static_google_map($lat, $lng, $zoom = 15, $maptype = 'roadmap', $width = 600, $height = 400) {
     return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
 }
 
