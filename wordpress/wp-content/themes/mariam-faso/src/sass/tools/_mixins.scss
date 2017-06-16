@@ -9,6 +9,9 @@
 }
 
 @mixin wysiwyg($color) {
+    p {
+        margin-bottom: 1em;
+    }
     strong {
         font-weight: 600;
     }
@@ -54,6 +57,9 @@
     color: $color;
     text-align: left;
     @include wysiwyg($color);
+    p {
+        margin-bottom: 0;
+    }
 }
 
 @mixin third-title($color) {
