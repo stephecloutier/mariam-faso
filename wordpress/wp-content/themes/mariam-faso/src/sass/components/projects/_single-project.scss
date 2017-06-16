@@ -38,6 +38,34 @@
         margin-top: 2rem;
         max-width: $columns12p;
         margin: 0 auto;
+        .info__single {
+            border: 1px solid $yellow;
+            border-radius: 3px;
+            min-height: 100px;
+            max-width: 100%;
+            margin-top: 1.5rem;
+            color: $purple;
+            font-family: "Rubik", Helvetica, arial, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 2rem;
+
+            .info__title {
+                text-transform: uppercase;
+                font-weight: 600;
+                display: block;
+                margin-bottom: 0.25em;
+            }
+        }
+        .infos__button {
+            @include button-base($purple, $purple);
+            @include button-colored-rounded($yellow, 20%);
+            width: 100%;
+            margin-top: 2rem;
+        }
     }
 }
 
