@@ -45,9 +45,9 @@ get_header();
             <?= $fields['agendaIntro']; ?>
         </div>
     </div>
-    <div class="agenda__events agenda__events--next">
+    <section class="agenda__events agenda__events--next">
         <div class="events__wrapper">
-            <span class="agenda__nextEvents"><?= __('Évènements à venir', 'mf'); ?></span>
+            <h2 class="agenda__nextEvents"><?= __('Évènements à venir', 'mf'); ?></h2>
             <div class="events__inside-wrapper">
             <?php
                 if($nextEventsFields) :
@@ -55,7 +55,7 @@ get_header();
             ?>
 
                 <article class="agenda__event nextEvent event">
-                    <h2 class="event__title<?php if(!$nextEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $nextEvent['eventName'] ?></h2>
+                    <h3 class="event__title>"><?= $nextEvent['eventName'] ?></h3>
                     <?php if($nextEvent['eventImg']): ?>
                     <div class="event__img--wrapper">
                         <img width="300" height="auto" src="<?= $nextEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
@@ -73,18 +73,18 @@ get_header();
             <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
             <?php endif; ?>
         </div>
-    </div>
+    </section>
 
-    <div class="agenda__events agenda__events--previous">
+    <section class="agenda__events agenda__events--previous">
         <div class="events__wrapper">
-            <span class="agenda__previousEvents"><?= __('Évènements passés', 'mf'); ?></span>
+            <h2 class="agenda__previousEvents"><?= __('Évènements passés', 'mf'); ?></h2>
             <div class="events__inside-wrapper">
             <?php
                 if($previousEventsFields) :
                     foreach($previousEventsFields as $previousEvent) :
             ?>
                 <article class="agenda__event previousEvent event">
-                    <h2 class="event__title<?php if(!$previousEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $previousEvent['eventName'] ?></h2>
+                    <h3 class="event__title"><?= $previousEvent['eventName'] ?></h3>
                     <?php if($previousEvent['eventImg']): ?>
                     <div class="event__img--wrapper">
                         <img width="300" height="auto" src="<?= $previousEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
@@ -103,7 +103,7 @@ get_header();
             <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements passés à afficher.', 'mf'); ?></p>
             <?php endif; ?>
         </div>
-    </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
