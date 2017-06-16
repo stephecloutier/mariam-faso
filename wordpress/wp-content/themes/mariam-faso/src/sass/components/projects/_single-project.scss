@@ -1,0 +1,50 @@
+.project {
+    max-width: $max-width;
+    margin: 3rem auto 0 auto;
+    display: flex;
+    align-items: flex-start;
+
+    &__articles {
+        max-width: $columns12p;
+
+        .second-title {
+            margin-bottom: 0;
+        }
+        .project__content {
+            .article__content {
+                @include wysiwyg($darkGray);
+                font-weight: 400;
+                .project__subtitle {
+                    font-family: "Rubik", Helvetica, arial, sans-serif;
+                    color: $raspberry;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    margin-bottom: 0.25rem;
+                    margin-top: 1.5rem;
+
+                }
+            }
+            .project__img--wrapper {
+                width: 100%;
+                margin-bottom: 3rem;
+                .project__img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    &__infos {
+        margin-top: 2rem;
+        max-width: $columns12p;
+        margin: 0 auto;
+    }
+}
+
+
+.project__back {
+    display: block;
+    max-width: $max-width;
+    margin: 1rem auto 3rem auto;
+    @include link-with-left-arrow($purple);
+}

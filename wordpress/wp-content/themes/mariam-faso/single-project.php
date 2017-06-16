@@ -25,30 +25,32 @@ $fields = get_fields();
             </div>
         </div>
     </div>
-    <div class="project__wrapper">
-        <article class="project__description">
+    <div class="project">
+        <div class="project__articles">
             <h2 class="second-title"><?= __('Description du projet', 'mf'); ?></h2>
             <?php if(have_rows('projectContentRepeater')):
                 while(have_rows('projectContentRepeater')): the_row();
             ?>
-            <div class="project__contentWrapper">
-                <span class="project__subtitle"><?= get_sub_field('projectContentSubtitle'); ?></span>
-                <div class="project__content">
-                    <?= get_sub_field('projectContent'); ?>
-                </div>
-                <?php
-                    if(get_sub_field('projectContentImgs')):
-                        $images = get_sub_field('projectContentImgs');
-                ?>
-                <div class="project__imgWrapper">
-                    <?php foreach($images as $image): ?>
-                    <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
-                    <?php endforeach; ?>
-                </div>
-                <?php endif; ?>
+            <div class="project__article">
+                <article class="project__content">
+                    <div class="article__content">
+                        <h3 class="project__subtitle"><?= get_sub_field('projectContentSubtitle'); ?></h3>
+                        <div class="project__content">
+                            <?= get_sub_field('projectContent'); ?>
+                        </div>
+                    </div>
+                    <?php
+                        if(get_sub_field('projectContentImg')):
+                            $image = get_sub_field('projectContentImg');
+                    ?>
+                    <div class="project__img--wrapper">
+                        <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
+                    </div>
+                    <?php endif; ?>
+                </article>
             </div>
             <?php endwhile; endif; ?>
-        </article>
+        </div>
 
         <div class="project__infos infos">
             <h2 class="second-title"><?= __('Informations sur le projet', 'mf'); ?></h2>
@@ -65,9 +67,9 @@ $fields = get_fields();
 
             <a href="<?= mf_get_page_url('template-help.php'); ?>" class="infos__button" title="<?= __('Aller sur la page de don', 'mf') ?>"><?= __('Faire un don pour aider ce projet', 'mf'); ?></a>
         </div>
-
-        <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back back__link" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
     </div>
+
+    <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back back__link" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
 
     <?php get_template_part('parts/help'); ?>
 
