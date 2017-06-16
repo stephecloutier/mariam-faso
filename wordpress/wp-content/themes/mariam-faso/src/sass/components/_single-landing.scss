@@ -42,6 +42,9 @@
         &--strong {
             font-weight: 600;
         }
+        &.trip__title {
+            font-weight: 600;
+        }
     }
     .single-landing__subtitle {
         @include landing-title(white);
