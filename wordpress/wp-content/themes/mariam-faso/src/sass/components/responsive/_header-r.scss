@@ -1,0 +1,153 @@
+@media screen and (max-width: 1120px){
+    .header {
+        padding: 0 1rem;
+    }
+    .navigation__list {
+        .navigation__item--parent {
+            &:hover, &:focus {
+                .navigation__sub-container {
+                    max-width: 200px;
+                }
+            }
+            &>.navigation__link::after {
+                margin-left: 0.25em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px){
+    .header {
+        .header__top {
+            justify-content: flex-start;
+            font-size: $small;
+            .header__logo {
+                width: 120px;
+            }
+            .navigation {
+                min-height: 40px;
+            }
+        }
+    }
+    .navigation__list {
+        .navigation__item--parent {
+            &:hover, &:focus {
+                .navigation__sub-container {
+                    max-width: 150px;
+                }
+                .navigation__sub-item {
+                    font-size: $smaller;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 580px){
+    .header {
+        .header__top {
+            flex-direction: column;
+            align-items: center;
+            font-size: $small;
+            width: 100%;
+            .header__logo {
+                margin-bottom: 1rem;
+            }
+            .navigation {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        position: relative;
+        padding: 0.5rem 0;
+        .header__wrapper {
+            padding: 0;
+        }
+        .header__top {
+            //flex-direction: row;
+            //justify-content: space-between;
+
+            .header__title {
+                align-self: flex-end;
+                padding: 1rem 1rem 0 0;
+            }
+            .navigation {
+                svg[id="navIconSVG"] {
+                    display: inline-block;
+                    width: 75px;
+                    height: 75px;
+                    position: absolute;
+                    top: 1rem;
+                    left: 0;
+                    fill: white;
+                }
+                .navigation__list { // remove --toggled modifier
+                    @include hidden;
+                }
+                .navigation__list--toggled { // add --toggled modifier
+                    background-color: $raspberry;
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    // style lorsque le parent du sub container est cliqué
+                    .navigation__item--parent {
+                        background-color: darken($raspberry, 10%);
+                    }
+                    .navigation__item {
+                        width: 100%;
+                        &:not(first-child) {
+                            border-top: 1px solid darken($raspberry, 10%);
+                        }
+                        .navigation__link {
+                            padding: 1rem;
+                            width: 100%;
+                            display: inline-block;
+                            &::after {
+                                display: none;
+                            }
+                        }
+                        .navigation__sub-container {
+                            font-size: 0;
+                            line-height: 0;
+                            .navigation__link {
+                                padding: 0;
+                            }
+                        }
+                        //&:hover {
+
+                            .navigation__sub-container {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: stretch;
+                                font-size: 1rem;
+                                line-height: 1;
+                                background-color: $purple;
+                                font-size: $small;
+                                //pour cacher le sous-menu
+                                // @include hidden;
+                                // width: 0;
+                                // height: 0;
+                                // padding: 0;
+                                .navigation__sub-item {
+                                    &:not(:first-child) {
+                                        border-top: 1px solid darken($purple, 15%);
+                                    }
+                                    .navigation__link {
+                                        padding: 1rem 0 1rem 2rem;
+                                    }
+                                }
+
+                            }
+                        //}
+                    }
+                }
+            }
+
+        }
+    }
+}

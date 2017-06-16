@@ -29,6 +29,14 @@
                     </h1>
     <?php endif; ?>
                 <nav class="navigation">
+                    <svg class="navIconSVG" id="navIconSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 142 142"  xml:space="preserve">
+                        <g class="svg__group">
+                            <rect class="svg__line svg__line--1" x="37.8" y="50.3" width="65" height="8"></rect>
+                            <rect class="svg__line svg__line--2" x="37.8" y="67.5" width="65" height="8"></rect>
+                            <rect class="svg__line svg__line--3" x="37.8" y="67.5" width="65" height="8"></rect>
+                            <rect class="svg__line svg__line--4" x="37.8" y="84.7" width="65" height="8"></rect>
+                        </g>
+                    </svg>
                     <h2 class="hidden"><?= __('Navigation principale', 'mf'); ?></h2>
                     <ul class="navigation__list" role="menubar">
                         <?php foreach(mf_get_nav_items('main') as $item): ?>

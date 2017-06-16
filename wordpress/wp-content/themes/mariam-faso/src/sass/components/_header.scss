@@ -19,6 +19,9 @@
         }
         .navigation {
             flex-grow: 2;
+            svg[id="navIconSVG"] {
+                display: none;
+            }
         }
     }
 }
@@ -50,7 +53,7 @@
 
 // Showing/hiding sub-menu
 
-.navigation__item--parent {
+.navigation__list .navigation__item--parent { // remove --toggled modifier
     position: relative;
     .navigation__sub-container {
         font-size: 0;
