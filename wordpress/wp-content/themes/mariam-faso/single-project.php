@@ -26,7 +26,7 @@ $fields = get_fields();
         </div>
     </div>
     <div class="project">
-        <div class="project__articles">
+        <section class="project__articles">
             <h2 class="second-title"><?= __('Description du projet', 'mf'); ?></h2>
             <?php if(have_rows('projectContentRepeater')):
                 while(have_rows('projectContentRepeater')): the_row();
@@ -50,9 +50,9 @@ $fields = get_fields();
                 </article>
             </div>
             <?php endwhile; endif; ?>
-        </div>
+        </section>
 
-        <div class="project__infos infos">
+        <section class="project__infos infos">
             <h2 class="second-title"><?= __('Informations sur le projet', 'mf'); ?></h2>
             <?php if(have_rows('projectInfosRepeater')):
                 while(have_rows('projectInfosRepeater')): the_row();
@@ -66,7 +66,7 @@ $fields = get_fields();
             <?php endwhile; endif; ?>
 
             <a href="<?= mf_get_page_url('template-help.php'); ?>" class="infos__button" title="<?= __('Aller sur la page de don', 'mf') ?>"><?= __('Faire un don pour aider ce projet', 'mf'); ?></a>
-        </div>
+        </section>
     </div>
 
     <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back back__link" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
