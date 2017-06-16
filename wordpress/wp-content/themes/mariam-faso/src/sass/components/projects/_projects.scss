@@ -1,7 +1,23 @@
 .projects {
+    .project {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
     @include overview-project;
     .projects__inside-wrapper {
         max-width: $max-width;
         margin: 0 auto;
+
+    }
+
+}
+
+.projects__introduction {
+    .projects__button {
+        margin-top: -0.5rem;
+        margin-bottom: 3rem;
+        @include button-base(white, white);
+        @include button-colored-rounded($raspberry, 10%);
     }
 }

@@ -11,12 +11,12 @@ $fields = get_fields();
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
     </ul>
-    <div class="introduction__wrapper">
+    <div class="introduction__wrapper projects__introduction">
         <h1 class="projects__title main-title"><?= __('Nos projets', 'mf'); ?></h1>
         <div class="projects__intro main-intro">
             <?= $fields['projectsIntro']; ?>
         </div>
-        <a href="<?= mf_get_page_url('template-gallery.php'); ?>" class="projects__button"><?= __('Voir toutes les photos', 'mf'); ?></a>
+        <a href="<?= mf_get_page_url('template-gallery.php'); ?>" class="projects__button"><?= __('Voir la galerie photos', 'mf'); ?></a>
     </div>
 
     <div class="projects">
