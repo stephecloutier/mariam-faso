@@ -37,17 +37,22 @@ get_header();
     ?>
     <article class="culture__article">
         <div class="culture__wrapper">
-            <h2 class="culture__subtitle second-title"><?= get_sub_field('cultureSubtitle'); ?></h2>
-            <div class="culture__text">
-                <?= get_sub_field('cultureTextualContent'); ?>
+            <div class="culture__content">
+                <h2 class="culture__subtitle second-title"><?= get_sub_field('cultureSubtitle'); ?></h2>
+                <div class="culture__text">
+                    <?= get_sub_field('cultureTextualContent'); ?>
+                </div>
             </div>
-            <div class="culture__imgWrapper">
+
+            <div class="culture__imgs--wrapper">
                 <?php foreach($images as $image): ?>
-            <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="culture__img">
+                <div class="culture__img--wrapper">
+                    <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="culture__img">
+                </div>
                 <?php endforeach; ?>
             </div>
                 <?php if(get_sub_field('cultureVideo')): ?>
-            <div class="culture__videoWrapper">
+            <div class="culture__video--wrapper">
                 <?= get_sub_field('cultureVideo'); ?>
             </div>
                 <?php endif; ?>
