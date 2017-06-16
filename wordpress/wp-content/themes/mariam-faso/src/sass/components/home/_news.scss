@@ -17,4 +17,7 @@
         @include button-base($raspberry, white);
         @include button-transparent($raspberry);
     }
+    .news__wrapper {
+        margin-bottom: 0;
+    }
 }

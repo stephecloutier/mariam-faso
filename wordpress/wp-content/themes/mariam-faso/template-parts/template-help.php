@@ -25,8 +25,10 @@ $fields = get_fields();
                 while(have_rows('help-usFaqRepeater')): the_row();
         ?>
         <div class="faq__qa">
-            <span class="faq__question"><?= get_sub_field('help-usFaqQuestion'); ?></span>
-            <p class="faq__answer"><?= get_sub_field('help-usFaqAnswer'); ?></p>
+            <p class="faq__question"><?= get_sub_field('help-usFaqQuestion'); ?></p>
+            <div class="faq__answer">
+                <?= get_sub_field('help-usFaqAnswer'); ?>
+            </div>
         </div>
         <?php endwhile; endif; ?>
     </div>

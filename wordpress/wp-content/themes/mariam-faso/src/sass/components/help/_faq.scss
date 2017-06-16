@@ -1,0 +1,40 @@
+.help__faq {
+    margin: 3rem auto;
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    .faq__qa {
+        border-bottom: 2px solid $lightGray;
+        padding: 2rem 0;
+        &:last-child {
+            border-bottom: 0;
+        }
+        .faq__question {
+            text-transform: uppercase;
+            color: $raspberry;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: "Q";
+            }
+        }
+        .faq__answer {
+            line-height: 1.5;
+            @include wysiwyg($darkGray);
+            display: flex;
+            align-items: center;
+            &::before {
+                content: "R";
+            }
+        }
+        .faq__question::before, .faq__answer::before {
+            font-family: "Rubik", Helvetica, arial, sans-serif;
+            font-weight: 600;
+            color: $purple;
+            font-size: $big;
+            display: inline-block;
+            margin-right: 2em;
+        }
+    }
+}
