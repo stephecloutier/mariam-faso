@@ -55,7 +55,7 @@ get_header();
             ?>
 
                 <article class="agenda__event nextEvent event">
-                    <h3 class="event__title>"><?= $nextEvent['eventName'] ?></h3>
+                    <h3 class="event__title<?php if(!$nextEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $nextEvent['eventName'] ?></h3>
                     <?php if($nextEvent['eventImg']): ?>
                     <div class="event__img--wrapper">
                         <img width="300" height="auto" src="<?= $nextEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
@@ -84,7 +84,7 @@ get_header();
                     foreach($previousEventsFields as $previousEvent) :
             ?>
                 <article class="agenda__event previousEvent event">
-                    <h3 class="event__title"><?= $previousEvent['eventName'] ?></h3>
+                    <h3 class="event__title<?php if(!$previousEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $previousEvent['eventName'] ?></h3>
                     <?php if($previousEvent['eventImg']): ?>
                     <div class="event__img--wrapper">
                         <img width="300" height="auto" src="<?= $previousEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">

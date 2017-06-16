@@ -1,17 +1,17 @@
 
 .trips__trips {
-    .events__inside-wrapper {
+    .trips__inside-wrapper {
         text-align: left;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: wrap;
-        .event {
+        .trip {
             background-color: white;
             border-radius: 3px;
             border: 2px solid $lightGray;
             max-width: $columns7p;
-            min-height: 400px;
+            min-height: 300px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -69,7 +69,7 @@
                 flex-direction: column;
                 justify-content: space-between;
 
-                .event__desc {
+                .trip__desc {
                     font-weight: 500;
                     margin-top: 1rem;
                     min-height: 110px;
@@ -79,7 +79,7 @@
                     }
                 }
 
-                .event__link {
+                .trip__link {
                     cursor: pointer;
                     margin-top: 1rem;
                     padding-bottom: 2rem;
