@@ -1,0 +1,74 @@
+.contact__infos {
+    margin-bottom: 3rem;
+    .infos__wrapper {
+        display: flex;
+        align-items: flex-start;
+        .infos__persons {
+            margin-left: 1.5rem;
+            border-left: 2px solid $lightGray;
+            padding-left: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            .infos__person {
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 66px;
+                }
+            }
+        }
+        .infos__general, .infos__person {
+            max-width: $columns5p;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+            .infos__title, .infos__personName {
+                font-family: "Rubik", Helvetica, arial, sans-serif;
+                text-transform: uppercase;
+                line-height: 1;
+                margin-bottom: 0.25rem;
+                color: $raspberry;
+
+            }
+            .infos__title {
+                font-size: $bigger;
+                font-weight: 500;
+            }
+            .infos__personName {
+                font-weight: 400;
+                margin-bottom: 0.75rem;
+            }
+
+            .infos__address, .infos__phone, .infos__mail {
+                font-size: $smallPlus;
+                line-height: 1.5;
+                margin-bottom: 0.5rem;
+                display: flex;
+                align-items: flex-start;
+                &::before {
+                    font-family: mariamfaso;
+                    display: inline-block;
+                    font-size: 1rem;
+                    margin-right: 0.5rem;
+                    color: $purple;
+                    font-size: $small;
+                }
+            }
+            .infos__address::before {
+                content: "m";
+            }
+            .infos__phone::before {
+                content: "t";
+            }
+            .infos__mail::before {
+                content: "e";
+            }
+        }
+
+        .infos__general {
+            .infos__title {
+                color: $purple;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
