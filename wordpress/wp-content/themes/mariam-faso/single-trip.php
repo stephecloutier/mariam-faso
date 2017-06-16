@@ -27,32 +27,35 @@ $date = new DateTime($fields['tripStartDate']);
             </div>
         </div>
     </div>
-    <div class="trip__wrapper">
-        <article class="trip__description">
+    <div class="trip">
+        <section class="trip__articles">
             <h2 class="second-title"><?= __('Description du voyage', 'mf'); ?></h2>
-            <?php if(have_rows('tripContentRepeater')):
-                while(have_rows('tripContentRepeater')): the_row();
-            ?>
-            <div class="trip__contentWrapper">
-                <span class="trip__subtitle"><?= get_sub_field('tripContentSubtitle'); ?></span>
-                <div class="trip__contente">
-                    <?= get_sub_field('tripContent'); ?>
-                </div>
-                <?php
-                    if(get_sub_field('tripContentImgs')):
-                        $images = get_sub_field('tripContentImgs');
+                <?php if(have_rows('tripContentRepeater')):
+                    while(have_rows('tripContentRepeater')): the_row();
                 ?>
-                <div class="trip__imgWrapper">
-                    <?php foreach($images as $image): ?>
-                    <img width="400" height="400" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="trip__img">
-                    <?php endforeach; ?>
+                <div class="trip__article">
+                    <article class="trip__content">
+                        <div class="article__content">
+                            <span class="trip__subtitle"><?= get_sub_field('tripContentSubtitle'); ?></span>
+                            <div class="trip__contente">
+                                <?= get_sub_field('tripContent'); ?>
+                            </div>
+                        </div>
+                        <?php
+                            if(get_sub_field('tripContentImg')):
+                                $image = get_sub_field('tripContentImg');
+                        ?>
+                        <div class="trip__img--wrapper">
+                            <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="trip__img">
+                        </div>
+                        <?php endif; ?>
+                    </article>
                 </div>
-                <?php endif; ?>
-            </div>
-            <?php endwhile; endif; ?>
-        </article>
+                <?php endwhile; endif; ?>
+        </section>
 
-        <div class="trip__infos infos">
+
+        <section class="trip__infos infos">
             <h2 class="second-title"><?= __('Informations sur le voyage', 'mf'); ?></h2>
             <?php if(have_rows('tripInfosRepeater')):
                 while(have_rows('tripInfosRepeater')): the_row();
@@ -64,7 +67,7 @@ $date = new DateTime($fields['tripStartDate']);
                 </div>
             </div>
             <?php endwhile; endif; ?>
-        </div>
+        </section>
 
         <?php if(have_rows('tripConfessionRepeater')): ?>
         <div class="trip__confessions confessions">
