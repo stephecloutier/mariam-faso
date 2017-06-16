@@ -36,38 +36,40 @@ $previousTrip = false;
     <section class="trips__trips trips__trips--next">
         <div class="trips__wrapper">
             <h2 class="trips__title second-title"><?= __('Voyages à venir', 'mf'); ?></h2>
-            <?php
-                if($posts->have_posts()) :
-                    while($posts->have_posts()):
-                    $posts->the_post();
-                    $tripFields = get_fields();
-                    $currentDate = date('Y-m-d');
-                    $startDate = new DateTime($tripFields['tripStartDate']);
-                    if($tripFields['tripEndDate']) {
-                        $endDate = new DateTime($tripFields['tripEndDate']);
-                    }
-                    if($tripFields['tripStartDate'] > $currentDate):
-                        $nextTrip = true;
-            ?>
-            <article class="trips__trip trip">
-                <h3 class="trip__title"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
+            <div class="trips__inside-wrapper">
                 <?php
-                    if($tripFields['tripImg']):
-                    $image = $tripFields['tripImg'];
+                    if($posts->have_posts()) :
+                        while($posts->have_posts()):
+                        $posts->the_post();
+                        $tripFields = get_fields();
+                        $currentDate = date('Y-m-d');
+                        $startDate = new DateTime($tripFields['tripStartDate']);
+                        if($tripFields['tripEndDate']) {
+                            $endDate = new DateTime($tripFields['tripEndDate']);
+                        }
+                        if($tripFields['tripStartDate'] > $currentDate):
+                            $nextTrip = true;
                 ?>
-                <div class="trip__img--wrapper">
-                    <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img">
-                </div>
-                <?php endif; ?>
-                <time class="trip__time" datetime="<?= $startDate->format('c'); ?>">
-                    <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
-                </time>
-                <div class="trip__content--wrapper">
-                    <p class="trip__desc<?php if(!$tripFields['tripImg']) echo 'trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
-                    <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . $tripFields['tripName'] . '</span>', __('Voir plan du voyage :tripName', 'mf')); ?></a>
-                </div>
-            </article>
-            <?php endif; endwhile; endif; ?>
+                <article class="trips__trip trip">
+                    <h3 class="trip__title"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
+                    <?php
+                        if($tripFields['tripImg']):
+                        $image = $tripFields['tripImg'];
+                    ?>
+                    <div class="trip__img--wrapper">
+                        <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img">
+                    </div>
+                    <?php endif; ?>
+                    <time class="trip__time" datetime="<?= $startDate->format('c'); ?>">
+                        <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
+                    </time>
+                    <div class="trip__content--wrapper">
+                        <p class="trip__desc<?php if(!$tripFields['tripImg']) echo 'trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
+                        <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . $tripFields['tripName'] . '</span>', __('Voir plan du voyage :tripName', 'mf')); ?></a>
+                    </div>
+                </article>
+                <?php endif; endwhile; endif; ?>
+            </div>
             <?php if(!$nextTrip): ?>
             <p class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à venir à afficher pour le moment', 'mf'); ?></p>
             <?php endif; ?>
@@ -77,35 +79,37 @@ $previousTrip = false;
     <section class="trips__trips trips__trips--previous">
         <div class="trips__wrapper">
             <h2 class="trips__title second-title"><?= __('Voyages précédents', 'mf'); ?></h2>
-            <?php
-                if($posts->have_posts()) :
-                    while($posts->have_posts()):
-                    $posts->the_post();
-                    $tripFields = get_fields();
-                    $currentDate = date('Y-m-d');
-                    $startDate = new DateTime($tripFields['tripStartDate']);
-                    if($tripFields['tripEndDate']) {
-                        $endDate = new DateTime($tripFields['tripEndDate']);
-                    }
-                    if($tripFields['tripStartDate'] <= $currentDate):
-                        $nextTrip = true;
-            ?>
-            <article class="trips__trip trip">
-                <h3 class="trip__title"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
-                <?php if($tripFields['tripImg']): $image = $tripFields['tripImg']; ?>
-                <div class="trip__img--wrapper">
-                    <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img<?php if($tripFields['tripIsBig']) echo ' tripImg--big'; ?>">
-                </div>
-                <?php endif; ?>
-                <time class="trip__time" datetime="<?= $startDate->format('c'); ?>">
-                    <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
-                </time>
-                <div class="trip__content--wrapper">
-                    <p class="trip__desc<?php if(!$tripFields['tripImg']) echo 'trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
-                    <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . $tripFields['tripName'] . '</span>', __('Voir le résumé du voyage :tripName', 'mf')); ?></a>
-                </div>
-            </article>
-            <?php endif; endwhile; endif; ?>
+            <div class="trips__inside-wrapper">
+                <?php
+                    if($posts->have_posts()) :
+                        while($posts->have_posts()):
+                        $posts->the_post();
+                        $tripFields = get_fields();
+                        $currentDate = date('Y-m-d');
+                        $startDate = new DateTime($tripFields['tripStartDate']);
+                        if($tripFields['tripEndDate']) {
+                            $endDate = new DateTime($tripFields['tripEndDate']);
+                        }
+                        if($tripFields['tripStartDate'] <= $currentDate):
+                            $nextTrip = true;
+                ?>
+                <article class="trips__trip trip">
+                    <h3 class="trip__title"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
+                    <?php if($tripFields['tripImg']): $image = $tripFields['tripImg']; ?>
+                    <div class="trip__img--wrapper">
+                        <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img<?php if($tripFields['tripIsBig']) echo ' tripImg--big'; ?>">
+                    </div>
+                    <?php endif; ?>
+                    <time class="trip__time" datetime="<?= $startDate->format('c'); ?>">
+                        <?php echo strftime("%B %Y", $startDate->getTimestamp()); ?>
+                    </time>
+                    <div class="trip__content--wrapper">
+                        <p class="trip__desc<?php if(!$tripFields['tripImg']) echo 'trip__desc--down'; ?>"><?= $tripFields['tripShortDesc']; ?></p>
+                        <a href="<?= the_permalink(); ?>" class="trip__link"><?= str_replace(':tripName', '<span class="hidden">' . $tripFields['tripName'] . '</span>', __('Voir le résumé du voyage :tripName', 'mf')); ?></a>
+                    </div>
+                </article>
+                <?php endif; endwhile; endif; ?>
+            </div>
             <?php if(!$previousTrip): ?>
             <p class="loop__empty trips__empty"><?= __('Il n’y a pas de voyages à précédents à afficher pour le moment', 'mf'); ?></p>
             <?php endif; ?>
