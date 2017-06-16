@@ -1,0 +1,37 @@
+.learn-more {
+    padding: 5rem 0;
+    width: 100%;
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: $hugeMinus;
+    &.moreProjects {
+        background-color: $raspberry;
+        color: white;
+        .more__link {
+            @include button-base(white, $raspberry);
+            @include button-transparent(white);
+        }
+    }
+    &.moreAbout {
+        background-color: $yellow;
+        color: $purple;
+        .more__link {
+            @include button-base($purple, $yellow);
+            @include button-transparent($purple);
+        }
+    }
+    .learn-more__wrapper {
+        max-width: 50%;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+    .more__catchPhrase {
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        .more--strong {
+            font-weight: 600;
+        }
+    }
+}

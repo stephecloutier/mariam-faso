@@ -6,6 +6,7 @@
         @include button-base($purple, white);
         @include button-transparent($purple);
         margin-bottom: 1.5rem;
+        font-size: $smallPlus;
     }
     .pressArticle__img {
         margin-bottom: 2rem;
