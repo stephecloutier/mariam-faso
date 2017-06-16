@@ -36,7 +36,7 @@ $date = new DateTime($fields['tripStartDate']);
                 <div class="trip__article">
                     <article class="trip__content">
                         <div class="article__content">
-                            <span class="trip__subtitle"><?= get_sub_field('tripContentSubtitle'); ?></span>
+                            <h3 class="trip__subtitle"><?= get_sub_field('tripContentSubtitle'); ?></h3>
                             <div class="trip__contente">
                                 <?= get_sub_field('tripContent'); ?>
                             </div>
@@ -54,10 +54,10 @@ $date = new DateTime($fields['tripStartDate']);
                 <?php endwhile; endif; ?>
         </section>
 
-
+        <?php if(have_rows('tripInfosRepeater')): ?>
         <section class="trip__infos infos">
             <h2 class="second-title"><?= __('Informations sur le voyage', 'mf'); ?></h2>
-            <?php if(have_rows('tripInfosRepeater')):
+            <?php
                 while(have_rows('tripInfosRepeater')): the_row();
             ?>
             <div class="trip__info info__single">
@@ -66,13 +66,15 @@ $date = new DateTime($fields['tripStartDate']);
                     <?= get_sub_field('tripInfoContent'); ?>
                 </div>
             </div>
-            <?php endwhile; endif; ?>
+            <?php endwhile; ?>
         </section>
-
-        <?php if(have_rows('tripConfessionRepeater')): ?>
-        <div class="trip__confessions confessions">
-            <h2 class="confessions__title second-title"><?= __('Témoignages', 'mf'); ?></h2>
-            <?php while(have_rows('tripConfessionRepeater')): the_row(); ?>
+        <?php endif; ?>
+    </div>
+    <?php if(have_rows('tripConfessionsRepeater')): ?>
+    <section class="trip__confessions confessions">
+        <h2 class="confessions__title second-title"><?= __('Témoignages', 'mf'); ?></h2>
+        <div class="trip__confessions--wrapper">
+            <?php while(have_rows('tripConfessionsRepeater')): the_row(); ?>
             <div class="trip__confession confession">
                 <div class="confession__content">
                     <?= get_sub_field('tripConfessionContent'); ?>
@@ -81,13 +83,16 @@ $date = new DateTime($fields['tripStartDate']);
             </div>
             <?php endwhile; ?>
         </div>
-        <?php endif; ?>
+    </section>
+    <?php endif; ?>
 
-        <span class="trip__more"><?= __('Vous avez participé à ce voyage et souhaitez partager votre expérience&nbsp;?', 'mf'); ?></span>
-        <a href="<?= mf_get_page_url('template-contact.php'); ?>" class="trip__button button__more" title="<?= __('Aller sur la page de contact', 'mf'); ?>"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
-
-        <a href="<?= mf_get_page_url('template-trips.php'); ?>" class="trip__back back__link" title="<?= __('Aller sur la page des voyages', 'mf'); ?>"><?= __('Retourner à la liste des voyages', 'mf'); ?></a>
+    <div class="trip__more">
+        <span class="more__catchPhrase"><?= __('Vous avez participé à ce voyage et souhaitez partager votre expérience&nbsp;?', 'mf'); ?></span>
+        <a class="more__button" href="<?= mf_get_page_url('template-contact.php'); ?>" title="<?= __('Aller sur la page de contact', 'mf'); ?>"><?= __('Contactez-nous&nbsp;!', 'mf'); ?></a>
     </div>
+
+
+    <a href="<?= mf_get_page_url('template-trips.php'); ?>" class="trip__back back__link" title="<?= __('Aller sur la page des voyages', 'mf'); ?>"><?= __('Retourner à la liste des voyages', 'mf'); ?></a>
     <?php get_template_part('parts/help'); ?>
 </main>
 
