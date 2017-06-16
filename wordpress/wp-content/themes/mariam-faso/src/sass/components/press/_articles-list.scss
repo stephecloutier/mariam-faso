@@ -1,0 +1,74 @@
+.press__list {
+    margin-bottom: 2rem;
+    font-family: "Rubik", Helvetica, arial, sans-serif;
+    .article {
+        &:not(:first-child) {
+            border-top: 3px solid $lightGray;
+        }
+        .articleLink {
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &::before {
+                font-family: mariamfaso;
+                font-size: 2.5rem;
+                color: $orange;
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+            .article__title {
+                font-size: $normalPlus;
+                font-weight: 500;
+                transition: 0.25s ease-in-out;
+            }
+            .article__link {
+                color: $raspberry;
+                font-weight: 400;
+                font-size: $smallPlus;
+                &::after {
+                    content: "d";
+                    font-family: mariamfaso;
+                    display: inline-block;
+                    font-size: $small;
+                    vertical-align: middle;
+                    margin-left: 0.5em;
+                    margin-right: 0.5em;
+                    transition: 0.25s ease-in-out;
+                }
+            }
+        &:hover, &:focus {
+            .article__title {
+                color: $raspberry;
+            }
+            .article__link {
+                &::after {
+                    margin-right: 0;
+                    margin-left: 1em;
+                }
+            }
+        }
+
+        }
+        &--scanned .articleLink::before {
+            content: "i";
+        }
+        &--video .articleLink::before {
+            content: "y";
+            background-color: $orange;
+            color: white;
+            font-size: 1.5rem;
+            vertical-align: middle;
+            padding-top: 0.2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50px;
+            text-align: center;
+        }
+        &--external .articleLink::before {
+            content: "w";
+        }
+    }
+
+}

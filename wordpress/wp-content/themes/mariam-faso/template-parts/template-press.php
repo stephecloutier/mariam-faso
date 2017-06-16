@@ -21,7 +21,6 @@ get_header();
             <?php
 
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                //$posts = new WP_Query('posts_per_page=3&paged=' . $paged . '&post_type=article');
                 $posts = new WP_Query(['posts_per_page' => 10, 'paged' => $paged, 'post_type' => 'article']);
             ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -35,8 +34,11 @@ get_header();
                     echo 'article--external';
                 }
                 ?>">
-                <a href="<?= ($fields['articleProvenance'] === 'scanned') ? the_permalink() : $fields['articleLink']; ?>" class="articleLink">
-                    <p><?= $fields['articleTitle']; ?></p>
+                <a href="<?= ($fields['articleProvenance'] === 'scanned') ? the_permalink() : $fields['articleLink']; ?>" title="<?php if($fields['articleProvenance'] !== 'scanned') echo __('Visiter le site de l’article', 'mf'); ?>" class="articleLink">
+                    <div class="articleLink--wrapper">
+                        <p class="article__title"><?= $fields['articleTitle']; ?></p>
+                        <span class="article__link"><?= __('Aller consulter cet article', 'mf'); ?></span>
+                    </div>
                 </a>
             </li>
             <?php endwhile; else: ?>
