@@ -24,7 +24,7 @@ $fields = get_fields();
             <?php
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                 $posts = new WP_Query([
-                    'posts_per_page' => 9,
+                    'posts_per_page' => 6,
                     'paged' => $paged,
                     'post_type' => 'project',
 
@@ -36,7 +36,8 @@ $fields = get_fields();
             ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php $projectFields = get_fields(); ?>
-            <article class="projects__project project <?= ($projectFields['projectIsOver']) ? ('project--over') : ('project--inProgress'); ?>">
+            <article class="projects__project project">
+                <span tabindex="0" class="about__project  about__project<?= ($projectFields['projectIsOver']) ? ('--over') : ('--inProgress'); ?>"><?= ($projectFields['projectIsOver']) ? ('Projet terminé') : ('Projet en cours'); ?></span>
                 <h2 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($projectFields['projectName']), false, 65); ?></h2>
                 <div class="project__img--wrapper">
                     <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
