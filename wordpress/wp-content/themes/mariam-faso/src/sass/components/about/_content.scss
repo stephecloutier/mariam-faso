@@ -1,0 +1,27 @@
+.about__article {
+    &:nth-child(2n+1) {
+        background-color: $lightGray;
+    }
+    padding: 5rem 0;
+    font-weight: 500;
+    line-height: 1.5;
+    .article__wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .article__content {
+            max-width: $columns12;
+        }
+        .article__img--wrapper {
+            max-width: $columns12;
+            margin-left: 44px;
+        }
+    }
+    &:nth-child(2n) {
+        .article__img--wrapper {
+            order: -1;
+            margin-right: 44px;
+            margin-left: 0;
+        }
+    }
+}

@@ -31,19 +31,23 @@ get_header();
     <?php if(have_rows('aboutContentRepeater')):
         while(have_rows('aboutContentRepeater')): the_row();
     ?>
-    <div class="about__wrapper">
-        <article class="about__article article">
-            <h2 class="second-title"><?= the_sub_field('aboutContentTitle'); ?></h2>
+    <div class="about__article article">
+        <article class="article__wrapper">
             <div class="article__content">
+                <h2 class="second-title"><?= the_sub_field('aboutContentTitle'); ?></h2>
                 <?= the_sub_field('aboutContentP') ?>
             </div>
             <?php if(get_sub_field('aboutContentImg')): ?>
                 <?php $image = get_sub_field('aboutContentImg'); ?>
-            <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
+            <div class="article__img--wrapper">
+                <img class="article__img" width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
+            </div>
+
             <?php endif; ?>
         </article>
     </div>
     <?php endwhile; endif; ?>
+
 
     <?php get_template_part('parts/help'); ?>
 </main>
