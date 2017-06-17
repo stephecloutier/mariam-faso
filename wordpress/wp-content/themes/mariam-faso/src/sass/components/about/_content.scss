@@ -16,6 +16,7 @@
         .article__img--wrapper {
             max-width: $columns12;
             margin-left: 44px;
+            overflow: hidden;
         }
     }
     &:nth-child(2n) {
