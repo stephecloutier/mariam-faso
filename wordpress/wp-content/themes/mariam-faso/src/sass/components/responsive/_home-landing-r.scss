@@ -1,0 +1,34 @@
+@media screen and (max-width: 700px){
+    .landing {
+        &__title {
+            font-size: $biggestPlus;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .header--home {
+        min-height: 0;
+    }
+    .landing {
+        min-height: 0;
+        height: 50vh;
+        padding: 0 1rem;
+        &__title {
+            font-size: $biggest;
+            margin-top: -50px;
+        }
+        &__button {
+            font-size: $small;
+            min-width: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 300px){
+    .landing {
+        &__title {
+            font-size: $bigger;
+        }
+    }
+}
