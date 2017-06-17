@@ -1,0 +1,34 @@
+@media screen and (max-width: 700px){
+    .main__help {
+        .help__wrapper {
+            padding: 6rem 2rem;
+            .help__links {
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 470px){
+    .main__help {
+        min-height: 0;
+        .help__wrapper {
+            min-height: 0;
+            padding: 2rem 1rem;
+            .help__title {
+                font-size: $biggest;
+            }
+            .help__desc {
+                font-size: $normal;
+            }
+            .help__links {
+                .help__link {
+                    width: 30%;
+                    font-size: $small;
+                    &::before {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
