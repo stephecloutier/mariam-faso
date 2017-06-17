@@ -94,9 +94,7 @@
                     flex-direction: column;
                     align-items: center;
                     // style lorsque le parent du sub container est cliqué
-                    .navigation__item--parent {
-                        background-color: darken($raspberry, 10%);
-                    }
+
                     .navigation__item {
                         width: 100%;
                         &:not(first-child) {
@@ -117,33 +115,40 @@
                                 padding: 0;
                             }
                         }
-                        //&:hover {
 
-                            .navigation__sub-container {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                align-items: stretch;
-                                font-size: 1rem;
-                                line-height: 1;
-                                background-color: $purple;
-                                font-size: $small;
-                                //pour cacher le sous-menu
-                                // @include hidden;
-                                // width: 0;
-                                // height: 0;
-                                // padding: 0;
-                                .navigation__sub-item {
-                                    &:not(:first-child) {
-                                        border-top: 1px solid darken($purple, 15%);
-                                    }
-                                    .navigation__link {
-                                        padding: 1rem 0 1rem 2rem;
+                        &--parent {
+                            &:hover, &:focus {
+                                max-width: none;
+                            }
+                            &.navigation__item--toggled {
+                                background-color: darken($raspberry, 10%);
+                                .navigation__sub-container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: stretch;
+                                    font-size: 1rem;
+                                    line-height: 1;
+                                    background-color: $purple;
+                                    font-size: $small;
+                                    //pour cacher le sous-menu
+                                    // @include hidden;
+                                    // width: 0;
+                                    // height: 0;
+                                    // padding: 0;
+                                    .navigation__sub-item {
+                                        &:not(:first-child) {
+                                            border-top: 1px solid darken($purple, 15%);
+                                        }
+                                        .navigation__link {
+                                            padding: 1rem 0 1rem 2rem;
+                                        }
                                     }
                                 }
-
                             }
-                        //}
+                        }
+
+
                     }
                 }
             }

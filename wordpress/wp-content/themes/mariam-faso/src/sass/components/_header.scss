@@ -124,7 +124,7 @@
             @include link-underline-transition(white, 2px, 5);
         }
     }
-    .navigation__item--parent {
+    .navigation__list .navigation__item--parent {
             &:hover, &:focus {
                 .navigation__sub-container {
                     box-shadow: 0px 4px 0px 0px $lightGray;
