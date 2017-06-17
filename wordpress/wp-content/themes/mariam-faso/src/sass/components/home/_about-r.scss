@@ -1,0 +1,37 @@
+@media screen and (max-width: 950px){
+    .who {
+        .who__wrapper {
+            .who__img {
+                max-width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 715px){
+    .who {
+        .who__wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            .who__text {
+                max-width: 100%;
+            }
+            .who__img {
+                align-self: center;
+                order: -1;
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px){
+    .who {
+        .who__wrapper {
+            .who__text {
+                font-size: $normal;
+            }
+        }
+    }
+}
