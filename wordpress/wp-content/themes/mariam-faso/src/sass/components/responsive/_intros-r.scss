@@ -1,0 +1,11 @@
+@media screen and (max-width: 900px){
+    .main-intro {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .main-intro {
+        font-size: $normalPlus;
+    }
+}
