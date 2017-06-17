@@ -210,9 +210,9 @@
             align-items: flex-start;
             position: relative;
             margin-bottom: 66px;
-        &:not(:nth-child(3n+1)) {
-            margin-left: 66px;
-        }
+            &:not(:nth-child(3n+1)) {
+                margin-left: 66px;
+            }
             &__img--wrapper {
                 border-top-left-radius: 3px;
                 border-top-right-radius: 3px;
