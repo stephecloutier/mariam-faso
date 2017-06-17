@@ -1,0 +1,21 @@
+@media screen and (max-width: 1260px){
+    .learn-more {
+        .learn-more__wrapper {
+            max-width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .learn-more {
+        .learn-more__wrapper {
+            max-width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .learn-more {
+        font-size: $biggest;
+    }
+}
