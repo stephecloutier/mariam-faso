@@ -1,0 +1,47 @@
+@media screen and (max-width: 1100px){
+    .main__projects {
+        .projects__inside-wrapper {
+            width: 100%;
+            justify-content: center;
+
+            .project {
+                &:nth-child(1n) {
+                    margin: 0 33px 2rem 33px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 745px){
+    .main__projects {
+        .projects__inside-wrapper {
+            flex-direction: column;
+            align-items: center;
+            .project {
+                &:nth-child(1n) {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                &:nth-child(1) {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px){
+    .main__projects {
+        .projects__inside-wrapper {
+
+            .project {
+                width: 98%;
+                .project__title {
+                    //font-size: $bigger;
+                }
+            }
+        }
+    }
+}
