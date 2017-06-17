@@ -1,0 +1,21 @@
+@media screen and (max-width: 850px){
+    .quote {
+        .quote__content {
+            max-width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .quote {
+        .quote__content {
+            max-width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .quote {
+        font-size: $normalPlus;
+    }
+}
