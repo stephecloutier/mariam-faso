@@ -1,12 +1,14 @@
-
 let navigationList = document.querySelector(".navigation__list");
 let burgerButton = document.querySelector("#navIconSVG");
 let parentNavItems = document.querySelectorAll(".navigation__item--parent");
 
 const toggleSubMenus = function (oEvent) {
-    oEvent.preventDefault();
-    console.log(oEvent.target.parentNode);
-    oEvent.target.parentNode.classList.toggle("navigation__item--toggled");
+    let width = window.innerWidth || document.body.clientWidth;
+    if(width <= 450) {
+        oEvent.preventDefault();
+        console.log(oEvent.target.parentNode);
+        oEvent.target.parentNode.classList.toggle("navigation__item--toggled");
+    }
 };
 
 burgerButton.addEventListener("click", () => {
