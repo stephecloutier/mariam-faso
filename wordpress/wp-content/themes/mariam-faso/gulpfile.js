@@ -12,7 +12,7 @@ var gulp = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     csso = require("gulp-csso"),
     babel = require("gulp-babel"),
-    sourcemaps = require("gulp-sourcemaps")
+    //sourcemaps = require("gulp-sourcemaps")
 
 // --- Tasks for images
 
@@ -29,11 +29,11 @@ var gulp = require("gulp"),
 
     gulp.task("css", function() {
         gulp.src("src/sass/**/*.scss")
-            .pipe(sourcemaps.init())
+            //.pipe(sourcemaps.init())
                 .pipe(sass().on("error", sass.logError))
                 .pipe(autoprefixer())
-                //.pipe(csso())
-            .pipe(sourcemaps.write())
+                .pipe(csso())
+            //.pipe(sourcemaps.write())
             .pipe(gulp.dest("assets/css"))
    });
 
