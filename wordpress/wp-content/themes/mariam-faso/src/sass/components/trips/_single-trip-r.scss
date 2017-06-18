@@ -1,0 +1,80 @@
+@media screen and (max-width: 1100px) {
+    .trip {
+        padding: 0 2rem;
+        &__articles {
+            margin-right: 2rem;
+        }
+    }
+    .trip__back {
+        max-width: 100%;
+        margin: 1rem 0 3rem 0;
+        padding: 0 2rem;
+    }
+    .trip__more {
+        max-width: 100%;
+        margin: 1rem 0 3rem 0;
+        padding: 0 2rem;
+    }
+    .trip__confessions {
+        max-width: 100%;
+        padding: 0 2rem;
+        .trip__confessions--wrapper {
+            flex-direction: column;
+            align-items: stretch;
+            .trip__confession {
+                width: 700px;
+                margin-bottom: 2rem;
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .trip {
+        flex-direction: column;
+        align-items: flex-start;
+        &__articles {
+            margin-right: 0;
+        }
+        &__infos {
+            order: -1;
+            max-width: 500px;
+            width: 500px;
+            margin: 0 0 2rem 0;
+        }
+    }
+    .trip__confessions {
+        .trip__confessions--wrapper {
+            .trip__confession {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .trip {
+        &__articles {
+            width: 100%;
+        }
+        &__infos {
+            width: 100%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .trip {
+        padding: 0 1rem;
+    }
+    .trip__back {
+        padding: 0 1rem;
+    }
+    .trip__more {
+        padding: 0 1rem;
+    }
+}
