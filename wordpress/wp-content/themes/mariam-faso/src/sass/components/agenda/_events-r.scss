@@ -1,0 +1,31 @@
+@media screen and (max-width: 1100px){
+    .agenda__events {
+        .events__inside-wrapper {
+            width: 100%;
+            justify-content: center;
+            margin: 0 -1%;
+            .event {
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 0;
+                }
+                &:nth-child(1n) {
+                    margin: 0 1% 2rem 1%;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    .agenda__events {
+        .events__inside-wrapper {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            .event {
+                width: 100%;
+            }
+        }
+    }
+}
