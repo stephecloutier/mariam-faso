@@ -36,7 +36,7 @@
 
             </div>
         </footer>
-        <script src="wp-content/themes/mariam-faso/assets/js/script.js"></script>
+        <script src="<?= get_template_directory_uri(); ?>/assets/js/script.js"></script>
     </body>
 </html>
 <!-- <?php //if(is_user_logged_in()) {wp_footer();}; ?> -->

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title(''); ?></title>
-    <link rel="stylesheet" href="wp-content/themes/mariam-faso/assets/css/main.css">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.css">
 </head>
 <body>
     <?php if(is_front_page()): ?>
@@ -13,7 +13,7 @@
             <div class="header__top">
                 <h1 class="header__title">
                     <a href="index.php" class="header__link">
-                        <img src="wp-content/themes/mariam-faso/assets/images/mariamfaso_logo_alt.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
+                        <img src="<?= get_template_directory_uri(); ?>/assets/images/mariamfaso_logo_alt.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
                         --><span class="hidden"><?php bloginfo('name'); ?></span>
                     </a>
                 </h1>
@@ -23,7 +23,7 @@
                 <div class="header__top">
                     <h1 class="header__title">
                         <a href="index.php" class="header__link">
-                            <img src="wp-content/themes/mariam-faso/assets/images/mariamfaso_logo.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
+                            <img src="<?= get_template_directory_uri(); ?>/assets/images/mariamfaso_logo.svg" alt="<?php bloginfo('name') ?>" width="175" height="auto" class="header__logo"><!--
                             --><span class="hidden"><?php bloginfo('name') ?></span>
                         </a>
                     </h1>
