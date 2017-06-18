@@ -9,6 +9,14 @@
         margin: 1rem auto 3rem auto;
         @include link-with-left-arrow($purple);
     }
+    .event__imgs-title {
+        font-family: "Rubik", Helvetica, arial, sans-serif;
+        display: block;
+        color: $purple;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
     .infos__wrapper {
         margin-top: 2rem;
         &::after {
@@ -70,6 +78,24 @@
                 .map__img {
                     width: 100%;
                     height: auto;
+                }
+            }
+        }
+        .event__imgs {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            .event__img--wrapper {
+                height: $columns7p;
+                width: $columns7p;
+                overflow: hidden;
+                margin-bottom: 66px;
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 66px;
+                }
+                .event__img {
+                    width: auto;
+                    height: $columns7p;
                 }
             }
         }

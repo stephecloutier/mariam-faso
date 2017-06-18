@@ -98,21 +98,20 @@ if($fields['eventTimeStart']) {
                 </div>
             </div>
             <?php endif; ?>
-        </div>
-        <?php
-            if($fields['eventOtherImgs']):
-                $images = $fields['eventOtherImgs'];
-        ?>
-        <div class="event__imgs">
+            <?php
+                if($fields['eventOtherImgs']):
+                    $images = $fields['eventOtherImgs'];
+            ?>
             <span class="event__imgs-title"><?= __('Photos des éditions précédentes', 'mf'); ?></span>
-            <?php foreach($images as $image): ?>
-            <div class="event__img--wrapper">
-                <img width="300" heigth="auto" class="event__img" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+            <div class="event__imgs">
+                <?php foreach($images as $image): ?>
+                <div class="event__img--wrapper">
+                    <img width="300" heigth="auto" class="event__img" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                </div>
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
-
         <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="event__back back__link" title="<?= __('Aller sur la page Agenda', 'mf'); ?>"><?= __('Retourner à l’agenda', 'mf'); ?></a>
     </div>
 
