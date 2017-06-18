@@ -21,8 +21,8 @@
         .header__top {
             justify-content: flex-start;
             font-size: $small;
-            .header__logo {
-                width: 120px;
+            .logo_svg {
+                max-width: 120px;
             }
             .navigation {
                 min-height: 40px;
@@ -50,7 +50,7 @@
             align-items: center;
             font-size: $small;
             width: 100%;
-            .header__logo {
+            .logo_svg {
                 margin-bottom: 1rem;
             }
             .navigation {
