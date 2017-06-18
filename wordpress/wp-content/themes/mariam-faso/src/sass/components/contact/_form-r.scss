@@ -1,0 +1,29 @@
+@media screen and (max-width: 400px){
+    .contact__form {
+        padding: 2rem 0 3rem 0;
+        .form__wrapper {
+            .form__content {
+                padding: 2rem 1.5rem;
+                .form {
+                    &__button {
+                        min-width: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px){
+    .contact__form {
+        .form__wrapper {
+            .form__content {
+                .form {
+                    &__button {
+                        font-size: $small;
+                    }
+                }
+            }
+        }
+    }
+}
