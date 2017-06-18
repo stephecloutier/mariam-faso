@@ -21,6 +21,14 @@
             flex-grow: 2;
             svg[id="navIconSVG"] {
                 display: none;
+                fill: $raspberry;
+            }
+        }
+    }
+    &.header--home {
+        .navigation {
+            svg[id="navIconSVG"] {
+                fill: white;
             }
         }
     }
