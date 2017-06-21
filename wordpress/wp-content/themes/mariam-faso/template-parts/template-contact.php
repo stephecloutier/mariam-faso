@@ -94,24 +94,10 @@ get_header();
             <h2 class="form__title second-title"><?= __('Formulaire de contact', 'mf'); ?></h2>
             <div class="form__content">
                 <p class="form__mendatoryfields"><?= __('Les champs munis d’un * sont obligatoires', 'mf') ?></p>
-                <form action="#" method="post" class="form">
-                    <label for="formName" class="form__label form__label--required"><?= __('Nom et prénom', 'mf'); ?></label>
-                    <input required="required" type="text" name="sender-name" id="formName" class="form__input form__input--text" placeholder="Jean Valjean"></input>
-
-                    <label for="formMail" class="form__label form__label--required"><?= __('Adresse mail', 'mf'); ?></label>
-                    <input required="required" type="email" name="mail" id="formMail" class="form__input form__input--mail" placeholder="jeanvaljean@mail.be"></input>
-
-                    <label for="formSubject" class="form__label"><?= __('Sujet', 'mf'); ?></label>
-                    <input type="text" name="subject" id="formSubject" class="form__input form__input--text"></input>
-
-                    <label for="formMessage" class="form__label form__label--required"><?= __('Message', 'mf'); ?></label>
-                    <textarea rows="8" required="required" name="message" id="formMessage" class="form__input form__input--textarea"></textarea>
-
-                    <button class="form__button" type="submit"><?= __('Envoyer', 'mf'); ?></button>
-                </form>
+                <?= do_shortcode('[contact-form-7 id="225" title="Formulaire de contact"]'); ?>
             </div>
         </div>
-    </section>
+
 </main>
 
 <?php get_footer(); ?>

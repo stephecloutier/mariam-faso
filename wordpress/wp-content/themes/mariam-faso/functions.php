@@ -25,6 +25,14 @@ add_filter('wp_pagenavi_class_current', 'theme_pagination_class');
 register_nav_menu('main', 'La navigation principale du site.');
 add_theme_support('post-thumbnails');
 
+
+// form
+
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    return $content;
+});
+
 // load_theme_textdomain()
 
 /*

@@ -14,7 +14,7 @@
             max-width: $columns19p;
             border-radius: 3px;
             box-shadow: inset 0 -4px darken($lightGray, 15%);
-            padding: 2rem $column-width;
+            padding: 2rem $column-width 0 $column-width;
 
             .form__mendatoryfields {
                 color: $raspberry;
@@ -22,10 +22,10 @@
                 margin-bottom: 1rem;
             }
 
-            .form {
+            .wpcf7-form {
                 display: flex;
                 flex-direction: column;
-                &__label {
+                .form__label {
                     text-transform: uppercase;
                     color: $raspberry;
                     margin-bottom: 0.5rem;
@@ -34,7 +34,7 @@
                         margin-left: 0.5em;
                     }
                 }
-                &__input {
+                .form__input {
                     font-family: "Open Sans", Helvetica, arial, sans-serif;
                     margin-bottom: 1.5rem;
                     border-radius: 3px;
@@ -46,14 +46,32 @@
                         padding: 1em;
                     }
                 }
-                &__button {
+                .form__button {
                     align-self: flex-end;
                     @include button-base(white, white);
                     @include button-colored($raspberry, 10%);
                     border: none;
                     cursor: pointer;
+                    margin-top: 1rem;
                 }
             }
         }
+    }
+    .wpcf7-response-output {
+        padding: 2rem 0;
+        &.wpcf7-mail-sent-ng {
+            color: red;
+        }
+        &.wpcf7-validation-errors {
+            color: red;
+        }
+    }
+    .screen-reader-response {
+        @include hidden;
+    }
+    .wpcf7-not-valid-tip {
+        margin-top: -1.5rem;
+        color: red;
+        margin-bottom: 1.5rem;
     }
 }
