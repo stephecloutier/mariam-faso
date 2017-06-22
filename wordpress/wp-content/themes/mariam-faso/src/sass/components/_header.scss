@@ -33,7 +33,7 @@
         }
     }
     .logo_svg {
-        max-width: 175px;
+        width: 175px;
     }
 }
 
@@ -157,5 +157,22 @@
                     }
                 }
             }
+    }
+}
+
+.logo_svg {
+    .st0 {
+        fill: $raspberry;
+    }
+    .st1 {
+        fill: $orange;
+    }
+    &--home {
+        .st0 {
+            fill: white;
+        }
+        .st1 {
+            fill: $yellow;
+        }
     }
 }
