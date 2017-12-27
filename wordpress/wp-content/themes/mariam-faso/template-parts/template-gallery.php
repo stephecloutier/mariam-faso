@@ -23,7 +23,9 @@ $fields = get_fields();
         <?php $images = $fields['galleryImgs']; ?>
         <?php foreach($images as $image): ?>
         <figure tabindex="0" class="gallery__figure">
-            <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="gallery__img">
+            <a href="<?= $image['url']; ?>" data-lightbox="gallery" data-title="<?= mf_get_image_alt($image); ?>">
+                <img width="300" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="gallery__img">
+            </a>
             <?php if($image['description']): ?>
             <figcaption class="gallery__figcaption">
                 <?= $image['description']; ?>
