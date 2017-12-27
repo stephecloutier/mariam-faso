@@ -66,7 +66,7 @@
                 <div class="landing__title">
                     <?= get_field('landingCatchPhrase'); ?>
                 </div>
-                <a href="<?= mf_get_page_url('template-help.php'); ?>" class="landing__button"><?= __('Faire un don', 'mf'); ?></a>
+                <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="landing__button"><?= __('Voir nos projets', 'mf'); ?></a>
             </div>
             <?php endif; ?>
         </div>

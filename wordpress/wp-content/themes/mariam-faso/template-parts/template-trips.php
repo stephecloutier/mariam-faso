@@ -91,7 +91,7 @@ $previousTrip = false;
                             $endDate = new DateTime($tripFields['tripEndDate']);
                         }
                         if($tripFields['tripStartDate'] <= $currentDate):
-                            $nextTrip = true;
+                            $previousTrip = true;
                 ?>
                 <article class="trips__trip trip">
                     <h3 class="trip__title<?php if(!$tripFields['tripImg']) echo ' trip__title--bigger'; ?>"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
