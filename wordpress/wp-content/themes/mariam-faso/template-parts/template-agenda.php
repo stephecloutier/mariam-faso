@@ -22,8 +22,10 @@ get_header();
     foreach($posts->posts as $post) {
         $event = get_fields($post->ID);
         if($event['eventDate'] >= $currentDate) {
+            $event['link'] = get_permalink($post->ID);
             $nextEventsFields[] = $event;
         } else {
+            $event['link'] = get_permalink($post->ID);
             $previousEventsFields[] = $event;
         }
     }
@@ -65,7 +67,7 @@ get_header();
                     <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
                     <div class="event__content--wrapper">
                         <p class="event__desc<?php if(!$nextEvent['eventImg']) echo ' event__desc--down'; ?>"><?= $nextEvent['eventShortDesc'] ?></p>
-                        <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($nextEvent['eventName']); ?></span></a>
+                        <a href="<?= $nextEvent['link']; ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($nextEvent['eventName']); ?></span></a>
                     </div>
                 </article>
             <?php endforeach; else: ?>
@@ -95,7 +97,7 @@ get_header();
 
                     <div class="event__content--wrapper">
                         <p class="event__desc<?php if(!$previousEvent['eventImg']) echo ' event__desc--down'; ?>"><?= $previousEvent['eventShortDesc'] ?></p>
-                        <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></a>
+                        <a href="<?= $previousEvent['link']; ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></a>
                     </div>
                 </article>
             <?php endforeach; else: ?>
