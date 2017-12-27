@@ -43,7 +43,7 @@ $fields = get_fields();
                     <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
                     <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg">
                     <?php else: ?>
-                    <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
+                    <img class="project__img" width="200" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                     <?php endif; ?>
                 </div>
                 <div class="project__content--wrapper">
