@@ -42,6 +42,10 @@
             height: 0.07em;
         }
     }
+    ul, ol {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
 }
 
 @mixin max-width-centered {
