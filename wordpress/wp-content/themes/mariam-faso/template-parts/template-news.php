@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Template Name: Actualités
+    Template Name: Actualité
 */
 
 get_header();
@@ -11,7 +11,7 @@ get_header();
     <?php mf_display_breadcrumb(); ?>
     </ul>
     <div class="introduction__wrapper">
-        <h1 class="news__title main-title"><?= __('Toutes les actualités', 'mf'); ?></h1>
+        <h1 class="news__title main-title"><?= __('Toute l\'actualité', 'mf'); ?></h1>
         <div class="main-intro news__intro">
             <?= get_field('allNewsIntro'); ?>
         </div>
@@ -43,7 +43,7 @@ get_header();
             </div>
         </article>
         <?php endwhile; else: ?>
-        <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualités à afficher pour le moment.', 'mf'); ?></p>
+        <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualité à afficher pour le moment.', 'mf'); ?></p>
         <?php endif; ?>
     </div>
 

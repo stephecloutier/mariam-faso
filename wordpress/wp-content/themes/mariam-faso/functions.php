@@ -77,12 +77,12 @@ function mf_register_types() {
     ]);
 
     register_post_type('news', [
-        'label' => 'Actualités',
+        'label' => 'Actualité',
         'labels' => [
             'singular_name' => 'actualité',
             'add_new_item' => 'Ajouter une nouvelle actualité'
         ],
-        'description' => 'Permet d’administrer les actualités affichées sur le site',
+        'description' => 'Permet d’administrer l\'actualité du site',
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-pressthis'

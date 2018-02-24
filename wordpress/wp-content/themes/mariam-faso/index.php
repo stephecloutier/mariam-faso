@@ -88,7 +88,7 @@ get_header();
 
         <section class="main__news news">
             <div class="news__wrapper">
-                <h2 class="news__title second-title"><?= __('Actualités', 'mf'); ?></h2>
+                <h2 class="news__title second-title"><?= __('Actualité', 'mf'); ?></h2>
                 <div class="news__wrapper">
                     <?php $posts = new WP_Query(['showposts' => 3, 'post_type' => 'news']); ?>
                     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -113,10 +113,10 @@ get_header();
                         </div>
                     </article>
                     <?php endwhile; else: ?>
-                    <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualités à afficher pour le moment.', 'mf'); ?></p>
+                    <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualité à afficher pour le moment.', 'mf'); ?></p>
                     <?php endif; ?>
                 </div>
-                <a href="<?= mf_get_page_url('template-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualités', 'mf'); ?></a>
+                <a href="<?= mf_get_page_url('template-news.php'); ?>" class="news__link"><?= __('Voir plus d’actualité', 'mf'); ?></a>
             </div>
         </section>
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Template Name: Actualités (individuelle)
+    Template Name: Actualité (individuelle)
 */
 
 get_header();
@@ -30,7 +30,7 @@ $fields = get_fields();
             </div>
         </div>
         <div class="single-news__links">
-            <a href="<?= mf_get_page_url('template-news.php') ?>" class="back__link news__back news__back--news" title="<?= __('Retourner sur la page des actualités', 'mf'); ?>"><?= __('Retourner à la page des actualités', 'mf'); ?></a>
+            <a href="<?= mf_get_page_url('template-news.php') ?>" class="back__link news__back news__back--news" title="<?= __('Retourner sur la page d\'actualité', 'mf'); ?>"><?= __('Retourner à la page d\'actualité', 'mf'); ?></a>
         </div>
     </div>
 
