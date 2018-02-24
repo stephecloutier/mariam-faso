@@ -85,6 +85,11 @@
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
+            &-title {
+                content: "";
+                display: block;
+                clear: both;
+            }
             .event__img--wrapper {
                 height: $columns7p;
                 width: $columns7p;

@@ -26,7 +26,6 @@ if($fields['eventTimeStart']) {
                 <div class="event__intro single-landing__intro">
                     <?= $fields['eventDesc']; ?>
                 </div>
-                <!-- <a href="" class="event__button single-landing__button"></a> -->
                 <?php if($fields['eventImg']): ?>
                 <style>
                     .event__landing {
