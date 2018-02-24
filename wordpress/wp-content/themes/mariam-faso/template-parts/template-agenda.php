@@ -4,39 +4,42 @@
     Template Name: Agenda
 */
 get_header();
-?>
-<?php
-    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-    $posts = new WP_Query([
-                    'post_type' => 'event',
-                    'posts_per_page' => -1,
-                ]);
+$fields = get_fields();
+
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$posts = new WP_Query([
+                'post_type' => 'event',
+                'posts_per_page' => -1,
+            ]);
 
 
-    $fields = get_fields();
-    $currentDate = date('Y-m-d');
+$fields = get_fields();
+$currentDate = date('Y-m-d');
 
-    // to access fields of post type event, I store them in previous or next event array, then I order them.
-    $previousEventsFields = [];
-    $nextEventsFields = [];
-    foreach($posts->posts as $post) {
-        $event = get_fields($post->ID);
-        if($event['eventDate'] >= $currentDate) {
-            $event['link'] = get_permalink($post->ID);
-            $nextEventsFields[] = $event;
-        } else {
-            $event['link'] = get_permalink($post->ID);
-            $previousEventsFields[] = $event;
-        }
+// to access fields of post type event, I store them in previous or next event array, then I order them.
+$previousEventsFields = [];
+$nextEventsFields = [];
+foreach($posts->posts as $post) {
+    $event = get_fields($post->ID);
+    if($event['eventDate'] >= $currentDate) {
+        $event['link'] = get_permalink($post->ID);
+        $nextEventsFields[] = $event;
+    } else {
+        $event['link'] = get_permalink($post->ID);
+        $previousEventsFields[] = $event;
     }
-    usort($previousEventsFields, function($a, $b) {
-        return $b['eventDate'] <=> $a['eventDate'];
-    });
-    usort($nextEventsFields, function($a, $b) {
-        return $a['eventDate'] <=> $b['eventDate'];
-    });
+}
+usort($previousEventsFields, function($a, $b) {
+    return $b['eventDate'] <=> $a['eventDate'];
+});
+usort($nextEventsFields, function($a, $b) {
+    return $a['eventDate'] <=> $b['eventDate'];
+});
+
+wp_reset_query();
 
 ?>
+
 <main class="main">
     <ul class="breadcrumb">
     <?php mf_display_breadcrumb(); ?>
