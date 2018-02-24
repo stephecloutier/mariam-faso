@@ -17,7 +17,13 @@ get_header();
         <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
     </div>
 
-    <blockquote class="about__quote quote">
+    <blockquote 
+        class="about__quote quote"
+        <?php if($fields['aboutQuoteImg']): ?>
+        style="background-image: url('<?= $fields['aboutQuoteImg']['url']; ?>')"
+        <?php endif; ?>
+
+    >
         <div class="quote__wrapper">
             <div class="quote__content">
                 <?= $fields['aboutQuote']; ?>
