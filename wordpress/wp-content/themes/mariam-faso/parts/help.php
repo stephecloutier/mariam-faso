@@ -13,7 +13,6 @@
                 data-mobile-iframe="true">
                 <a 
                     class="fb-xfbml-parse-ignore help__link help__link--share" 
-                    id="perso-fb"
                     target="_blank"
                     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FMariamFaso%2F&amp;src=sdkpreparse">
                     <?= __('Partager notre site web', 'mf'); ?>
