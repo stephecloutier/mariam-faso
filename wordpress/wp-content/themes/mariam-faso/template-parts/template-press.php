@@ -34,9 +34,9 @@ get_header();
                     echo 'article--external';
                 }
                 ?>">
-                <a href="<?= ($fields['articleProvenance'] === 'scanned') ? the_permalink() : $fields['articleLink']; ?>" title="<?php if($fields['articleProvenance'] !== 'scanned') echo __('Visiter le site de l’article', 'mf'); ?>" class="articleLink">
+                <a <?php if($fields['articleProvenance'] !== 'scanned') echo 'target="_blank"'; ?> href="<?= ($fields['articleProvenance'] === 'scanned') ? the_permalink() : $fields['articleLink']; ?>" title="<?php if($fields['articleProvenance'] !== 'scanned') echo __('Visiter le site de l’article', 'mf'); ?>" class="articleLink">
                     <div class="articleLink--wrapper">
-                        <p class="article__title"><?= $fields['articleTitle']; ?></p>
+                        <p class="article__title"><?= get_the_title(); ?></p>
                         <span class="article__link"><?= __('Aller consulter cet article', 'mf'); ?></span>
                     </div>
                 </a>
