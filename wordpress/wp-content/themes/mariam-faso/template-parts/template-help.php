@@ -15,7 +15,7 @@ $fields = get_fields();
         <div class="main-intro help__intro">
             <?= $fields['help-usIntro']; ?>
         </div>
-        <a href="https://www.kbs-frb.be/en/Flows/Gift/Checkout?notice=L82338%20-%20Bastogne%20-%20Mariam%20Faso%20%28Burkina%20Faso%29&title=ASBL%20Mariam%20Faso%20%28Burkina%20Faso%29" class="help__button help__button--important" title="<?= __('Aller sur le site de la fondation Roi Beaudoin pour faire un don', 'mf'); ?>"><?= __('Faire un don', 'mf'); ?></a>
+        <a href="<?= $fields['help-usDonationLink']; ?>" class="help__button help__button--important" title="<?= __('Aller sur un site externe pour faire un don à l\'asbl Mariam Faso', 'mf'); ?>"><?= __('Faire un don', 'mf'); ?></a>
     </div>
 
     <div class="help__faq faq__wrapper">
