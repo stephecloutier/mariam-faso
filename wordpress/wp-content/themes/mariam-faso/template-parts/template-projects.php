@@ -42,7 +42,7 @@ $fields = get_fields();
                     <h2 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($projectFields['projectName']), false, 65); ?></h2>
                     <div class="project__img--wrapper">
                         <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
-                        <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg">
+                        <img width="500" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg">
                         <?php else: ?>
                         <img class="project__img" width="200" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                         <?php endif; ?>

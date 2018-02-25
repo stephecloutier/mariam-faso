@@ -58,7 +58,7 @@ $previousTrip = false;
                             $image = $tripFields['tripImg'];
                         ?>
                         <div class="trip__img--wrapper">
-                            <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img">
+                            <img width="600" height="auto" src="<?= $image['sizes']['medium_large']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img">
                         </div>
                         <?php endif; ?>
                         <time class="trip__time" datetime="<?= $startDate->format('c'); ?>">
@@ -100,7 +100,7 @@ $previousTrip = false;
                         <h3 class="trip__title<?php if(!$tripFields['tripImg']) echo ' trip__title--bigger'; ?>"><?= mf_remove_p_tags($tripFields['tripName']); ?></h3>
                         <?php if($tripFields['tripImg']): $image = $tripFields['tripImg']; ?>
                         <div class="trip__img--wrapper">
-                            <img width="600" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img<?php if($tripFields['tripIsBig']) echo ' tripImg--big'; ?>">
+                            <img width="600" height="auto" src="<?= $image['sizes']['medium_large']; ?>" alt="<?= mf_get_image_alt('tripImg'); ?>" class="trip__img<?php if($tripFields['tripIsBig']) echo ' tripImg--big'; ?>">
                         </div>
                         <?php endif; ?>
                         <time class="trip__time" datetime="<?= $startDate->format('c'); ?>">

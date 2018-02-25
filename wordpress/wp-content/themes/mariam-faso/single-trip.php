@@ -46,7 +46,7 @@ $date = new DateTime($fields['tripStartDate']);
                                 $image = get_sub_field('tripContentImg');
                         ?>
                         <div class="trip__img--wrapper">
-                            <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="trip__img">
+                            <img width="400" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="trip__img">
                         </div>
                         <?php endif; ?>
                     </article>

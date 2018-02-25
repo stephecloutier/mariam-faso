@@ -6,12 +6,17 @@
 
 // Image compression
     // original images
-add_filter( 'wp_generate_attachment_metadata', mf_compress_image, 10, 2 );
-
+//add_filter( 'wp_generate_attachment_metadata', mf_compress_image, 10, 2 );
 
 add_action('init', 'mf_register_types');
 add_action( 'publish_event', 'mf_create_event_page' );
 add_filter('wp_title', 'custom_wp_title');
+
+// image thumbnails \\
+if (function_exists('add_theme_support')) {
+    add_theme_support('post-thumbnails');
+    add_image_size('500', 500, auto);
+}
 
 // ACF
 add_action('acf/init', 'my_acf_init');
@@ -33,7 +38,7 @@ add_filter('wpcf7_form_elements', function($content) {
     return $content;
 });
 
-// load_theme_textdomain()
+
 
 /*
 * Register custom post types during initialization

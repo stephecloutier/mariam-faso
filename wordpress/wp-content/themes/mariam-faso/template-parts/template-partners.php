@@ -23,7 +23,7 @@ get_header();
             <a class="partner__link" href="<?= the_sub_field('partnerLink'); ?>" title="<?= str_replace(':partnerName', the_sub_field('partnerName'), __('Visiter le site web de notre partenaire :partnerName', 'mf')); ?>">
             <?php if(get_sub_field('partnerLogo')): ?>
             <?php $logo = get_sub_field('partnerLogo'); ?>
-            <img class="partner__img" width="200" height="auto" src="<?= $logo['url']; ?>" alt="<?= mf_get_image_alt('partnerLogo'); ?>">
+            <img class="partner__img" width="200" height="auto" src="<?= $logo['sizes']['500']; ?>" alt="<?= mf_get_image_alt('partnerLogo'); ?>">
             <span class="hidden"><?= the_sub_field('partnerName'); ?></span>
             <?php else: ?>
             <span class="partner__name"><?= the_sub_field('partnerName'); ?></span>
@@ -32,7 +32,7 @@ get_header();
         <?php else: ?>
             <?php if(get_sub_field('partnerLogo')): ?>
             <?php $logo = get_sub_field('partnerLogo'); ?>
-            <img width="200" height="auto" src="<?= $logo['url']; ?>" alt="<?= mf_get_image_alt('partnerLogo'); ?>">
+            <img width="200" height="auto" src="<?= $logo['sizes']['500']; ?>" alt="<?= mf_get_image_alt('partnerLogo'); ?>">
             <span class="hidden"><?= the_sub_field('partnerName'); ?></span>
             <?php else: ?>
             <span class="partner__name"><?= the_sub_field('partnerName'); ?></span>

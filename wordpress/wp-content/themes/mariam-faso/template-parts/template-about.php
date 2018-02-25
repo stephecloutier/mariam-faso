@@ -46,7 +46,7 @@ get_header();
             <?php if(get_sub_field('aboutContentImg')): ?>
                 <?php $image = get_sub_field('aboutContentImg'); ?>
             <div class="article__img--wrapper">
-                <img class="article__img" width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
+                <img class="article__img" width="500" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
             </div>
 
             <?php endif; ?>

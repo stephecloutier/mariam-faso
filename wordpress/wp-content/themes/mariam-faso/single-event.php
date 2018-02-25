@@ -106,7 +106,7 @@ if($fields['eventTimeStart']) {
                 <?php foreach($images as $image): ?>
                 <div class="event__img--wrapper">
                     <a href="<?= $image['url']; ?>" data-lightbox="event" data-title="<?= mf_get_image_alt($image); ?>">
-                        <img width="300" heigth="auto" class="event__img" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                        <img width="300" heigth="auto" class="event__img" src="<?= $image['sizes']['medium']; ?>" alt="<?= mf_get_image_alt($image); ?>">
                     </a>
                 </div>
                 <?php endforeach; ?>

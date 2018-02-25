@@ -15,7 +15,7 @@ get_header();
                     <a href="<?= mf_get_page_url('template-about.php'); ?>" class="who__button"><?= __('En savoir plus', 'mf'); ?><span class="hidden"> <?= __('sur Mariam Faso', 'mf'); ?></span></a>
                 </div>
                 <?php if(get_field('homePresentationImg')): ?>
-                <img class="who__img" width="500" height="auto" src="<?= get_field('homePresentationImg')['url']; ?>" alt="<?= mf_get_image_alt('homePresentationImg'); ?>">
+                <img class="who__img" width="500" height="auto" src="<?= get_field('homePresentationImg')['sizes']['500']; ?>" alt="<?= mf_get_image_alt('homePresentationImg'); ?>">
                 <?php endif; ?>
 
             </div>
@@ -36,7 +36,7 @@ get_header();
                             <h3 class="event__title<?php if(!$fields['eventImg']) echo " event__title--bigger"; ?>"><?= $fields['eventName'] ?></h3>
                             <?php if($fields['eventImg']): ?>
                             <div class="event__img--wrapper">
-                                    <img class="event__img" width="500" height="auto" src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                                    <img class="event__img" width="500" height="auto" src="<?= $fields['eventImg']['sizes']['500']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
                             </div>
                             <?php endif; ?>
                             <?php
@@ -71,7 +71,7 @@ get_header();
                             <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($fields['projectName']), false, 65); ?></h3>
                             <div class="project__img--wrapper">
                             <?php if($fields['projectImg']): ?>
-                                <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
+                                <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['sizes']['medium']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
                             <?php else: ?>
                                 <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>" >
                             <?php endif; ?>
@@ -111,7 +111,7 @@ get_header();
                         </div>
                         <div class="article__img--wrapper">
                         <?php if($fields['newsImg']): ?>
-                            <img width="500" height="auto" src="<?= $fields['newsImg']['url']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
+                            <img width="500" height="auto" src="<?= $fields['newsImg']['sizes']['500']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
                         <?php else: ?>
                             <img class="article__img" width="500" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                         <?php endif; ?>

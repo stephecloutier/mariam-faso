@@ -23,7 +23,7 @@ $fields = get_fields();
                 if($fields['newsImg']):
                     $image = $fields['newsImg'];
             ?>
-            <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="single-news__img">
+            <img width="500" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="single-news__img">
             <?php endif; ?>
             <div class="single-news__content--textual">
                 <?= $fields['newsContent']; ?>

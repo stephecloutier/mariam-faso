@@ -44,7 +44,7 @@ $fields = get_fields();
                             $image = get_sub_field('projectContentImg');
                     ?>
                     <div class="project__img--wrapper">
-                        <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
+                        <img width="400" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
                     </div>
                     <?php endif; ?>
                 </article>
@@ -79,7 +79,7 @@ $fields = get_fields();
                 <?php foreach($images as $image): ?>
                 <div class="project__img--wrapper">
                     <a href="<?= $image['url']; ?>" data-lightbox="project" data-title="<?= mf_get_image_alt($image); ?>">
-                        <img width="300" heigth="auto" class="project__img" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                        <img width="300" heigth="auto" class="project__img" src="<?= $image['sizes']['medium']; ?>" alt="<?= mf_get_image_alt($image); ?>">
                     </a>
                 </div>
                 <?php endforeach; ?>
