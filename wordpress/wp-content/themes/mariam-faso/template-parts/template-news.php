@@ -37,7 +37,7 @@ get_header();
             </div>
             <div class="article__img--wrapper">
                 <?php if($fields['newsImg']): ?>
-                <img width="200" height="auto" src="<?= $fields['newsImg']['sizes']['medium']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
+                <img width="500" height="auto" src="<?= $fields['newsImg']['sizes']['500']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
                 <?php else: ?>
                 <img class="article__img" width="500" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                 <?php endif; ?>
