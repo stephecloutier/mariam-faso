@@ -71,9 +71,13 @@ if($fields['eventTimeStart']) {
             </div>
 
             <?php if($fields['eventMap']): ?>
-            <div class="info__single event__map map__wrapper">
+            <a 
+                class="info__single event__map map__wrapper" 
+                title="<?= __('Aller sur google maps', 'mf'); ?>"
+                target="blank"
+                href="https://www.google.com/maps/search/?api=1&amp;query=<?= $fields['eventMap']['lat'] . ',' . $fields['eventMap']['lng'] ?>">
                 <img class="map__img" src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
-            </div>
+            </a>
             <?php endif; ?>
 
             <?php if(have_rows('eventFieldsRepeater')):
@@ -106,7 +110,7 @@ if($fields['eventTimeStart']) {
                 <?php foreach($images as $image): ?>
                 <div class="event__img--wrapper">
                     <a href="<?= $image['url']; ?>" data-lightbox="event" data-title="<?= mf_get_image_alt($image); ?>">
-                        <img width="300" heigth="auto" class="event__img" src="<?= $image['sizes']['medium']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                        <img width="400" heigth="auto" class="event__img" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>">
                     </a>
                 </div>
                 <?php endforeach; ?>

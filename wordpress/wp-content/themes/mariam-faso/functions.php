@@ -341,7 +341,7 @@ function my_acf_init() {
 */
 
 function mf_get_static_google_map($lat, $lng, $zoom = 15, $maptype = 'roadmap', $width = 600, $height = 400) {
-    return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
+    return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&markers='  .  $lat . ',' . $lng .  '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
 }
 
 /*
