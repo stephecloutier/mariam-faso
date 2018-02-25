@@ -38,6 +38,8 @@ add_filter('wpcf7_form_elements', function($content) {
     return $content;
 });
 
+// external links in wysiwyg
+add_filter('acf_the_content', 'mf_add_target_blank');
 
 
 /*
@@ -361,6 +363,14 @@ function mf_remove_all_tags($field) {
     $newString = str_replace(['<p>', '</p>'], ' ', $field);
     $newString = preg_replace('/<.*?>/', '', $newString);
     return trim($newString);
+}
+
+/*
+ * Function to add target="_blank" to external links of acf content
+*/
+function mf_add_target_blank($content) {
+    $newContent = str_replace('<a', '<a target="_blank"', $content);
+    return $newContent;
 }
 
 
