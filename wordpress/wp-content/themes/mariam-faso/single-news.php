@@ -15,7 +15,7 @@ $fields = get_fields();
     <div class="news__wrapper single-news">
         <div class="single-news__heading">
             <time class="single-news__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
-            <h1 class="single-news__title second-title"><?= $fields['newsTitle']; ?></h1>
+            <h1 class="single-news__title second-title"><?= get_the_title(); ?></h1>
         </div>
 
         <div class="single-news__content">

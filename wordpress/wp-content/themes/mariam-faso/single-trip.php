@@ -14,7 +14,7 @@ $date = new DateTime($fields['tripStartDate']);
             <?php mf_display_breadcrumb(); ?>
             </ul>
             <div class="single-landing__content">
-                <h1 class="single-landing__title trip__title"><?= mf_remove_p_tags($fields['tripName']); ?></h1>
+                <h1 class="single-landing__title trip__title"><?= mf_remove_p_tags(get_the_title()); ?></h1>
                 <time class="single-landing__subtitle trip__subtitle" datetime="<?= $date->format('c'); ?>"><?= strftime("%B %Y", $date->getTimestamp()); ?></time>
                 <p class="single-landing__intro trip__intro"><?= $fields['tripDesc'] ?></p>
                 <?php if($fields['tripImg']): ?>

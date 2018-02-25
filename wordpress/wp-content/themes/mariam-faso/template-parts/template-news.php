@@ -26,14 +26,14 @@ get_header();
         <article class="news__article article">
             <div class="news__content">
                 <div class="news__heading">
-                    <h2 class="article__title second-title"><?= $fields['newsTitle']; ?></h2>
+                    <h2 class="article__title second-title"><?= get_the_title(); ?></h2>
                     <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
                 </div>
                 <div class="article__content">
                     <?php $content = get_field('newsContent'); ?>
                     <?= mf_get_the_excerpt(mf_remove_all_tags($content), false, 300); ?>
                 </div>
-                <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags($fields['newsTitle']); ?></span></a>
+                <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags(get_the_title()); ?></span></a>
             </div>
             <div class="article__img--wrapper">
                 <?php if($fields['newsImg']): ?>

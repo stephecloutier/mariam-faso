@@ -10,7 +10,7 @@ get_header();
     <?php mf_display_breadcrumb(); ?>
     </ul>
     <div class="introduction__wrapper">
-        <h1 class="pressArticle__title second-title"><?= $fields['articleTitle']; ?></h1>
+        <h1 class="pressArticle__title second-title"><?= get_the_title(); ?></h1>
         <?php if($fields['articleIntroduction']): ?>
             <div class="pressArticle__intro main-intro">
                 <?= $fields['articleIntroduction']; ?>

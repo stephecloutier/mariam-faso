@@ -13,7 +13,7 @@ $fields = get_fields();
             <?php mf_display_breadcrumb(); ?>
             </ul>
             <div class="single-landing__content">
-                <h1 class="single-landing__title project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h1>
+                <h1 class="single-landing__title project__title"><?= mf_remove_p_tags(get_the_title()); ?></h1>
                 <p class="single-landing__intro project__intro"><?= $fields['projectDesc']; ?></p>
                 <?php if($fields['projectImg']): ?>
                 <style>

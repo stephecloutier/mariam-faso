@@ -33,7 +33,7 @@ get_header();
                     <?php $fields = get_fields(); ?>
                     <a class="event__link-wrapper" href="<?php the_permalink(); ?>" title="<?= __('Aller sur la page individuelle de l\'évènement', 'mf'); ?>">
                         <article class="events__event event">
-                            <h3 class="event__title<?php if(!$fields['eventImg']) echo " event__title--bigger"; ?>"><?= $fields['eventName'] ?></h3>
+                            <h3 class="event__title<?php if(!$fields['eventImg']) echo " event__title--bigger"; ?>"><?= get_the_title(); ?></h3>
                             <?php if($fields['eventImg']): ?>
                             <div class="event__img--wrapper">
                                     <img class="event__img" width="500" height="auto" src="<?= $fields['eventImg']['sizes']['500']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
@@ -47,7 +47,7 @@ get_header();
 
                             <div class="event__content--wrapper">
                                 <p class="event__desc<?php if(!$fields['eventImg']) echo " event__desc--down"; ?>"><?= $fields['eventShortDesc'] ?></p>
-                                <span class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($fields['eventName']); ?></span></span>
+                                <span class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower(get_the_title()); ?></span></span>
                             </div>
                         </article>
                     </a>
@@ -68,7 +68,7 @@ get_header();
                     <?php $fields = get_fields(); ?>
                     <a class="project__link-wrapper"  href="<?= the_permalink(); ?>" title="<?= __('Aller sur la page individuelle du projet', 'mf'); ?>">
                         <article class="projects__project project">
-                            <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($fields['projectName']), false, 65); ?></h3>
+                            <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags(get_the_title()), false, 65); ?></h3>
                             <div class="project__img--wrapper">
                             <?php if($fields['projectImg']): ?>
                                 <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['sizes']['medium']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
@@ -78,7 +78,7 @@ get_header();
                             </div>
                             <div class="project__content--wrapper">
                                 <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
-                                <span class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_all_tags($fields['projectName']); ?></span></span>
+                                <span class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_all_tags(get_the_title()); ?></span></span>
                             </div>
                         </article>
                     </a>
@@ -100,14 +100,14 @@ get_header();
                     <article class="news__article article">
                         <div class="news__content">
                             <div class="news__heading">
-                                <h3 class="article__title"><?= $fields['newsTitle']; ?></h3>
+                                <h3 class="article__title"><?= get_the_title(); ?></h3>
                                 <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
                             </div>
                             <div class="article__content">
                                 <?php $content = get_field('newsContent'); ?>
                                 <?= mf_get_the_excerpt(mf_remove_all_tags($content), false, 300); ?>
                             </div>
-                            <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags($fields['newsTitle']); ?></span></a>
+                            <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags(get_the_title()); ?></span></a>
                         </div>
                         <div class="article__img--wrapper">
                         <?php if($fields['newsImg']): ?>
