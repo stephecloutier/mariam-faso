@@ -7,7 +7,7 @@
             <a href="<?= mf_get_page_url('template-agenda.php'); ?>" class="help__link help__link--events"><?= __('Participer à nos évènements', 'mf'); ?></a>
             <div 
                 class="fb-share-button" 
-                data-href="https://www.facebook.com/MariamFaso/"
+                data-href="<?= get_field('facebookLink'); ?>"
                 data-layout="button_count" 
                 data-size="small"
                 data-mobile-iframe="true">

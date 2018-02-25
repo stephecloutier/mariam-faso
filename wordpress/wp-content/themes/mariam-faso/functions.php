@@ -296,6 +296,22 @@ function mf_get_page_id_from_template($templateName) {
 }
 
 /*
+ * Get page ID from template name that is outside template-parts folder
+*/
+function mf_get_page_id_from_template_out($templateName) {
+    $pages = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $templateName,
+        'hierarchical' => 0
+    ));
+
+    foreach($pages as $page){
+        return $page->ID;
+    }
+}
+
+
+/*
  * Get page url from ID
 */
 function mf_get_page_url($templateName) {

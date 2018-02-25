@@ -1,3 +1,5 @@
+        <?php 
+        ?>
         <footer class="footer">
             <div class="footer__wrapper">
                 <div class="footer__columns">
@@ -23,8 +25,11 @@
                         <p class="footer__desc"><?= str_replace(':facebook', '<span class="footer__desc--strong"><a class="footer__link" href="https://www.facebook.com/MariamFaso/">Facebook</a></span>', __('N’hésitez pas à consulter notre page :facebook pour être au courant des évènements à venir&nbsp;!', 'mf')); ?></p>
 
                         <div class="footer__social">
-                            <a href="https://www.facebook.com/MariamFaso/" class="footer__button--social footer__facebook">Facebook</a>
-                            <a href="#" class="footer__button--social footer__youtube">Youtube</a>
+                        <?php $home = get_fields(mf_get_page_id_from_template_out('index.php')); ?>
+                            <a target="_blank" href="<?= $home['facebookLink']; ?>" class="footer__button--social footer__facebook">Facebook</a>
+                        <?php if($home['youtubeLink']): ?>
+                            <a target="_blank" href="$home['youtubeLink']" class="footer__button--social footer__youtube">Youtube</a>
+                        <?php endif; ?>
                         </div>
                         <div class="footer__copyright">
                             <span class="footer__copyright"><?= __('Site web réalisé par', 'mf'); ?> <a href="http://stephanie.cloutier.pro" class="footer__copyright--link">Stéphanie Cloutier</a></span>
