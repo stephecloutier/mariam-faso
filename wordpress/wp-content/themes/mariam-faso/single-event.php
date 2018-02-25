@@ -74,7 +74,7 @@ if($fields['eventTimeStart']) {
             <a 
                 class="info__single event__map map__wrapper" 
                 title="<?= __('Aller sur google maps', 'mf'); ?>"
-                target="blank"
+                target="_blank"
                 href="https://www.google.com/maps/search/?api=1&amp;query=<?= $fields['eventMap']['lat'] . ',' . $fields['eventMap']['lng'] ?>">
                 <img class="map__img" src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
             </a>
