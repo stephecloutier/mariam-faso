@@ -213,10 +213,16 @@
             flex-direction: column;
             align-items: flex-start;
             position: relative;
-            margin-bottom: 66px;
-            &:not(:nth-child(3n+1)) {
-                margin-left: 66px;
+            &__link-wrapper {
+                background-color: white;
+                cursor: pointer;
+                margin-bottom: 66px;
+                border-radius: 3px;
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 66px;
+                }
             }
+            
             &__img--wrapper {
                 border-top-left-radius: 3px;
                 border-top-right-radius: 3px;
@@ -307,9 +313,14 @@
             flex-direction: column;
             align-items: flex-start;
             position: relative;
-            margin-bottom: 66px;
-            &:not(:nth-child(3n+1)) {
-                margin-left: 66px;
+            &__link-wrapper {
+                background-color: white;
+                cursor: pointer;
+                margin-bottom: 66px;
+                border-radius: 3px;
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 66px;
+                }
             }
 
             &__img--wrapper {

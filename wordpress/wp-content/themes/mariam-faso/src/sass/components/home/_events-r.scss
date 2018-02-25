@@ -4,7 +4,7 @@
             width: 100%;
             justify-content: center;
 
-            .event {
+            .event__link-wrapper {
                 &:nth-child(1n) {
                     margin: 0 33px 2rem 33px;
                 }
@@ -18,7 +18,7 @@
         .events__inside-wrapper {
             flex-direction: column;
             align-items: center;
-            .event {
+            .event__link-wrapper {
                 &:nth-child(1n) {
                     margin-left: 0;
                     margin-right: 0;
@@ -36,7 +36,7 @@
     .main__events {
         .events__inside-wrapper {
 
-            .event {
+            .event__link-wrapper {
                 width: 98%;
                 &:nth-child(1n) {
                     //margin: 0;

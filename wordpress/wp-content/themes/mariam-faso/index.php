@@ -31,24 +31,26 @@ get_header();
                     ?>
                     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                     <?php $fields = get_fields(); ?>
-                    <article class="events__event event">
-                        <h3 class="event__title<?php if(!$fields['eventImg']) echo " event__title--bigger"; ?>"><?= $fields['eventName'] ?></h3>
-                        <?php if($fields['eventImg']): ?>
-                        <div class="event__img--wrapper">
-                                <img class="event__img" width="500" height="auto" src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
-                        </div>
-                        <?php endif; ?>
-                        <?php
-                            $date = $fields['eventDate'];
-                            $date = new DateTime($date);
-                         ?>
-                        <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
+                    <a class="event__link-wrapper" href="<?php the_permalink(); ?>" title="<?= __('Aller sur la page individuelle de l\'évènement', 'mf'); ?>">
+                        <article class="events__event event">
+                            <h3 class="event__title<?php if(!$fields['eventImg']) echo " event__title--bigger"; ?>"><?= $fields['eventName'] ?></h3>
+                            <?php if($fields['eventImg']): ?>
+                            <div class="event__img--wrapper">
+                                    <img class="event__img" width="500" height="auto" src="<?= $fields['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                            </div>
+                            <?php endif; ?>
+                            <?php
+                                $date = $fields['eventDate'];
+                                $date = new DateTime($date);
+                            ?>
+                            <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
 
-                        <div class="event__content--wrapper">
-                            <p class="event__desc<?php if(!$fields['eventImg']) echo " event__desc--down"; ?>"><?= $fields['eventShortDesc'] ?></p>
-                            <a href="<?php the_permalink(); ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($fields['eventName']); ?></span></a>
-                        </div>
-                    </article>
+                            <div class="event__content--wrapper">
+                                <p class="event__desc<?php if(!$fields['eventImg']) echo " event__desc--down"; ?>"><?= $fields['eventShortDesc'] ?></p>
+                                <span class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($fields['eventName']); ?></span></span>
+                            </div>
+                        </article>
+                    </a>
                     <?php endwhile; else: ?>
                 </div>
                 <p class="events__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
@@ -64,20 +66,22 @@ get_header();
                 <div class="projects__inside-wrapper">
                     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                     <?php $fields = get_fields(); ?>
-                    <article class="projects__project project">
-                        <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($fields['projectName']), false, 65); ?></h3>
-                        <div class="project__img--wrapper">
-                        <?php if($fields['projectImg']): ?>
-                            <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
-                        <?php else: ?>
-                            <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>" >
-                        <?php endif; ?>
-                        </div>
-                        <div class="project__content--wrapper">
-                            <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
-                            <a href="<?php the_permalink(); ?>" class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_all_tags($fields['projectName']); ?></span></a>
-                        </div>
-                    </article>
+                    <a class="project__link-wrapper"  href="<?= the_permalink(); ?>" title="<?= __('Aller sur la page individuelle du projet', 'mf'); ?>">
+                        <article class="projects__project project">
+                            <h3 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($fields['projectName']), false, 65); ?></h3>
+                            <div class="project__img--wrapper">
+                            <?php if($fields['projectImg']): ?>
+                                <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
+                            <?php else: ?>
+                                <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>" >
+                            <?php endif; ?>
+                            </div>
+                            <div class="project__content--wrapper">
+                                <p class="project__desc"><?= $fields['projectShortDesc']; ?></p>
+                                <span class="project__link"><?= __('Voir le projet', 'mf'); ?><span class="hidden"> <?= mf_remove_all_tags($fields['projectName']); ?></span></span>
+                            </div>
+                        </article>
+                    </a>
                     <?php endwhile; else: ?>
                     <p class="events__empty loop__empty"><?= __('Il n’y a pas de projets à afficher pour le moment.', 'mf'); ?></p>
                     <?php endif; ?>

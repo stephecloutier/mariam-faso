@@ -58,21 +58,22 @@ wp_reset_query();
                 if($nextEventsFields) :
                     foreach($nextEventsFields as $nextEvent) :
             ?>
-
-                <article class="agenda__event nextEvent event">
-                    <h3 class="event__title<?php if(!$nextEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $nextEvent['eventName'] ?></h3>
-                    <?php if($nextEvent['eventImg']): ?>
-                    <div class="event__img--wrapper">
-                        <img width="300" height="auto" src="<?= $nextEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
-                    </div>
-                    <?php endif; ?>
-                    <?php $date = new DateTime($nextEvent['eventDate']); ?>
-                    <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
-                    <div class="event__content--wrapper">
-                        <p class="event__desc<?php if(!$nextEvent['eventImg']) echo ' event__desc--down'; ?>"><?= $nextEvent['eventShortDesc'] ?></p>
-                        <a href="<?= $nextEvent['link']; ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($nextEvent['eventName']); ?></span></a>
-                    </div>
-                </article>
+                <a class="event__link-wrapper" href="<?= $nextEvent['link']; ?>" title="<?= __('Aller sur la page individuelle de l\'évènement', 'mf'); ?>">
+                    <article class="agenda__event nextEvent event">
+                        <h3 class="event__title<?php if(!$nextEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $nextEvent['eventName'] ?></h3>
+                        <?php if($nextEvent['eventImg']): ?>
+                        <div class="event__img--wrapper">
+                            <img width="300" height="auto" src="<?= $nextEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                        </div>
+                        <?php endif; ?>
+                        <?php $date = new DateTime($nextEvent['eventDate']); ?>
+                        <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
+                        <div class="event__content--wrapper">
+                            <p class="event__desc<?php if(!$nextEvent['eventImg']) echo ' event__desc--down'; ?>"><?= $nextEvent['eventShortDesc'] ?></p>
+                            <span class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($nextEvent['eventName']); ?></span></span>
+                        </div>
+                    </article>
+                </a>
             <?php endforeach; else: ?>
             </div>
             <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements à afficher pour le moment.', 'mf'); ?></p>
@@ -88,21 +89,23 @@ wp_reset_query();
                 if($previousEventsFields) :
                     foreach($previousEventsFields as $previousEvent) :
             ?>
-                <article class="agenda__event previousEvent event">
-                    <h3 class="event__title<?php if(!$previousEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $previousEvent['eventName'] ?></h3>
-                    <?php if($previousEvent['eventImg']): ?>
-                    <div class="event__img--wrapper">
-                        <img width="300" height="auto" src="<?= $previousEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
-                    </div>
-                    <?php endif; ?>
-                    <?php $date = new DateTime($previousEvent['eventDate']); ?>
-                    <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
+                <a class="event__link-wrapper" href="<?= $previousEvent['link']; ?>" title="<?= __('Aller sur la page individuelle de l\'évènement', 'mf'); ?>">
+                    <article class="agenda__event previousEvent event">
+                        <h3 class="event__title<?php if(!$previousEvent['eventImg']) echo ' event__title--bigger'; ?>"><?= $previousEvent['eventName'] ?></h3>
+                        <?php if($previousEvent['eventImg']): ?>
+                        <div class="event__img--wrapper">
+                            <img width="300" height="auto" src="<?= $previousEvent['eventImg']['url']; ?>" alt="<?= mf_get_image_alt('eventImg'); ?>">
+                        </div>
+                        <?php endif; ?>
+                        <?php $date = new DateTime($previousEvent['eventDate']); ?>
+                        <time class="event__time" datetime="<?= $date->format('c'); ?>"><?= $date->format('d'. '/'. 'm'); ?></time>
 
-                    <div class="event__content--wrapper">
-                        <p class="event__desc<?php if(!$previousEvent['eventImg']) echo ' event__desc--down'; ?>"><?= $previousEvent['eventShortDesc'] ?></p>
-                        <a href="<?= $previousEvent['link']; ?>" class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></a>
-                    </div>
-                </article>
+                        <div class="event__content--wrapper">
+                            <p class="event__desc<?php if(!$previousEvent['eventImg']) echo ' event__desc--down'; ?>"><?= $previousEvent['eventShortDesc'] ?></p>
+                            <span class="event__link"><?= __('Voir les informations', 'mf'); ?><span class="hidden"> <?= __('sur', 'mf'); ?> <?= strtolower($previousEvent['eventName']); ?></span></span>
+                        </div>
+                    </article>
+                </a>
             <?php endforeach; else: ?>
             </div>
             <p class="events__empty loop__empty"><?= __('Il n’y a pas d’évènements passés à afficher.', 'mf'); ?></p>
