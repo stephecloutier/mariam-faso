@@ -32,12 +32,17 @@
 
                     </div>
                 </div>
-
-
             </div>
         </footer>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v2.12';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <script src="<?= get_template_directory_uri(); ?>/assets/js/script.js"></script>
         <script src="<?= get_template_directory_uri(); ?>/assets/js/lightbox-plus-jquery.min.js"></script>
     </body>
 </html>
-<!-- <?php //if(is_user_logged_in()) {wp_footer();}; ?> -->
