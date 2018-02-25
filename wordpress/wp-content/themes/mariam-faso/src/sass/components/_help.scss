@@ -52,9 +52,7 @@
                     font-family: mariamfaso;
                     color: white;
                     font-size: 5rem;
-                    position: relative;
-                    top: 0;
-                    transition: 0.25s ease-in;
+                    transition: 0.2s ease-out;
                 }
 
                 &--donate::before {
@@ -68,7 +66,7 @@
                 }
 
                 &:hover::before, &:focus::before {
-                    top: -5px;
+                    transform: translateY(-5px);
                 }
 
             }
