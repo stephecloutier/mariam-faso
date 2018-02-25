@@ -69,6 +69,24 @@ $fields = get_fields();
         </section>
     </div>
 
+    <?php
+            if($fields['projectGallery']):
+                $images = $fields['projectGallery'];
+        ?>
+        <section class="project__gallery">
+            <span class="second-title"><?= __('Photos du projet', 'mf'); ?></span>
+            <div class="project__gallery-imgs">
+                <?php foreach($images as $image): ?>
+                <div class="project__img--wrapper">
+                    <a href="<?= $image['url']; ?>" data-lightbox="project" data-title="<?= mf_get_image_alt($image); ?>">
+                        <img width="300" heigth="auto" class="project__img" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+        <?php endif; ?>
+
     <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back back__link" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
 
     <?php get_template_part('parts/help'); ?>

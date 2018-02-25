@@ -4,6 +4,17 @@
         &__articles {
             margin-right: 2rem;
         }
+        &__gallery {
+            .project__gallery-imgs {
+                .project__img--wrapper {
+                    &:not(:nth-child(3n+1)) {
+                        margin-left: 0;
+                    }
+                    margin-right: 2%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
     }
     .project__back {
         max-width: 100%;

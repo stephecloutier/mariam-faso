@@ -67,6 +67,31 @@
             margin-top: 2rem;
         }
     }
+
+    &__gallery {
+        max-width: $max-width;
+        margin: 0 auto;
+        .project__gallery-imgs {
+            margin-top: 2em;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            .project__img--wrapper {
+                height: $columns7p;
+                width: $columns7p;
+                overflow: hidden;
+                margin-bottom: 66px;
+                &:not(:nth-child(3n+1)) {
+                    margin-left: 66px;
+                }
+                .project__img {
+                    width: auto;
+                    height: $columns7p;
+                }
+            }
+        }
+    }
 }
 
 
