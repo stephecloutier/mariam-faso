@@ -6,7 +6,7 @@
     <title><?php wp_title(''); ?></title>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/lightbox.min.css">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.css">
-    <?php wp_head(); ?>
+    <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
 </head>
 <body>
     <?php if(is_front_page()): ?>
@@ -72,5 +72,3 @@
             <?php endif; ?>
         </div>
     </header>
-
-    <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
