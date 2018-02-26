@@ -28,7 +28,7 @@
                         <?php $home = get_fields(mf_get_page_id_from_template_out('index.php')); ?>
                             <a target="_blank" href="<?= $home['facebookLink']; ?>" class="footer__button--social footer__facebook">Facebook</a>
                         <?php if($home['youtubeLink']): ?>
-                            <a target="_blank" href="$home['youtubeLink']" class="footer__button--social footer__youtube">Youtube</a>
+                            <a target="_blank" href="<?= $home['youtubeLink']; ?>" class="footer__button--social footer__youtube">Youtube</a>
                         <?php endif; ?>
                         </div>
                         <div class="footer__copyright">

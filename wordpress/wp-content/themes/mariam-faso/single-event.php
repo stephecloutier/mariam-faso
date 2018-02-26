@@ -33,6 +33,11 @@ if($fields['eventTimeStart']) {
                     }
                 </style>
                 <?php endif; ?>
+                <?php if($fields['eventFacebookLink']): ?>
+                <div class="event__social">
+                    <a title="<?= __('Voir l\'évènement sur Facebook', 'mf'); ?>" target="_blank" href="<?= $fields['eventFacebookLink']; ?>" class="event__facebook">Facebook</a>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
