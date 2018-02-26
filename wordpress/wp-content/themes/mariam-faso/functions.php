@@ -8,6 +8,7 @@
     // original images
 //add_filter( 'wp_generate_attachment_metadata', mf_compress_image, 10, 2 );
 
+add_filter('show_admin_bar', '__return_false');
 add_action('init', 'mf_register_types');
 add_action( 'publish_event', 'mf_create_event_page' );
 add_filter('wp_title', 'custom_wp_title');

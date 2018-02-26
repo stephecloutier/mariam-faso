@@ -71,4 +71,5 @@
             </div>
             <?php endif; ?>
         </div>
+        <?php wp_head(); ?>
     </header>

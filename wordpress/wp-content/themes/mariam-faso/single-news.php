@@ -29,6 +29,11 @@ $fields = get_fields();
                 <?= $fields['newsContent']; ?>
             </div>
         </div>
+
+        <div class="project__share">
+            <span class="project__subtitle"><?= __('Partagez l\'actualité sur les réseaux sociaux&nbsp;!', 'mf'); ?></span>
+            <?php echo do_shortcode('[Sassy_Social_Share]'); ?>
+        </div>
         <div class="single-news__links">
             <a href="<?= mf_get_page_url('template-news.php') ?>" class="back__link news__back news__back--news" title="<?= __('Retourner sur la page d\'actualité', 'mf'); ?>"><?= __('Retourner à la page d\'actualité', 'mf'); ?></a>
         </div>

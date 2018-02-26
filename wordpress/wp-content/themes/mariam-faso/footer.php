@@ -1,5 +1,3 @@
-        <?php 
-        ?>
         <footer class="footer">
             <div class="footer__wrapper">
                 <div class="footer__columns">
@@ -38,6 +36,7 @@
                     </div>
                 </div>
             </div>
+            <?php wp_footer(); ?>
         </footer>
         <!-- <script>(function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];

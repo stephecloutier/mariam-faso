@@ -54,8 +54,8 @@ $date = new DateTime($fields['tripStartDate']);
                 <?php endwhile; endif; ?>
         </section>
 
-        <?php if(have_rows('tripInfosRepeater')): ?>
         <section class="trip__infos infos">
+        <?php if(have_rows('tripInfosRepeater')): ?>
             <h2 class="second-title"><?= __('Informations sur le voyage', 'mf'); ?></h2>
             <?php
                 while(have_rows('tripInfosRepeater')): the_row();
@@ -67,8 +67,12 @@ $date = new DateTime($fields['tripStartDate']);
                 </div>
             </div>
             <?php endwhile; ?>
-        </section>
         <?php endif; ?>
+            <div class="project__share">
+                <span class="project__subtitle"><?= __('Partagez le voyage sur les réseaux sociaux&nbsp;!', 'mf'); ?></span>
+                <?php echo do_shortcode('[Sassy_Social_Share]'); ?>
+            </div>
+        </section>
     </div>
     <?php if(have_rows('tripConfessionsRepeater')): ?>
     <section class="trip__confessions confessions">

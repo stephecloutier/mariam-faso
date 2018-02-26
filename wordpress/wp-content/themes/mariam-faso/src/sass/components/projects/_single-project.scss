@@ -67,6 +67,17 @@
             margin-top: 2rem;
         }
     }
+    &__share {
+        margin-top: 1.5rem;
+        .project__subtitle {
+            font-family: "Rubik", Helvetica, arial, sans-serif;
+            color: $raspberry;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+    }
 
     &__gallery {
         max-width: $max-width;
