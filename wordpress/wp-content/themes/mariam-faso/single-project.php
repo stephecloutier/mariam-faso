@@ -26,7 +26,7 @@ $fields = get_fields();
             </div>
         </div>
     </div>
-    <div class="project">
+    <div class="single-project">
         <section class="project__articles">
             <h2 class="second-title"><?= __('Description du projet', 'mf'); ?></h2>
             <?php if(have_rows('projectContentRepeater')):

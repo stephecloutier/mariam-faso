@@ -2,13 +2,13 @@
     .projects {
         margin: 0;
     }
-    .project {
-        padding: 0;
-    }
     .main__projects {
         .projects__inside-wrapper {
             width: 100%;
             justify-content: center;
+            .project {
+                padding: 0;
+            }
 
             .project__link-wrapper {
                 &:nth-child(1n) {

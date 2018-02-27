@@ -1,9 +1,11 @@
-.project {
+.single-project {
     max-width: $max-width;
     margin: 3rem auto 0 auto;
     display: flex;
     align-items: flex-start;
+}
 
+.project {
     &__articles {
         max-width: $columns12p;
 
