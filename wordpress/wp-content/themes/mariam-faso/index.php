@@ -73,7 +73,7 @@ get_header();
                             <?php if($fields['projectImg']): ?>
                                 <img class="project__img" width="200" height="auto" src="<?= $fields['projectImg']['sizes']['medium']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" >
                             <?php else: ?>
-                                <img class="project__img" width="200" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>" >
+                                <img class="project__img" width="200" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>" >
                             <?php endif; ?>
                             </div>
                             <div class="project__content--wrapper">
@@ -113,7 +113,7 @@ get_header();
                         <?php if($fields['newsImg']): ?>
                             <img width="500" height="auto" src="<?= $fields['newsImg']['sizes']['500']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
                         <?php else: ?>
-                            <img class="article__img" width="500" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
+                            <img class="article__img" width="500" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                         <?php endif; ?>
                         </div>
                     </article>
