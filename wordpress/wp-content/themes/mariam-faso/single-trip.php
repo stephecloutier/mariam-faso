@@ -6,6 +6,7 @@ get_header();
 $fields = get_fields();
 $date = new DateTime($fields['tripStartDate']);
 ?>
+<meta property="og:image" content="<?php if($fields['tripImg']['url']) echo $fields['tripImg']['url']; ?>" />
 
 <main class="main">
     <div class="trip__landing single-landing">

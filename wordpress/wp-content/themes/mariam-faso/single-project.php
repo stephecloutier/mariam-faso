@@ -5,6 +5,7 @@
 get_header();
 $fields = get_fields();
 ?>
+<meta property="og:image" content="<?php if($fields['projectImg']['url']) echo $fields['projectImg']['url']; ?>" />
 
 <main class="main">
     <div class="project__landing single-landing">

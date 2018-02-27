@@ -7,6 +7,7 @@
 get_header();
 $fields = get_fields();
 ?>
+<meta property="og:image" content="<?php if($fields['newsImg']['url']) echo $fields['newsImg']['url']; ?>" />
 
 <main class="main">
     <ul class="breadcrumb">
