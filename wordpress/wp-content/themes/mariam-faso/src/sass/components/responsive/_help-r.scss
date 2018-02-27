@@ -21,7 +21,7 @@
                 font-size: $normal;
             }
             .help__links {
-                .help__link {
+                .help__link, .fb-share-button  {
                     width: 30%;
                     font-size: $small;
                     &::before {
