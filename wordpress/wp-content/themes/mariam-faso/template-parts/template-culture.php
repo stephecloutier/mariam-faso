@@ -47,7 +47,7 @@ get_header();
             <div class="culture__imgs--wrapper">
                 <?php foreach($images as $image): ?>
                 <div class="culture__img--wrapper">
-                    <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="culture__img">
+                    <img width="400" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="culture__img">
                 </div>
                 <?php endforeach; ?>
             </div>

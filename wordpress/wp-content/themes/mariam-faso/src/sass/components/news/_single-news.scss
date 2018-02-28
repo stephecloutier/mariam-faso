@@ -21,6 +21,8 @@
         line-height: 1.5;
         display: flex;
         align-items: flex-start;
+        @include wysiwyg($darkGray);
+
         &--textual {
             max-width: $columns13;
         }

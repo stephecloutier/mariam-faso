@@ -2,15 +2,15 @@
     .projects {
         margin: 0;
     }
-    .project {
-        padding: 0;
-    }
     .main__projects {
         .projects__inside-wrapper {
             width: 100%;
             justify-content: center;
-
             .project {
+                padding: 0;
+            }
+
+            .project__link-wrapper {
                 &:nth-child(1n) {
                     margin: 0 33px 2rem 33px;
                 }
@@ -30,9 +30,10 @@
 @media screen and (max-width: 745px){
     .main__projects {
         .projects__inside-wrapper {
+            padding: 0;
             flex-direction: column;
             align-items: center;
-            .project {
+            .project__link-wrapper {
                 &:nth-child(1n) {
                     margin-left: 0;
                     margin-right: 0;
@@ -47,16 +48,10 @@
 }
 
 
-@media screen and (max-width: 450px){
-    .main__projects {
-        padding: 2rem 1rem;
-    }
-}
-
 @media screen and (max-width: 350px){
     .main__projects {
         .projects__inside-wrapper {
-            .project {
+            .project__link-wrapper {
                 width: 98%;
             }
         }

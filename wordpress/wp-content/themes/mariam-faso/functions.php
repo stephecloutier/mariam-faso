@@ -6,12 +6,18 @@
 
 // Image compression
     // original images
-add_filter( 'wp_generate_attachment_metadata', mf_compress_image, 10, 2 );
+//add_filter( 'wp_generate_attachment_metadata', mf_compress_image, 10, 2 );
 
-
+add_filter('show_admin_bar', '__return_false');
 add_action('init', 'mf_register_types');
 add_action( 'publish_event', 'mf_create_event_page' );
 add_filter('wp_title', 'custom_wp_title');
+
+// image thumbnails \\
+if (function_exists('add_theme_support')) {
+    add_theme_support('post-thumbnails');
+    add_image_size('500', 500, auto);
+}
 
 // ACF
 add_action('acf/init', 'my_acf_init');
@@ -33,7 +39,9 @@ add_filter('wpcf7_form_elements', function($content) {
     return $content;
 });
 
-// load_theme_textdomain()
+// external links in wysiwyg
+add_filter('acf_the_content', 'mf_add_target_blank');
+
 
 /*
 * Register custom post types during initialization
@@ -77,12 +85,12 @@ function mf_register_types() {
     ]);
 
     register_post_type('news', [
-        'label' => 'Actualités',
+        'label' => 'Actualité',
         'labels' => [
             'singular_name' => 'actualité',
             'add_new_item' => 'Ajouter une nouvelle actualité'
         ],
-        'description' => 'Permet d’administrer les actualités affichées sur le site',
+        'description' => 'Permet d’administrer l\'actualité du site',
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-pressthis'
@@ -289,6 +297,22 @@ function mf_get_page_id_from_template($templateName) {
 }
 
 /*
+ * Get page ID from template name that is outside template-parts folder
+*/
+function mf_get_page_id_from_template_out($templateName) {
+    $pages = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $templateName,
+        'hierarchical' => 0
+    ));
+
+    foreach($pages as $page){
+        return $page->ID;
+    }
+}
+
+
+/*
  * Get page url from ID
 */
 function mf_get_page_url($templateName) {
@@ -336,7 +360,7 @@ function my_acf_init() {
 */
 
 function mf_get_static_google_map($lat, $lng, $zoom = 15, $maptype = 'roadmap', $width = 600, $height = 400) {
-    return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
+    return 'https://maps.googleapis.com/maps/api/staticmap?center=' .  $lat . ',' . $lng . '&zoom=' . $zoom . '&size=' . $width . 'x' . $height . '&maptype=' . $maptype . '&markers='  .  $lat . ',' . $lng .  '&key=AIzaSyAiHOHGennwjYldHEzhXL7ae4sfWIz32ew';
 }
 
 /*
@@ -356,6 +380,14 @@ function mf_remove_all_tags($field) {
     $newString = str_replace(['<p>', '</p>'], ' ', $field);
     $newString = preg_replace('/<.*?>/', '', $newString);
     return trim($newString);
+}
+
+/*
+ * Function to add target="_blank" to external links of acf content
+*/
+function mf_add_target_blank($content) {
+    $newContent = str_replace('<a', '<a target="_blank"', $content);
+    return $newContent;
 }
 
 

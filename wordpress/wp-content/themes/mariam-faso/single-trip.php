@@ -6,6 +6,7 @@ get_header();
 $fields = get_fields();
 $date = new DateTime($fields['tripStartDate']);
 ?>
+<meta property="og:image" content="<?php if($fields['tripImg']['url']) echo $fields['tripImg']['url']; ?>" />
 
 <main class="main">
     <div class="trip__landing single-landing">
@@ -14,7 +15,7 @@ $date = new DateTime($fields['tripStartDate']);
             <?php mf_display_breadcrumb(); ?>
             </ul>
             <div class="single-landing__content">
-                <h1 class="single-landing__title trip__title"><?= mf_remove_p_tags($fields['tripName']); ?></h1>
+                <h1 class="single-landing__title trip__title"><?= mf_remove_p_tags(get_the_title()); ?></h1>
                 <time class="single-landing__subtitle trip__subtitle" datetime="<?= $date->format('c'); ?>"><?= strftime("%B %Y", $date->getTimestamp()); ?></time>
                 <p class="single-landing__intro trip__intro"><?= $fields['tripDesc'] ?></p>
                 <?php if($fields['tripImg']): ?>
@@ -46,7 +47,7 @@ $date = new DateTime($fields['tripStartDate']);
                                 $image = get_sub_field('tripContentImg');
                         ?>
                         <div class="trip__img--wrapper">
-                            <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="trip__img">
+                            <img width="400" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="trip__img">
                         </div>
                         <?php endif; ?>
                     </article>
@@ -54,8 +55,8 @@ $date = new DateTime($fields['tripStartDate']);
                 <?php endwhile; endif; ?>
         </section>
 
-        <?php if(have_rows('tripInfosRepeater')): ?>
         <section class="trip__infos infos">
+        <?php if(have_rows('tripInfosRepeater')): ?>
             <h2 class="second-title"><?= __('Informations sur le voyage', 'mf'); ?></h2>
             <?php
                 while(have_rows('tripInfosRepeater')): the_row();
@@ -67,8 +68,12 @@ $date = new DateTime($fields['tripStartDate']);
                 </div>
             </div>
             <?php endwhile; ?>
-        </section>
         <?php endif; ?>
+            <div class="project__share">
+                <span class="project__subtitle"><?= __('Partagez le voyage sur les réseaux sociaux&nbsp;!', 'mf'); ?></span>
+                <?php echo do_shortcode('[Sassy_Social_Share]'); ?>
+            </div>
+        </section>
     </div>
     <?php if(have_rows('tripConfessionsRepeater')): ?>
     <section class="trip__confessions confessions">

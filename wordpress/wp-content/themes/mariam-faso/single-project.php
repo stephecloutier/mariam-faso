@@ -5,6 +5,7 @@
 get_header();
 $fields = get_fields();
 ?>
+<meta property="og:image" content="<?php if($fields['projectImg']['url']) echo $fields['projectImg']['url']; ?>" />
 
 <main class="main">
     <div class="project__landing single-landing">
@@ -13,7 +14,7 @@ $fields = get_fields();
             <?php mf_display_breadcrumb(); ?>
             </ul>
             <div class="single-landing__content">
-                <h1 class="single-landing__title project__title"><?= mf_remove_p_tags($fields['projectName']); ?></h1>
+                <h1 class="single-landing__title project__title"><?= mf_remove_p_tags(get_the_title()); ?></h1>
                 <p class="single-landing__intro project__intro"><?= $fields['projectDesc']; ?></p>
                 <?php if($fields['projectImg']): ?>
                 <style>
@@ -25,7 +26,7 @@ $fields = get_fields();
             </div>
         </div>
     </div>
-    <div class="project">
+    <div class="single-project">
         <section class="project__articles">
             <h2 class="second-title"><?= __('Description du projet', 'mf'); ?></h2>
             <?php if(have_rows('projectContentRepeater')):
@@ -44,7 +45,7 @@ $fields = get_fields();
                             $image = get_sub_field('projectContentImg');
                     ?>
                     <div class="project__img--wrapper">
-                        <img width="400" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
+                        <img width="400" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>" class="project__img">
                     </div>
                     <?php endif; ?>
                 </article>
@@ -66,9 +67,30 @@ $fields = get_fields();
             <?php endwhile; endif; ?>
 
             <a href="<?= mf_get_page_url('template-help.php'); ?>" class="infos__button" title="<?= __('Aller sur la page de don', 'mf') ?>"><?= __('Faire un don pour aider ce projet', 'mf'); ?></a>
+            <div class="project__share">
+                <span class="project__subtitle"><?= __('Partagez le projet sur les réseaux sociaux&nbsp;!', 'mf'); ?></span>
+                <?php echo do_shortcode('[Sassy_Social_Share]'); ?>
+            </div>
         </section>
     </div>
 
+    <?php
+            if($fields['projectGallery']):
+                $images = $fields['projectGallery'];
+        ?>
+        <section class="project__gallery">
+            <span class="second-title"><?= __('Photos du projet', 'mf'); ?></span>
+            <div class="project__gallery-imgs">
+                <?php foreach($images as $image): ?>
+                <div class="project__img--wrapper">
+                    <a href="<?= $image['url']; ?>" data-lightbox="project" data-title="<?= mf_get_image_alt($image); ?>">
+                        <img width="300" heigth="auto" class="project__img" src="<?= $image['sizes']['medium']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+        <?php endif; ?>
     <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="project__back back__link" title="<?= __('Aller sur la page des projets', 'mf'); ?>"><?= __('Retourner aux projets', 'mf'); ?></a>
 
     <?php get_template_part('parts/help'); ?>

@@ -75,6 +75,7 @@
                 overflow: hidden;
                 width: $columns7p * 2 + 64px;
                 margin-bottom: 0;
+                margin-left: 0;
                 .map__img {
                     width: 100%;
                     height: auto;
@@ -85,6 +86,11 @@
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
+            &-title {
+                content: "";
+                display: block;
+                clear: both;
+            }
             .event__img--wrapper {
                 height: $columns7p;
                 width: $columns7p;
@@ -102,42 +108,28 @@
     }
 }
 
-/*
-display: flex;
-flex-wrap: wrap;
-align-items: flex-start;
-justify-content: space-between;
-width: 100%;
+.event__social {
+    margin-top: 1.5em;
+}
 
-.info__single {
-    border: 1px solid $yellow;
-    border-radius: 3px;
-    min-height: 110px;
-    min-width: $columns7p;
-    //margin-right: 66px;
-    margin-bottom: 44px;
-
-    &:nth-child(3) {
-        //margin-right: 0;
+.event__facebook {
+    @include hidden;
+    &::before {
+        font-family: mariamfaso;
+        font-size: $icon / 2;
+        color: $purple;
+        line-height: $icon;
+        padding: $icon / 4;
+        @include button-colored-rounded(white, 15%);
+        content: "f";
+        margin-right: $icon / 2;
     }
-    &:not(:nth-child(3n+1)) {
-        //margin-left: 66px;
+    // Hover, focus and active effects \\
+    &:hover::before, &:focus::before {
+        box-shadow: inset 0 -4px darken(white, 15% * 2);
     }
-
-    &:not(.event__map) {
-        //max-width: $columns7p;
-    }
-    &.event__map {
-        overflow: hidden;
-        flex-grow: 1;
-        margin-right: 66px;
-        float: left;
-        .map__img {
-            width: 100%;
-            height: auto;
-            // width: 100%;
-            // height: auto;
-        }
+    &:active::before {
+        box-shadow: inset 0px 1px 5px 3px darken(white, 15% * 2);
+        transition: none;
     }
 }
-*/

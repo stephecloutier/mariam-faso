@@ -16,7 +16,10 @@
         .trips__inside-wrapper {
             justify-content: center;
             padding: 0 2rem;
-            .trip {
+            .trip__link-wrapper {
+                .trip {
+                    padding: 0;
+                }
                 &:not(:nth-child(3n+1)) {
                     margin-left: 0;
                 }
@@ -42,7 +45,7 @@
             flex-direction: column;
             align-items: center;
             padding: 0;
-            .trip {
+            .trip__link-wrapper {
                 &:nth-child(1n) {
                     margin: 0 0 44px 0;
                 }
@@ -54,7 +57,7 @@
 @media screen and (max-width: 350px){
     .trips__trips {
         .trips__inside-wrapper {
-            .trip {
+            .trip__link-wrapper {
                 max-width: 100%;
             }
         }

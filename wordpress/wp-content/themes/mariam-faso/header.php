@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="<?= get_permalink(); ?>" />
     <title><?php wp_title(''); ?></title>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/lightbox.min.css">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.css">
+    <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
 </head>
 <body>
     <?php if(is_front_page()): ?>
@@ -70,6 +72,5 @@
             </div>
             <?php endif; ?>
         </div>
+        <?php wp_head(); ?>
     </header>
-
-    <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>

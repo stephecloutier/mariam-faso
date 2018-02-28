@@ -23,8 +23,11 @@
                         <p class="footer__desc"><?= str_replace(':facebook', '<span class="footer__desc--strong"><a class="footer__link" href="https://www.facebook.com/MariamFaso/">Facebook</a></span>', __('N’hésitez pas à consulter notre page :facebook pour être au courant des évènements à venir&nbsp;!', 'mf')); ?></p>
 
                         <div class="footer__social">
-                            <a href="https://www.facebook.com/MariamFaso/" class="footer__button--social footer__facebook">Facebook</a>
-                            <a href="#" class="footer__button--social footer__youtube">Youtube</a>
+                        <?php $home = get_fields(mf_get_page_id_from_template_out('index.php')); ?>
+                            <a target="_blank" href="<?= $home['facebookLink']; ?>" class="footer__button--social footer__facebook">Facebook</a>
+                        <?php if($home['youtubeLink']): ?>
+                            <a target="_blank" href="<?= $home['youtubeLink']; ?>" class="footer__button--social footer__youtube">Youtube</a>
+                        <?php endif; ?>
                         </div>
                         <div class="footer__copyright">
                             <span class="footer__copyright"><?= __('Site web réalisé par', 'mf'); ?> <a href="http://stephanie.cloutier.pro" class="footer__copyright--link">Stéphanie Cloutier</a></span>
@@ -32,12 +35,18 @@
 
                     </div>
                 </div>
-
-
             </div>
+            <?php wp_footer(); ?>
         </footer>
+        <!-- <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v2.12';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script> -->
         <script src="<?= get_template_directory_uri(); ?>/assets/js/script.js"></script>
         <script src="<?= get_template_directory_uri(); ?>/assets/js/lightbox-plus-jquery.min.js"></script>
     </body>
 </html>
-<!-- <?php //if(is_user_logged_in()) {wp_footer();}; ?> -->

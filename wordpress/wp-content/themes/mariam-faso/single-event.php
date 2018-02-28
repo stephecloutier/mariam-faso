@@ -21,18 +21,22 @@ if($fields['eventTimeStart']) {
             <?php mf_display_breadcrumb(); ?>
             </ul>
             <div class="single-landing__content">
-                <h1 class="event__title single-landing__title single-landing__title--strong"><?= $fields['eventName'] ?></h1>
+                <h1 class="event__title single-landing__title single-landing__title--strong"><?= get_the_title(); ?></h1>
                 <span class="event__subtitle single-landing__subtitle"><?= strftime("%B %Y", $date->getTimestamp()); ?></span>
                 <div class="event__intro single-landing__intro">
                     <?= $fields['eventDesc']; ?>
                 </div>
-                <!-- <a href="" class="event__button single-landing__button"></a> -->
                 <?php if($fields['eventImg']): ?>
                 <style>
                     .event__landing {
                         background-image: url('<?= $fields['eventImg']['url']; ?>');
                     }
                 </style>
+                <?php endif; ?>
+                <?php if($fields['eventFacebookLink']): ?>
+                <div class="event__social">
+                    <a title="<?= __('Voir l\'évènement sur Facebook', 'mf'); ?>" target="_blank" href="<?= $fields['eventFacebookLink']; ?>" class="event__facebook">Facebook</a>
+                </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -72,9 +76,13 @@ if($fields['eventTimeStart']) {
             </div>
 
             <?php if($fields['eventMap']): ?>
-            <div class="info__single event__map map__wrapper">
+            <a 
+                class="info__single event__map map__wrapper" 
+                title="<?= __('Aller sur google maps', 'mf'); ?>"
+                target="_blank"
+                href="https://www.google.com/maps/search/?api=1&amp;query=<?= $fields['eventMap']['lat'] . ',' . $fields['eventMap']['lng'] ?>">
                 <img class="map__img" src="<?= mf_get_static_google_map($fields['eventMap']['lat'], $fields['eventMap']['lng']); ?>">
-            </div>
+            </a>
             <?php endif; ?>
 
             <?php if(have_rows('eventFieldsRepeater')):
@@ -106,7 +114,9 @@ if($fields['eventTimeStart']) {
             <div class="event__imgs">
                 <?php foreach($images as $image): ?>
                 <div class="event__img--wrapper">
-                    <img width="300" heigth="auto" class="event__img" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                    <a href="<?= $image['url']; ?>" data-lightbox="event" data-title="<?= mf_get_image_alt($image); ?>">
+                        <img width="400" heigth="auto" class="event__img" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt($image); ?>">
+                    </a>
                 </div>
                 <?php endforeach; ?>
             </div>

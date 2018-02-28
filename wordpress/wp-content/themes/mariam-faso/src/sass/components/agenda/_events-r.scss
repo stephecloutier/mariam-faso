@@ -4,7 +4,7 @@
             width: 100%;
             justify-content: center;
             margin: 0 -1%;
-            .event {
+            .event__link-wrapper {
                 &:not(:nth-child(3n+1)) {
                     margin-left: 0;
                 }

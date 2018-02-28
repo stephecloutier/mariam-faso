@@ -17,7 +17,13 @@ get_header();
         <a href="<?= mf_get_page_url('template-projects.php'); ?>" class="introduction__link"><?= __('Voir nos projets', 'mf'); ?></a>
     </div>
 
-    <blockquote class="about__quote quote">
+    <blockquote 
+        class="about__quote quote"
+        <?php if($fields['aboutQuoteImg']): ?>
+        style="background-image: url('<?= $fields['aboutQuoteImg']['url']; ?>')"
+        <?php endif; ?>
+
+    >
         <div class="quote__wrapper">
             <div class="quote__content">
                 <?= $fields['aboutQuote']; ?>
@@ -40,7 +46,7 @@ get_header();
             <?php if(get_sub_field('aboutContentImg')): ?>
                 <?php $image = get_sub_field('aboutContentImg'); ?>
             <div class="article__img--wrapper">
-                <img class="article__img" width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
+                <img class="article__img" width="500" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt('aboutContentImg'); ?>">
             </div>
 
             <?php endif; ?>

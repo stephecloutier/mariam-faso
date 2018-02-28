@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Template Name: Actualités
+    Template Name: Actualité
 */
 
 get_header();
@@ -11,7 +11,7 @@ get_header();
     <?php mf_display_breadcrumb(); ?>
     </ul>
     <div class="introduction__wrapper">
-        <h1 class="news__title main-title"><?= __('Toutes les actualités', 'mf'); ?></h1>
+        <h1 class="news__title main-title"><?= __('Toute l\'actualité', 'mf'); ?></h1>
         <div class="main-intro news__intro">
             <?= get_field('allNewsIntro'); ?>
         </div>
@@ -26,24 +26,25 @@ get_header();
         <article class="news__article article">
             <div class="news__content">
                 <div class="news__heading">
-                    <h2 class="article__title second-title"><?= $fields['newsTitle']; ?></h2>
+                    <h2 class="article__title second-title"><?= get_the_title(); ?></h2>
                     <time class="article__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date('d/m/Y') ?></time>
                 </div>
                 <div class="article__content">
-                    <?= mf_get_the_excerpt('newsContent', true, 300); ?>
+                    <?php $content = get_field('newsContent'); ?>
+                    <?= mf_get_the_excerpt(mf_remove_all_tags($content), false, 300); ?>
                 </div>
-                <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags($fields['newsTitle']); ?></span></a>
+                <a href="<?php the_permalink(); ?>" class="article__link"><?= __('Lire la suite', 'mf'); ?><span class="hidden"> <?= __('de', 'mf'); ?> <?= mf_remove_all_tags(get_the_title()); ?></span></a>
             </div>
             <div class="article__img--wrapper">
                 <?php if($fields['newsImg']): ?>
-                <img width="200" height="auto" src="<?= $fields['newsImg']['url']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
+                <img width="500" height="auto" src="<?= $fields['newsImg']['sizes']['500']; ?>" alt="<?= mf_get_image_alt('newsImg'); ?>" class="article__img">
                 <?php else: ?>
-                <img class="article__img" width="500" height="auto" src="wp-content/themes/mariam-faso/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
+                <img class="article__img" width="500" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
                 <?php endif; ?>
             </div>
         </article>
         <?php endwhile; else: ?>
-        <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualités à afficher pour le moment.', 'mf'); ?></p>
+        <p class="events__empty loop__empty"><?= __('Il n’y a pas d’actualité à afficher pour le moment.', 'mf'); ?></p>
         <?php endif; ?>
     </div>
 

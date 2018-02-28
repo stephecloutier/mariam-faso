@@ -36,21 +36,23 @@ $fields = get_fields();
             ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php $projectFields = get_fields(); ?>
-            <article class="projects__project project">
-                <span tabindex="0" class="about__project  about__project<?= ($projectFields['projectIsOver']) ? ('--over') : ('--inProgress'); ?>"><?= ($projectFields['projectIsOver']) ? ('Projet terminé') : ('Projet en cours'); ?></span>
-                <h2 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags($projectFields['projectName']), false, 65); ?></h2>
-                <div class="project__img--wrapper">
-                    <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
-                    <img width="500" height="auto" src="<?= $image['url']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg">
-                    <?php else: ?>
-                    <img class="project__img" width="200" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
-                    <?php endif; ?>
-                </div>
-                <div class="project__content--wrapper">
-                    <p class="project__desc"><?= $projectFields['projectShortDesc']; ?></p>
-                    <a href="<?= the_permalink(); ?>" class="project__link"><?= str_replace(':projectName', '<span class="hidden">' . mf_remove_all_tags($projectFields['projectName']) . '</span>', __('Voir le projet :projectName', 'mf')); ?></a>
-                </div>
-            </article>
+            <a class="project__link-wrapper"  href="<?= the_permalink(); ?>" title="<?= __('Aller sur la page individuelle du projet', 'mf'); ?>">
+                <article class="projects__project project">
+                    <span tabindex="0" class="about__project  about__project<?= ($projectFields['projectIsOver']) ? ('--over') : ('--inProgress'); ?>"><?= ($projectFields['projectIsOver']) ? ('Projet terminé') : ('Projet en cours'); ?></span>
+                    <h2 class="project__title"><?= mf_get_the_excerpt(mf_remove_all_tags(get_the_title()), false, 65); ?></h2>
+                    <div class="project__img--wrapper">
+                        <?php if($projectFields['projectImg']): $image = $projectFields['projectImg']; ?>
+                        <img width="500" height="auto" src="<?= $image['sizes']['500']; ?>" alt="<?= mf_get_image_alt('projectImg'); ?>" class="projectImg">
+                        <?php else: ?>
+                        <img class="project__img" width="200" height="auto" src="<?= get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="<?= __('Jeunes burkinabés', 'mf'); ?>">
+                        <?php endif; ?>
+                    </div>
+                    <div class="project__content--wrapper">
+                        <p class="project__desc"><?= $projectFields['projectShortDesc']; ?></p>
+                        <span class="project__link"><?= str_replace(':projectName', '<span class="hidden">' . mf_remove_all_tags(get_the_title()) . '</span>', __('Voir le projet :projectName', 'mf')); ?></span>
+                    </div>
+                </article>
+            </a>
             <?php endwhile; else: ?>
                 <span class="projects__empty loop__empty"><?= __('Il n’y a pas de projets à afficher pour le moment', 'mf'); ?></span>
             <?php endif; ?>
